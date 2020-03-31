@@ -1,0 +1,56 @@
+<resources>
+    <!--LIGHT COLOR THEME-->
+
+    <color name="color_primary">#6200ee</color>
+    <color name="color_primary_variant">#3700b3</color>
+    <color name="color_secondary">#bb86fc</color>
+
+    <color name="color_background">#ffffff</color>
+    <color name="color_surface">#ffffff</color>
+    <color name="color_error">#b00020</color>
+
+    <color name="color_on_primary">#ffffff</color>
+    <color name="color_on_secondary">#000000</color>
+    <color name="color_on_background">#000000</color>
+    <color name="color_on_surface">#000000</color>
+    <color name="color_on_error">#ffffff</color>
+
+    <!--DARK COLOR THEME-->
+
+    <color name="dark_color_primary">#bb86fc</color>
+    <color name="dark_color_primary_variant">#8858c8</color>
+    <color name="dark_color_secondary">#efb7ff</color>
+
+    <color name="dark_color_background">#121212</color>
+    <color name="dark_color_surface">#424242</color>
+    <color name="dark_color_error">#cf6679</color>
+
+    <color name="dark_color_on_primary">#000000</color>
+    <color name="dark_color_on_secondary">#000000</color>
+    <color name="dark_color_on_background">#ffffff</color>
+    <color name="dark_color_on_surface">#ffffff</color>
+    <color name="dark_color_on_error">#000000</color>
+
+
+    <color name="white">#ffffff</color>
+
+    <color name="gray">#9CA9BA</color>
+    <color name="gray_dark">#675F7F</color>
+    <color name="gray_light">#ECECEC</color>
+
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+
+    <color name="dark">#000000</color>
+
+    <color name="grey600">#757575</color>
+    <color name="grey300">#E0E0E0</color>
+
+    <color name="primary_ligher">#E1E4F4</color>
+    <color name="primary_lightest">#F0F1F9</color>
+
+    <color name="icons">#FFFFFF</color>
+
+    <color name="transparent">@android:color/transparent</color>
+
+</resources>

@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">NewMotivate</string>
+    <string name="error">Error</string>
+    <string name="ok">OK</string>
+    <string name="press_once_again_to_exit">Press once again to exit</string>
+    <string name="btn_back"><![CDATA[<< Back]]></string>
+    <string name="empty_field_err">Please fill this field</string>
+    <string name="next_step">Next step</string>
+    <string name="edit_btn">Edit</string>
+    <string name="loading">loading</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="remind_me">Remind Me</string>
+    <string name="remind_date_and_time">Reminder set for %1$s, %2$s %3$s</string>
+    <string name="date_reminder_default">Today</string>
+    <string name="date_error_check_again">The date you entered is in the past</string>
+    <string name="todo_error">Please enter a Todo</string>
+    <string name="about">About</string>
+    <string name="snooze">Snooze</string>
+    <string-array name="snooze_options">
+        <item>10 Minutes</item>
+        <item>30 Minutes</item>
+        <item>1 Hour</item>
+    </string-array>
+    <string name="no_to_dos">You don\'t have any todos</string>
+    <string name="remove">Remove</string>
+    <string name="done_label">Done</string>
+    <string name="is_dark_theme">Dark theme</string>
+    <string name="repeat">Repeat</string>
+    <string name="duration">Duration</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="select_a_date">Select a date</string>
+    <string name="cancel">Cancel</string>
+    <string name="repeat_every">Repeat every...</string>
+    <string name="monday">Mon</string>
+    <string name="tuesday">TUE</string>
+    <string name="wednesday">WED</string>
+    <string name="thursday">THU</string>
+    <string name="friday">FRI</string>
+    <string name="saturday">SAT</string>
+    <string name="sunday">SUN</string>
+    <string-array name="repeat_list">
+        <item>Days</item>
+        <item>Weeks</item>
+        <item>Months</item>
+        <item>Years</item>
+    </string-array>
+</resources>
