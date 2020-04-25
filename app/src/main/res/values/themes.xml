@@ -18,7 +18,7 @@
         <item name="colorOnSurface">@color/color_on_surface</item>
         <item name="colorOnError">@color/color_on_error</item>
 
-        <item name="android:textColor">@color/dark</item>
+        <item name="android:textColor">@android:color/black</item>
         <item name="android:textColorSecondary">@color/secondary_text</item>
 
         <!-- ActionBar -->

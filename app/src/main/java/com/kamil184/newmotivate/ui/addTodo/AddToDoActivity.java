@@ -13,14 +13,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.kamil184.newmotivate.R;
+import com.kamil184.newmotivate.model.ToDoItem;
 import com.kamil184.newmotivate.ui.base.BaseActivity;
 import com.kamil184.newmotivate.util.DateUtils;
-import com.kamil184.newmotivate.model.ToDoItem;
 
 import java.util.Calendar;
 import java.util.TimeZone;
@@ -132,7 +133,11 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
             dateTextView.setText(getString(R.string.date));
             if (theme == LIGHT_THEME) {
                 dateTextView.setTextColor(getResources().getColor(R.color.secondary_text));
-            } else dateTextView.setTextColor(getResources().getColor(R.color.white));
+                dateImageView.setImageResource(R.drawable.ic_date_range_grey_600_24dp);
+            } else{
+                dateTextView.setTextColor(getResources().getColor(R.color.white));
+                dateImageView.setImageResource(R.drawable.ic_date_range_white_24dp);
+            }
 
             item.setHasDate(false);
         });
@@ -142,7 +147,11 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
             reminderTextView.setText(getString(R.string.remind_me));
             if (theme == LIGHT_THEME) {
                 reminderTextView.setTextColor(getResources().getColor(R.color.secondary_text));
-            } else reminderTextView.setTextColor(getResources().getColor(R.color.white));
+                reminderImageView.setImageResource(R.drawable.ic_add_alarm_grey_600_24dp);
+            } else{
+                reminderTextView.setTextColor(getResources().getColor(R.color.white));
+                reminderImageView.setImageResource(R.drawable.ic_add_alarm_white_24dp);
+            }
 
             item.setHasReminder(false);
         });
@@ -153,7 +162,11 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
             repeatTextView.setText(getString(R.string.repeat));
             if (theme == LIGHT_THEME) {
                 repeatTextView.setTextColor(getResources().getColor(R.color.secondary_text));
-            } else repeatTextView.setTextColor(getResources().getColor(R.color.white));
+                repeatImageView.setImageResource(R.drawable.ic_repeat_grey_600_24dp);
+            } else{
+                repeatTextView.setTextColor(getResources().getColor(R.color.white));
+                repeatImageView.setImageResource(R.drawable.ic_repeat_white_24dp);
+            }
 
             item.setRepeat(null);
         });
@@ -163,7 +176,11 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
             durationTextView.setText(getString(R.string.duration));
             if (theme == LIGHT_THEME) {
                 durationTextView.setTextColor(getResources().getColor(R.color.secondary_text));
-            } else durationTextView.setTextColor(getResources().getColor(R.color.white));
+                repeatImageView.setImageResource(R.drawable.ic_clock_grey_600_24dp);
+            } else{
+                durationTextView.setTextColor(getResources().getColor(R.color.white));
+                repeatImageView.setImageResource(R.drawable.ic_clock_white_24dp);
+            }
 
             item.setDuration(0);
         });
@@ -211,8 +228,11 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
 
                     if (theme == LIGHT_THEME) {
                         dateTextView.setTextColor(getResources().getColor(R.color.color_primary));
-                    } else
+                        dateImageView.setImageResource(R.drawable.ic_date_range_primary_24dp);
+                    } else{
                         dateTextView.setTextColor(getResources().getColor(R.color.dark_color_primary));
+                        dateImageView.setImageResource(R.drawable.ic_date_range_primary_dark_24dp);
+                    }
                     dateDelete.setVisibility(View.VISIBLE);
 
                     itemCalendar.set(Calendar.YEAR, year1);
@@ -253,12 +273,15 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
 
         if (theme == LIGHT_THEME) {
             repeatTextView.setTextColor(getResources().getColor(R.color.color_primary));
-        } else repeatTextView.setTextColor(getResources().getColor(R.color.dark_color_primary));
+            repeatImageView.setImageResource(R.drawable.ic_repeat_primary_24dp);
+        } else{
+            repeatTextView.setTextColor(getResources().getColor(R.color.dark_color_primary));
+            repeatImageView.setImageResource(R.drawable.ic_repeat_primary_dark_24dp);
+        }
 
         boolean isDaily = false;
         if (repeat.getDays() != null) {
-            isDaily = true;
-            if (repeat.getCount() != 1) isDaily = false;
+            isDaily = repeat.getCount() == 1;
             for (int i = 0; i < 7; i++) {
                 if (!isDaysChecked[i]) isDaily = false;
             }
@@ -299,7 +322,12 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
 
         if (theme == LIGHT_THEME) {
             reminderTextView.setTextColor(getResources().getColor(R.color.color_primary));
-        } else reminderTextView.setTextColor(getResources().getColor(R.color.dark_color_primary));
+            reminderImageView.setImageResource(R.drawable.ic_add_alarm_primary_24dp);
+        } else {
+            reminderTextView.setTextColor(getResources().getColor(R.color.dark_color_primary));
+            reminderImageView.setImageResource(R.drawable.ic_add_alarm_primary_dark_24dp);
+        }
+
 
         Calendar itemCalendar = item.getCalendar();
         itemCalendar.set(Calendar.HOUR_OF_DAY, hour);
@@ -314,7 +342,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        if (ev.getAction() ==  MotionEvent.ACTION_DOWN){
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
             hideKeyboard();
             noteEditText.clearFocus();
             todoTitle.clearFocus();

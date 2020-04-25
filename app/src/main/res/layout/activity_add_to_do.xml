@@ -110,7 +110,7 @@
                                     android:id="@+id/date_delete"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:background="@android:color/transparent"
+                                    android:background="?android:attr/selectableItemBackground"
                                     android:paddingStart="@dimen/spacing_16"
                                     android:paddingTop="@dimen/spacing_12"
                                     android:paddingEnd="@dimen/spacing_16"
@@ -157,7 +157,7 @@
                                     android:id="@+id/reminder_delete"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:background="@android:color/transparent"
+                                    android:background="?android:attr/selectableItemBackground"
                                     android:paddingStart="@dimen/spacing_16"
                                     android:paddingTop="@dimen/spacing_12"
                                     android:paddingEnd="@dimen/spacing_16"
@@ -223,7 +223,7 @@
                                     android:id="@+id/repeat_delete"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:background="@android:color/transparent"
+                                    android:background="?android:attr/selectableItemBackground"
                                     android:paddingStart="@dimen/spacing_16"
                                     android:paddingTop="@dimen/spacing_12"
                                     android:paddingEnd="@dimen/spacing_16"
@@ -270,7 +270,7 @@
                                     android:id="@+id/duration_delete"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:background="@android:color/transparent"
+                                    android:background="?android:attr/selectableItemBackground"
                                     android:paddingStart="@dimen/spacing_16"
                                     android:paddingTop="@dimen/spacing_12"
                                     android:paddingEnd="@dimen/spacing_16"
@@ -293,7 +293,7 @@
                             android:id="@+id/note_edit_text"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@color/transparent"
+                            android:background="@android:color/transparent"
                             android:gravity="top"
                             android:hint="Add a note"
                             android:inputType="textMultiLine"
@@ -307,7 +307,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:orientation="horizontal">
 
@@ -318,16 +318,18 @@
                 android:layout_weight="1"
                 android:gravity="center|start"
                 android:padding="@dimen/spacing_8"
-                android:text="Created 7 hours ago"
                 android:textAppearance="?attr/textAppearanceBody1"
-                android:textColor="?android:textColorSecondary" />
+                android:textColor="?android:textColorSecondary"
+                tools:text="Created 7 hours ago" />
 
             <ImageButton
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.1"
-                android:background="@color/transparent"
-                android:padding="@dimen/spacing_4"
+                android:layout_marginRight="@dimen/spacing_4"
+                android:layout_marginBottom="@dimen/spacing_4"
+                android:layout_weight="0.15"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="@dimen/spacing_8"
                 app:srcCompat="?deleteDrawable" />
         </LinearLayout>
 

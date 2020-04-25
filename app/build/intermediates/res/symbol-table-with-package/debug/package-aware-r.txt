@@ -819,7 +819,6 @@ color color_primary
 color color_primary_variant
 color color_secondary
 color color_surface
-color dark
 color dark_color_background
 color dark_color_error
 color dark_color_on_background
@@ -884,7 +883,6 @@ color grey300
 color grey600
 color highlighted_text_material_dark
 color highlighted_text_material_light
-color icons
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -968,8 +966,6 @@ color notification_action_color_filter
 color notification_icon_bg_color
 color primary_dark_material_dark
 color primary_dark_material_light
-color primary_ligher
-color primary_lightest
 color primary_material_dark
 color primary_material_light
 color primary_text
@@ -994,7 +990,6 @@ color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
-color transparent
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -1452,6 +1447,8 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_add_alarm_grey_600_24dp
+drawable ic_add_alarm_primary_24dp
+drawable ic_add_alarm_primary_dark_24dp
 drawable ic_add_alarm_white_24dp
 drawable ic_add_white_24dp
 drawable ic_calendar_black_24dp
@@ -1459,8 +1456,12 @@ drawable ic_clear_black_24dp
 drawable ic_clear_grey_600_24dp
 drawable ic_clear_white_24dp
 drawable ic_clock_grey_600_24dp
+drawable ic_clock_primary_24dp
+drawable ic_clock_primary_dark_24dp
 drawable ic_clock_white_24dp
 drawable ic_date_range_grey_600_24dp
+drawable ic_date_range_primary_24dp
+drawable ic_date_range_primary_dark_24dp
 drawable ic_date_range_white_24dp
 drawable ic_delete_grey_600_24dp
 drawable ic_delete_white_24dp
@@ -1477,6 +1478,8 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_repeat_grey_600_24dp
+drawable ic_repeat_primary_24dp
+drawable ic_repeat_primary_dark_24dp
 drawable ic_repeat_white_24dp
 drawable ic_send_white_24dp
 drawable ic_sun
