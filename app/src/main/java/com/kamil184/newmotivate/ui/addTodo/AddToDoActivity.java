@@ -23,6 +23,7 @@ import com.kamil184.newmotivate.model.ToDoItem;
 import com.kamil184.newmotivate.ui.base.BaseActivity;
 import com.kamil184.newmotivate.util.DateUtils;
 
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -280,7 +281,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
         }
 
         boolean isDaily = false;
-        if (repeat.getDays() != null) {
+        if (repeat.getDays().length != 0) {
             isDaily = repeat.getCount() == 1;
             for (int i = 0; i < 7; i++) {
                 if (!isDaysChecked[i]) isDaily = false;
@@ -291,7 +292,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
         int dp6 = getResources().getDimensionPixelSize(R.dimen.spacing_6);
         int dp8 = getResources().getDimensionPixelSize(R.dimen.spacing_8);
         int dp12 = getResources().getDimensionPixelSize(R.dimen.spacing_12);
-        if (isDaysChecked.length == 0 || isDaily) {
+        if (isDaily || isDaysChecked.length == 0) {
             repeatSecondTextView.setVisibility(View.GONE);
             repeatTextView.setPaddingRelative(dp8, dp12, dp4, dp12);
         } else {

@@ -36,7 +36,7 @@
         android:layout_margin="@dimen/spacing_8"
         android:columnCount="4">
 
-        <com.kamil184.newmotivate.util.CircularMaterialButton
+        <com.kamil184.newmotivate.util.StateCircularMaterialButton
             android:id="@+id/monday"
             style="@style/CustomStyle.Button.Circle.Outlined"
             android:layout_width="@dimen/circle_button_size"
@@ -44,7 +44,7 @@
             android:layout_margin="@dimen/spacing_8"
             android:textColor="?android:textColorSecondary"/>
 
-        <com.kamil184.newmotivate.util.CircularMaterialButton
+        <com.kamil184.newmotivate.util.StateCircularMaterialButton
             android:id="@+id/tuesday"
             style="@style/CustomStyle.Button.Circle.Outlined"
             android:layout_width="@dimen/circle_button_size"
@@ -52,7 +52,7 @@
             android:layout_margin="@dimen/spacing_8"
             android:textColor="?android:textColorSecondary"/>
 
-        <com.kamil184.newmotivate.util.CircularMaterialButton
+        <com.kamil184.newmotivate.util.StateCircularMaterialButton
             android:id="@+id/wednesday"
             style="@style/CustomStyle.Button.Circle.Outlined"
             android:layout_width="@dimen/circle_button_size"
@@ -60,7 +60,7 @@
             android:layout_margin="@dimen/spacing_8"
             android:textColor="?android:textColorSecondary"/>
 
-        <com.kamil184.newmotivate.util.CircularMaterialButton
+        <com.kamil184.newmotivate.util.StateCircularMaterialButton
             android:id="@+id/thursday"
             style="@style/CustomStyle.Button.Circle.Outlined"
             android:layout_width="@dimen/circle_button_size"
@@ -68,7 +68,7 @@
             android:layout_margin="@dimen/spacing_8"
             android:textColor="?android:textColorSecondary"/>
 
-        <com.kamil184.newmotivate.util.CircularMaterialButton
+        <com.kamil184.newmotivate.util.StateCircularMaterialButton
             android:id="@+id/friday"
             style="@style/CustomStyle.Button.Circle.Outlined"
             android:layout_width="@dimen/circle_button_size"
@@ -76,7 +76,7 @@
             android:layout_margin="@dimen/spacing_8"
             android:textColor="?android:textColorSecondary"/>
 
-        <com.kamil184.newmotivate.util.CircularMaterialButton
+        <com.kamil184.newmotivate.util.StateCircularMaterialButton
             android:id="@+id/saturday"
             style="@style/CustomStyle.Button.Circle.Outlined"
             android:layout_width="@dimen/circle_button_size"
@@ -84,7 +84,7 @@
             android:layout_margin="@dimen/spacing_8"
             android:textColor="?android:textColorSecondary"/>
 
-        <com.kamil184.newmotivate.util.CircularMaterialButton
+        <com.kamil184.newmotivate.util.StateCircularMaterialButton
             android:id="@+id/sunday"
             style="@style/CustomStyle.Button.Circle.Outlined"
             android:layout_width="@dimen/circle_button_size"

@@ -15,10 +15,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.kamil184.newmotivate.util.CircularMaterialButton;
 import com.kamil184.newmotivate.R;
-import com.kamil184.newmotivate.util.Constants;
 import com.kamil184.newmotivate.model.ToDoItem.Repeat;
+import com.kamil184.newmotivate.util.Constants;
+import com.kamil184.newmotivate.util.StateCircularMaterialButton;
 
 import java.util.Calendar;
 import java.util.List;
@@ -30,21 +30,18 @@ import butterknife.Unbinder;
 
 import static com.kamil184.newmotivate.util.Constants.LIGHT_THEME;
 
-public class RepeatDialog extends DialogFragment {
+public class RepeatDialog extends DialogFragment implements StateCircularMaterialButton.StateOnClickListener {
 
     boolean theme;
-    private Unbinder unbinder;
-    private RepeatDialogListener listener;
     Repeat repeat;
-
-    public RepeatDialog(Repeat repeat) {
-        this.repeat = repeat;
-    }
-
     @BindView(R.id.repeat_dialog_edit_text)
     EditText editText;
     @BindView(R.id.repeat_dialog_spinner)
     Spinner spinner;
+    @BindViews({R.id.monday, R.id.tuesday, R.id.wednesday, R.id.thursday, R.id.friday, R.id.saturday, R.id.sunday})
+    List<StateCircularMaterialButton> daysOfWeek;
+    private Unbinder unbinder;
+    private RepeatDialogListener listener;
     /*@BindView(R.id.monday)
     CircularMaterialButton monday;
     @BindView(R.id.tuesday)
@@ -59,10 +56,11 @@ public class RepeatDialog extends DialogFragment {
     CircularMaterialButton saturday;
     @BindView(R.id.sunday)
     CircularMaterialButton sunday;*/
-
-    @BindViews({R.id.monday, R.id.tuesday, R.id.wednesday, R.id.thursday, R.id.friday, R.id.saturday, R.id.sunday})
-    List<CircularMaterialButton> daysOfWeek;
     private boolean[] isDaysChecked = new boolean[7];
+
+    RepeatDialog(Repeat repeat) {
+        this.repeat = repeat;
+    }
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -93,6 +91,7 @@ public class RepeatDialog extends DialogFragment {
         String[] resDays = getResources().getStringArray(R.array.short_days);
         for (int i = 0; i < 7; i++) {
             daysOfWeek.get(i).setText(resDays[i]);
+            daysOfWeek.get(i).setListener(this);
         }
 
         if (repeat == null) {
@@ -112,7 +111,7 @@ public class RepeatDialog extends DialogFragment {
             } else {
                 isDaysChecked = repeat.getDays();
                 for (int i = 0; i < 7; i++) {
-                    if(isDaysChecked[i]) daysOfWeek.get(i).callOnClick();
+                    if (isDaysChecked[i]) daysOfWeek.get(i).callOnClick();
                 }
             }
         }
@@ -140,7 +139,6 @@ public class RepeatDialog extends DialogFragment {
         builder.setView(view)
                 .setTitle(R.string.repeat_every)
                 .setPositiveButton(R.string.ok, (dialog, id) -> {
-
                     switch (spinner.getSelectedItemPosition()) {
                         case 0:
                             repeat = Repeat.DAY;
@@ -179,6 +177,15 @@ public class RepeatDialog extends DialogFragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    @Override
+    public boolean isMoreThanOne() {
+        byte count = 0;
+        for (int i = 0; i < 7; i++) {
+            if (daysOfWeek.get(i).isClicked()) count++;
+        }
+        return count>1;
     }
 
     public interface RepeatDialogListener {

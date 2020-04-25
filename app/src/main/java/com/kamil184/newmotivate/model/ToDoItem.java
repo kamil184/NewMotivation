@@ -170,10 +170,9 @@ public class ToDoItem implements Serializable {
         }
 
         public boolean[] getDays() {
-            return null;
+            return new boolean[0];
         }
 
-        public void setDays(boolean[] days) {
-        }
+        public void setDays(boolean[] days) { }
     }
 }
