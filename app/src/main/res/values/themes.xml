@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomStyle.LightTheme" parent="Theme.MaterialComponents.Light">
+
+        <!--Material color attributes -->
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryVariant">@color/color_primary_variant</item>
+        <item name="colorSecondary">@color/color_secondary</item>
+
+        <item name="android:colorBackground">@color/color_background</item>
+        <item name="colorSurface">@color/color_surface</item>
+        <item name="colorError">@color/color_error</item>
+
+        <item name="colorOnPrimary">@color/color_on_primary</item>
+        <item name="colorOnSecondary">@color/color_on_secondary</item>
+        <item name="colorOnBackground">@color/color_on_background</item>
+        <item name="colorOnSurface">@color/color_on_surface</item>
+        <item name="colorOnError">@color/color_on_error</item>
+
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:textColorSecondary">@color/secondary_text</item>
+
+        <!-- ActionBar -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
+
+        <!--color of thumb when inactive-->
+        <item name="colorSwitchThumbNormal">@color/grey300</item>
+        <!--Inactive track color-->
+        <item name="android:colorForeground">@color/grey600</item>
+
+        <!-- Picker styles and themes. -->
+        <item name="materialCalendarStyle">@style/Widget.MaterialComponents.MaterialCalendar</item>
+        <item name="materialCalendarFullscreenTheme">
+            @style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen
+        </item>
+        <item name="materialCalendarTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar
+        </item>
+
+        <!-- Custom attrs -->
+        <item name="dividerDrawable">@drawable/inset_divider</item>
+        <item name="setThemeDrawable">@drawable/ic_moon</item>
+        <item name="deleteDrawable">@drawable/ic_delete_grey_600_24dp</item>
+        <item name="dateRangeDrawable">@drawable/ic_date_range_grey_600_24dp</item>
+        <item name="addAlarmDrawable">@drawable/ic_add_alarm_grey_600_24dp</item>
+        <item name="repeatDrawable">@drawable/ic_repeat_grey_600_24dp</item>
+        <item name="clockDrawable">@drawable/ic_clock_grey_600_24dp</item>
+    </style>
+
+    <style name="CustomStyle.DarkTheme" parent="Theme.MaterialComponents">
+        <!--Material color attributes -->
+        <item name="colorPrimary">@color/dark_color_primary</item>
+        <item name="colorPrimaryVariant">@color/dark_color_primary_variant</item>
+        <item name="colorSecondary">@color/dark_color_secondary</item>
+
+        <item name="android:colorBackground">@color/dark_color_background</item>
+        <item name="colorSurface">@color/dark_color_surface</item>
+        <item name="colorError">@color/dark_color_error</item>
+
+        <item name="colorOnPrimary">@color/dark_color_on_primary</item>
+        <item name="colorOnSecondary">@color/dark_color_on_secondary</item>
+        <item name="colorOnBackground">@color/dark_color_on_background</item>
+        <item name="colorOnSurface">@color/dark_color_on_surface</item>
+        <item name="colorOnError">@color/dark_color_on_error</item>
+
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+
+        <!-- ActionBar -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
+
+        <!--color of thumb when inactive-->
+        <item name="colorSwitchThumbNormal">@color/grey300</item>
+        <!--Inactive track color-->
+        <item name="android:colorForeground">@color/grey600</item>
+
+        <!-- Picker styles and themes. -->
+        <item name="materialCalendarStyle">@style/Widget.MaterialComponents.MaterialCalendar</item>
+        <item name="materialCalendarFullscreenTheme">
+            @style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen
+        </item>
+        <item name="materialCalendarTheme">@style/CustomStyle.DarkMaterialCalendar</item>
+
+        <!-- Custom attrs -->
+        <item name="dividerDrawable">@drawable/inset_divider_dark</item>
+        <item name="setThemeDrawable">@drawable/ic_sun</item>
+        <item name="deleteDrawable">@drawable/ic_delete_white_24dp</item>
+        <item name="dateRangeDrawable">@drawable/ic_date_range_white_24dp</item>
+        <item name="addAlarmDrawable">@drawable/ic_add_alarm_white_24dp</item>
+        <item name="repeatDrawable">@drawable/ic_repeat_white_24dp</item>
+        <item name="clockDrawable">@drawable/ic_clock_white_24dp</item>
+
+    </style>
+</resources>

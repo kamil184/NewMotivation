@@ -1,18 +1,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".activities.MainActivity">
+    tools:context=".ui.main.MainActivity">
 
     <group android:checkableBehavior="all">
     <item
-        android:id="@+id/is_dark_theme"
+        android:id="@+id/set_theme"
         android:title="@string/is_dark_theme"
-        app:showAsAction="never" />
+        app:showAsAction="always"
+        android:icon="?setThemeDrawable"/>
     </group>
-
-    <item android:title="@string/about"
-        android:id="@+id/aboutMeMenuItem"
-        app:showAsAction="never"
-        />
 
 </menu>

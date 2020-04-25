@@ -33,17 +33,35 @@
     <string name="select_a_date">Select a date</string>
     <string name="cancel">Cancel</string>
     <string name="repeat_every">Repeat every...</string>
-    <string name="monday">Mon</string>
-    <string name="tuesday">TUE</string>
-    <string name="wednesday">WED</string>
-    <string name="thursday">THU</string>
-    <string name="friday">FRI</string>
-    <string name="saturday">SAT</string>
-    <string name="sunday">SUN</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+
     <string-array name="repeat_list">
         <item>Days</item>
         <item>Weeks</item>
         <item>Months</item>
         <item>Years</item>
     </string-array>
+
+    <string-array name="days">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+
+    <string-array name="short_days">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
+
+
 </resources>

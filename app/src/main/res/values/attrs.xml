@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Divider">
+        <attr name="dividerDrawable" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="Menu">
+        <attr name="setThemeDrawable" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ImageButtons">
+        <attr name="deleteDrawable" format="reference" />
+        <attr name="dateRangeDrawable" format="reference" />
+        <attr name="addAlarmDrawable" format="reference" />
+        <attr name="repeatDrawable" format="reference" />
+        <attr name="clockDrawable" format="reference" />
+    </declare-styleable>
+
+</resources>

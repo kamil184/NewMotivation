@@ -1,93 +1,10 @@
 <resources>
-    <!-- Base application theme. -->
-    <style name="CustomStyle.LightTheme" parent="Theme.MaterialComponents.Light">
-
-        <!--Material color attributes -->
-        <item name="colorPrimary">@color/color_primary</item>
-        <item name="colorPrimaryVariant">@color/color_primary_variant</item>
-        <item name="colorSecondary">@color/color_secondary</item>
-
-        <item name="android:colorBackground">@color/color_background</item>
-        <item name="colorSurface">@color/color_surface</item>
-        <item name="colorError">@color/color_error</item>
-
-        <item name="colorOnPrimary">@color/color_on_primary</item>
-        <item name="colorOnSecondary">@color/color_on_secondary</item>
-        <item name="colorOnBackground">@color/color_on_background</item>
-        <item name="colorOnSurface">@color/color_on_surface</item>
-        <item name="colorOnError">@color/color_on_error</item>
-
-        <item name="android:textColor">@color/dark</item>
-
-        <!-- ActionBar -->
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
-
-        <!--color of thumb when inactive-->
-        <item name="colorSwitchThumbNormal">@color/grey300</item>
-        <!--Inactive track color-->
-        <item name="android:colorForeground">@color/grey600</item>
-
-        <!-- Picker styles and themes. -->
-        <item name="materialCalendarStyle">@style/Widget.MaterialComponents.MaterialCalendar</item>
-        <item name="materialCalendarFullscreenTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen</item>
-        <item name="materialCalendarTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar</item>
-    </style>
-
-    <style name="CustomStyle.DarkTheme" parent="Theme.MaterialComponents">
-        <!--Material color attributes -->
-        <item name="colorPrimary">@color/dark_color_primary</item>
-        <item name="colorPrimaryVariant">@color/dark_color_primary_variant</item>
-        <item name="colorSecondary">@color/dark_color_secondary</item>
-
-        <item name="android:colorBackground">@color/dark_color_background</item>
-        <item name="colorSurface">@color/dark_color_surface</item>
-        <item name="colorError">@color/dark_color_error</item>
-
-        <item name="colorOnPrimary">@color/dark_color_on_primary</item>
-        <item name="colorOnSecondary">@color/dark_color_on_secondary</item>
-        <item name="colorOnBackground">@color/dark_color_on_background</item>
-        <item name="colorOnSurface">@color/dark_color_on_surface</item>
-        <item name="colorOnError">@color/dark_color_on_error</item>
-
-        <item name="android:textColor">@color/white</item>
-
-        <!-- ActionBar -->
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
-
-        <!--color of thumb when inactive-->
-        <item name="colorSwitchThumbNormal">@color/grey300</item>
-        <!--Inactive track color-->
-        <item name="android:colorForeground">@color/grey600</item>
-
-        <!-- Picker styles and themes. -->
-        <item name="materialCalendarStyle">@style/Widget.MaterialComponents.MaterialCalendar</item>
-        <item name="materialCalendarFullscreenTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen</item>
-        <item name="materialCalendarTheme">@style/CustomStyle.DarkMaterialCalendar</item>
-    </style>
-
     <style name="CustomStyle.DarkMaterialCalendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
         <item name="android:color">@color/white</item>
     </style>
 
     <style name="CustomStyle.Button.Circle.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton.Icon">
         <item name="android:textColor">@color/grey600</item>
-        <item name="android:padding">0dp</item>
-        <item name="iconPadding">0dp</item>
-        <item name="android:textSize">12sp</item>
-        <item name="android:insetLeft">0dp</item>
-        <item name="android:insetRight">0dp</item>
-        <item name="android:insetTop">0dp</item>
-        <item name="android:insetBottom">0dp</item>
-        <item name="shapeAppearance">@style/CustomStyle.Button.Circle.ShapeAppearance</item>
-    </style>
-
-    <style name="CustomStyle.Button.Circle.Normal" parent="Widget.MaterialComponents.Button">
-        <item name="android:colorBackground">@color/color_primary</item>
-        <item name="android:textColor">@color/white</item>
         <item name="android:padding">0dp</item>
         <item name="iconPadding">0dp</item>
         <item name="android:textSize">12sp</item>
@@ -110,6 +27,4 @@
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

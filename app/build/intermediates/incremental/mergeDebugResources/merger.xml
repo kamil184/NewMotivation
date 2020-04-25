@@ -288,43 +288,7 @@
         <attr name="android:drawable"/>
     </declare-styleable></file></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="androidx.viewpager2:viewpager2:1.0.0$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\af19d2bf9efbba5c87d98162386fe6bd\viewpager2-1.0.0\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="androidx.viewpager2:viewpager2:1.0.0" from-dependency="true" generated-set="androidx.viewpager2:viewpager2:1.0.0$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\af19d2bf9efbba5c87d98162386fe6bd\viewpager2-1.0.0\res"><file path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\af19d2bf9efbba5c87d98162386fe6bd\viewpager2-1.0.0\res\values\values.xml" qualifiers=""><declare-styleable name="ViewPager2">
         <attr name="android:orientation"/>
-    </declare-styleable></file></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="com.github.niniloveyou:StateButton:v1.0.0$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\af2f26b7617c69080bd60811efbf0ae2\jetified-StateButton-v1.0.0\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="com.github.niniloveyou:StateButton:v1.0.0" from-dependency="true" generated-set="com.github.niniloveyou:StateButton:v1.0.0$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\af2f26b7617c69080bd60811efbf0ae2\jetified-StateButton-v1.0.0\res"><file path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\af2f26b7617c69080bd60811efbf0ae2\jetified-StateButton-v1.0.0\res\values\values.xml" qualifiers=""><declare-styleable name="StateButton">
-
-        
-        <attr format="color|reference" name="normalTextColor"/>
-        <attr format="color|reference" name="pressedTextColor"/>
-        <attr format="color|reference" name="unableTextColor"/>
-
-        
-        <attr format="dimension|reference" name="strokeDashWidth"/>
-        <attr format="dimension|reference" name="strokeDashGap"/>
-        <attr format="dimension|reference" name="normalStrokeWidth"/>
-        <attr format="dimension|reference" name="pressedStrokeWidth"/>
-        <attr format="dimension|reference" name="unableStrokeWidth"/>
-        <attr format="color|reference" name="normalStrokeColor"/>
-        <attr format="color|reference" name="pressedStrokeColor"/>
-        <attr format="color|reference" name="unableStrokeColor"/>
-
-        
-        <attr format="color|reference" name="normalBackgroundColor"/>
-        <attr format="color|reference" name="pressedBackgroundColor"/>
-        <attr format="color|reference" name="unableBackgroundColor"/>
-
-        
-        <attr format="dimension|reference" name="radius"/>
-        <attr format="boolean|reference" name="round"/>
-
-        
-        <attr format="integer|reference" name="animationDuration"/>
-
-    </declare-styleable><declare-styleable name="StateImageView">
-        <attr format="color|reference" name="normalBackground"/>
-        <attr format="color|reference" name="pressedBackground"/>
-        <attr format="color|reference" name="unableBackground"/>
-
-        
-        <attr format="integer|reference" name="AnimationDuration"/>
-    </declare-styleable><string name="app_name">libarary</string></file></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="androidx.constraintlayout:constraintlayout:1.1.3$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\508ac768b50158a079142e4dc4915061\constraintlayout-1.1.3\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="androidx.constraintlayout:constraintlayout:1.1.3" from-dependency="true" generated-set="androidx.constraintlayout:constraintlayout:1.1.3$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\508ac768b50158a079142e4dc4915061\constraintlayout-1.1.3\res"><file path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\508ac768b50158a079142e4dc4915061\constraintlayout-1.1.3\res\values\values.xml" qualifiers=""><attr format="boolean" name="barrierAllowsGoneWidgets"/><attr format="enum" name="barrierDirection">
+    </declare-styleable></file></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="androidx.constraintlayout:constraintlayout:1.1.3$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\508ac768b50158a079142e4dc4915061\constraintlayout-1.1.3\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="androidx.constraintlayout:constraintlayout:1.1.3" from-dependency="true" generated-set="androidx.constraintlayout:constraintlayout:1.1.3$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\508ac768b50158a079142e4dc4915061\constraintlayout-1.1.3\res"><file path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\508ac768b50158a079142e4dc4915061\constraintlayout-1.1.3\res\values\values.xml" qualifiers=""><attr format="boolean" name="barrierAllowsGoneWidgets"/><attr format="enum" name="barrierDirection">
         <enum name="left" value="0"/>
         <enum name="right" value="1"/>
         <enum name="top" value="2"/>
@@ -5699,16 +5663,59 @@
   </style><style name="Widget.MaterialComponents.PopupMenu.ListPopupWindow" parent="Base.Widget.MaterialComponents.PopupMenu.ListPopupWindow">
     <item name="android:popupBackground">?attr/popupMenuBackground</item>
     <item name="android:popupElevation">8dp</item>
-  </style></file><file path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\cba1f2e431402bcc44fc733c2c041f34\material-1.2.0-alpha03\res\values-v28\values-v28.xml" qualifiers="v28"><item format="float" name="mtrl_high_ripple_default_alpha" type="dimen">0.24</item><item format="float" name="mtrl_high_ripple_focused_alpha" type="dimen">0.40</item><item format="float" name="mtrl_high_ripple_hovered_alpha" type="dimen">0.40</item><item format="float" name="mtrl_high_ripple_pressed_alpha" type="dimen">0.24</item><item format="float" name="mtrl_low_ripple_default_alpha" type="dimen">0.12</item><item format="float" name="mtrl_low_ripple_focused_alpha" type="dimen">0.20</item><item format="float" name="mtrl_low_ripple_hovered_alpha" type="dimen">0.20</item><item format="float" name="mtrl_low_ripple_pressed_alpha" type="dimen">0.12</item></file><file path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\cba1f2e431402bcc44fc733c2c041f34\material-1.2.0-alpha03\res\values-w360dp-port-v13\values-w360dp-port-v13.xml" qualifiers="w360dp-port-v13"><dimen name="mtrl_calendar_bottom_padding">4dp</dimen><dimen name="mtrl_calendar_day_corner">18dp</dimen><dimen name="mtrl_calendar_day_height">40dp</dimen><dimen name="mtrl_calendar_day_horizontal_padding">2dp</dimen><dimen name="mtrl_calendar_day_vertical_padding">2dp</dimen><dimen name="mtrl_calendar_day_width">40dp</dimen><dimen name="mtrl_calendar_days_of_week_height">40dp</dimen><dimen name="mtrl_calendar_month_horizontal_padding">4dp</dimen></file><file path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\cba1f2e431402bcc44fc733c2c041f34\material-1.2.0-alpha03\res\values-w480dp-port-v13\values-w480dp-port-v13.xml" qualifiers="w480dp-port-v13"><dimen name="mtrl_calendar_bottom_padding">0dp</dimen><dimen name="mtrl_calendar_day_corner">22dp</dimen><dimen name="mtrl_calendar_day_height">48dp</dimen><dimen name="mtrl_calendar_day_horizontal_padding">2dp</dimen><dimen name="mtrl_calendar_day_vertical_padding">2dp</dimen><dimen name="mtrl_calendar_day_width">48dp</dimen><dimen name="mtrl_calendar_days_of_week_height">48dp</dimen><dimen name="mtrl_calendar_month_horizontal_padding">0dp</dimen></file><file name="standalone_badge" path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\cba1f2e431402bcc44fc733c2c041f34\material-1.2.0-alpha03\res\xml\standalone_badge.xml" qualifiers="" type="xml"/><file name="standalone_badge_gravity_bottom_end" path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\cba1f2e431402bcc44fc733c2c041f34\material-1.2.0-alpha03\res\xml\standalone_badge_gravity_bottom_end.xml" qualifiers="" type="xml"/><file name="standalone_badge_gravity_bottom_start" path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\cba1f2e431402bcc44fc733c2c041f34\material-1.2.0-alpha03\res\xml\standalone_badge_gravity_bottom_start.xml" qualifiers="" type="xml"/><file name="standalone_badge_gravity_top_start" path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\cba1f2e431402bcc44fc733c2c041f34\material-1.2.0-alpha03\res\xml\standalone_badge_gravity_top_start.xml" qualifiers="" type="xml"/><file name="standalone_badge_offset" path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\cba1f2e431402bcc44fc733c2c041f34\material-1.2.0-alpha03\res\xml\standalone_badge_offset.xml" qualifiers="" type="xml"/></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res"/><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\build\generated\res\rs\debug"/><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res"><file name="ic_add_alarm_grey_600_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_add_alarm_grey_600_24dp.xml" qualifiers="" type="drawable"/><file name="ic_add_alarm_white_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_add_alarm_white_24dp.xml" qualifiers="" type="drawable"/><file name="ic_add_white_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_add_white_24dp.xml" qualifiers="" type="drawable"/><file name="ic_clear_white_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_clear_white_24dp.xml" qualifiers="" type="drawable"/><file name="ic_clock_grey_600_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_clock_grey_600_24dp.xml" qualifiers="" type="drawable"/><file name="ic_clock_white_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_clock_white_24dp.xml" qualifiers="" type="drawable"/><file name="ic_repeat_grey_600_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_repeat_grey_600_24dp.xml" qualifiers="" type="drawable"/><file name="ic_repeat_white_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_repeat_white_24dp.xml" qualifiers="" type="drawable"/><file name="ic_send_white_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_send_white_24dp.xml" qualifiers="" type="drawable"/><file name="ic_launcher_background" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable-v24\ic_launcher_background.xml" qualifiers="v24" type="drawable"/><file name="ic_launcher_foreground" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable-v24\ic_launcher_foreground.xml" qualifiers="v24" type="drawable"/><file name="activity_add_to_do" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\layout\activity_add_to_do.xml" qualifiers="" type="layout"/><file name="activity_main" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\layout\activity_main.xml" qualifiers="" type="layout"/><file name="base_toolbar" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\layout\base_toolbar.xml" qualifiers="" type="layout"/><file name="content_main" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\layout\content_main.xml" qualifiers="" type="layout"/><file name="repeat_dialog" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\layout\repeat_dialog.xml" qualifiers="" type="layout"/><file name="time_picker_dialog" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\layout\time_picker_dialog.xml" qualifiers="" type="layout"/><file name="menu_main" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\menu\menu_main.xml" qualifiers="" type="menu"/><file name="ic_launcher" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml" qualifiers="anydpi-v26" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-anydpi-v26\ic_launcher_round.xml" qualifiers="anydpi-v26" type="mipmap"/><file name="ic_launcher" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-hdpi\ic_launcher.png" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-hdpi\ic_launcher_round.png" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_launcher" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-mdpi\ic_launcher.png" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-mdpi\ic_launcher_round.png" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_launcher" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-xhdpi\ic_launcher.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-xhdpi\ic_launcher_round.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_launcher" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-xxhdpi\ic_launcher.png" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-xxhdpi\ic_launcher_round.png" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_launcher" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-xxxhdpi\ic_launcher.png" qualifiers="xxxhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-xxxhdpi\ic_launcher_round.png" qualifiers="xxxhdpi-v4" type="mipmap"/><file path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\values\colors.xml" qualifiers=""><color name="color_primary">#6200ee</color><color name="color_primary_variant">#3700b3</color><color name="color_secondary">#bb86fc</color><color name="color_background">#ffffff</color><color name="color_surface">#ffffff</color><color name="color_error">#b00020</color><color name="color_on_primary">#ffffff</color><color name="color_on_secondary">#000000</color><color name="color_on_background">#000000</color><color name="color_on_surface">#000000</color><color name="color_on_error">#ffffff</color><color name="dark_color_primary">#bb86fc</color><color name="dark_color_primary_variant">#8858c8</color><color name="dark_color_secondary">#efb7ff</color><color name="dark_color_background">#121212</color><color name="dark_color_surface">#424242</color><color name="dark_color_error">#cf6679</color><color name="dark_color_on_primary">#000000</color><color name="dark_color_on_secondary">#000000</color><color name="dark_color_on_background">#ffffff</color><color name="dark_color_on_surface">#ffffff</color><color name="dark_color_on_error">#000000</color><color name="white">#ffffff</color><color name="gray">#9CA9BA</color><color name="gray_dark">#675F7F</color><color name="gray_light">#ECECEC</color><color name="primary_text">#212121</color><color name="secondary_text">#727272</color><color name="dark">#000000</color><color name="grey600">#757575</color><color name="grey300">#E0E0E0</color><color name="primary_ligher">#E1E4F4</color><color name="primary_lightest">#F0F1F9</color><color name="icons">#FFFFFF</color><color name="transparent">@android:color/transparent</color></file><file path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\values\dimens.xml" qualifiers=""><dimen name="spacing_36">36dp</dimen><dimen name="spacing_30">30dp</dimen><dimen name="spacing_24">24dp</dimen><dimen name="spacing_16">16dp</dimen><dimen name="spacing_8">8dp</dimen><dimen name="spacing_4">4dp</dimen><dimen name="circle_button_size">56dp</dimen><dimen name="stroke_size">1dp</dimen></file><file path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">NewMotivate</string><string name="error">Error</string><string name="ok">OK</string><string name="press_once_again_to_exit">Press once again to exit</string><string name="btn_back"><![CDATA[<< Back]]></string><string name="empty_field_err">Please fill this field</string><string name="next_step">Next step</string><string name="edit_btn">Edit</string><string name="loading">loading</string><string name="title">Title</string><string name="description">Description</string><string name="remind_me">Remind Me</string><string name="remind_date_and_time">Reminder set for %1$s, %2$s %3$s</string><string name="date_reminder_default">Today</string><string name="date_error_check_again">The date you entered is in the past</string><string name="todo_error">Please enter a Todo</string><string name="about">About</string><string name="snooze">Snooze</string><string-array name="snooze_options">
+  </style></file><file path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\cba1f2e431402bcc44fc733c2c041f34\material-1.2.0-alpha03\res\values-v28\values-v28.xml" qualifiers="v28"><item format="float" name="mtrl_high_ripple_default_alpha" type="dimen">0.24</item><item format="float" name="mtrl_high_ripple_focused_alpha" type="dimen">0.40</item><item format="float" name="mtrl_high_ripple_hovered_alpha" type="dimen">0.40</item><item format="float" name="mtrl_high_ripple_pressed_alpha" type="dimen">0.24</item><item format="float" name="mtrl_low_ripple_default_alpha" type="dimen">0.12</item><item format="float" name="mtrl_low_ripple_focused_alpha" type="dimen">0.20</item><item format="float" name="mtrl_low_ripple_hovered_alpha" type="dimen">0.20</item><item format="float" name="mtrl_low_ripple_pressed_alpha" type="dimen">0.12</item></file><file path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\cba1f2e431402bcc44fc733c2c041f34\material-1.2.0-alpha03\res\values-w360dp-port-v13\values-w360dp-port-v13.xml" qualifiers="w360dp-port-v13"><dimen name="mtrl_calendar_bottom_padding">4dp</dimen><dimen name="mtrl_calendar_day_corner">18dp</dimen><dimen name="mtrl_calendar_day_height">40dp</dimen><dimen name="mtrl_calendar_day_horizontal_padding">2dp</dimen><dimen name="mtrl_calendar_day_vertical_padding">2dp</dimen><dimen name="mtrl_calendar_day_width">40dp</dimen><dimen name="mtrl_calendar_days_of_week_height">40dp</dimen><dimen name="mtrl_calendar_month_horizontal_padding">4dp</dimen></file><file path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\cba1f2e431402bcc44fc733c2c041f34\material-1.2.0-alpha03\res\values-w480dp-port-v13\values-w480dp-port-v13.xml" qualifiers="w480dp-port-v13"><dimen name="mtrl_calendar_bottom_padding">0dp</dimen><dimen name="mtrl_calendar_day_corner">22dp</dimen><dimen name="mtrl_calendar_day_height">48dp</dimen><dimen name="mtrl_calendar_day_horizontal_padding">2dp</dimen><dimen name="mtrl_calendar_day_vertical_padding">2dp</dimen><dimen name="mtrl_calendar_day_width">48dp</dimen><dimen name="mtrl_calendar_days_of_week_height">48dp</dimen><dimen name="mtrl_calendar_month_horizontal_padding">0dp</dimen></file><file name="standalone_badge" path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\cba1f2e431402bcc44fc733c2c041f34\material-1.2.0-alpha03\res\xml\standalone_badge.xml" qualifiers="" type="xml"/><file name="standalone_badge_gravity_bottom_end" path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\cba1f2e431402bcc44fc733c2c041f34\material-1.2.0-alpha03\res\xml\standalone_badge_gravity_bottom_end.xml" qualifiers="" type="xml"/><file name="standalone_badge_gravity_bottom_start" path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\cba1f2e431402bcc44fc733c2c041f34\material-1.2.0-alpha03\res\xml\standalone_badge_gravity_bottom_start.xml" qualifiers="" type="xml"/><file name="standalone_badge_gravity_top_start" path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\cba1f2e431402bcc44fc733c2c041f34\material-1.2.0-alpha03\res\xml\standalone_badge_gravity_top_start.xml" qualifiers="" type="xml"/><file name="standalone_badge_offset" path="C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\cba1f2e431402bcc44fc733c2c041f34\material-1.2.0-alpha03\res\xml\standalone_badge_offset.xml" qualifiers="" type="xml"/></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res"/><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\build\generated\res\rs\debug"/><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res"><file name="ic_add_alarm_grey_600_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_add_alarm_grey_600_24dp.xml" qualifiers="" type="drawable"/><file name="ic_add_alarm_white_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_add_alarm_white_24dp.xml" qualifiers="" type="drawable"/><file name="ic_add_white_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_add_white_24dp.xml" qualifiers="" type="drawable"/><file name="ic_clear_grey_600_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_clear_grey_600_24dp.xml" qualifiers="" type="drawable"/><file name="ic_clear_white_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_clear_white_24dp.xml" qualifiers="" type="drawable"/><file name="ic_clock_grey_600_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_clock_grey_600_24dp.xml" qualifiers="" type="drawable"/><file name="ic_clock_white_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_clock_white_24dp.xml" qualifiers="" type="drawable"/><file name="ic_date_range_grey_600_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_date_range_grey_600_24dp.xml" qualifiers="" type="drawable"/><file name="ic_date_range_white_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_date_range_white_24dp.xml" qualifiers="" type="drawable"/><file name="ic_delete_grey_600_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_delete_grey_600_24dp.xml" qualifiers="" type="drawable"/><file name="ic_delete_white_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_delete_white_24dp.xml" qualifiers="" type="drawable"/><file name="ic_moon" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_moon.xml" qualifiers="" type="drawable"/><file name="ic_repeat_grey_600_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_repeat_grey_600_24dp.xml" qualifiers="" type="drawable"/><file name="ic_repeat_white_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_repeat_white_24dp.xml" qualifiers="" type="drawable"/><file name="ic_send_white_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_send_white_24dp.xml" qualifiers="" type="drawable"/><file name="ic_sun" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_sun.xml" qualifiers="" type="drawable"/><file name="inset_divider" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\inset_divider.xml" qualifiers="" type="drawable"/><file name="inset_divider_dark" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\inset_divider_dark.xml" qualifiers="" type="drawable"/><file name="ic_launcher_background" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable-v24\ic_launcher_background.xml" qualifiers="v24" type="drawable"/><file name="ic_launcher_foreground" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable-v24\ic_launcher_foreground.xml" qualifiers="v24" type="drawable"/><file name="activity_add_to_do" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\layout\activity_add_to_do.xml" qualifiers="" type="layout"/><file name="activity_main" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\layout\activity_main.xml" qualifiers="" type="layout"/><file name="base_toolbar" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\layout\base_toolbar.xml" qualifiers="" type="layout"/><file name="content_main" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\layout\content_main.xml" qualifiers="" type="layout"/><file name="repeat_dialog" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\layout\repeat_dialog.xml" qualifiers="" type="layout"/><file name="time_picker_dialog" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\layout\time_picker_dialog.xml" qualifiers="" type="layout"/><file name="menu_main" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\menu\menu_main.xml" qualifiers="" type="menu"/><file name="ic_launcher" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml" qualifiers="anydpi-v26" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-anydpi-v26\ic_launcher_round.xml" qualifiers="anydpi-v26" type="mipmap"/><file name="ic_launcher" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-hdpi\ic_launcher.png" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-hdpi\ic_launcher_round.png" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_launcher" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-mdpi\ic_launcher.png" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-mdpi\ic_launcher_round.png" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_launcher" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-xhdpi\ic_launcher.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-xhdpi\ic_launcher_round.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_launcher" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-xxhdpi\ic_launcher.png" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-xxhdpi\ic_launcher_round.png" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_launcher" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-xxxhdpi\ic_launcher.png" qualifiers="xxxhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\mipmap-xxxhdpi\ic_launcher_round.png" qualifiers="xxxhdpi-v4" type="mipmap"/><file path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\values\attrs.xml" qualifiers=""><declare-styleable name="Divider">
+        <attr format="reference" name="dividerDrawable"/>
+    </declare-styleable><declare-styleable name="Menu">
+        <attr format="reference" name="setThemeDrawable"/>
+    </declare-styleable><declare-styleable name="ImageButtons">
+        <attr format="reference" name="deleteDrawable"/>
+        <attr format="reference" name="dateRangeDrawable"/>
+        <attr format="reference" name="addAlarmDrawable"/>
+        <attr format="reference" name="repeatDrawable"/>
+        <attr format="reference" name="clockDrawable"/>
+    </declare-styleable></file><file path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\values\colors.xml" qualifiers=""><color name="color_primary">#6200ee</color><color name="color_primary_variant">#3700b3</color><color name="color_secondary">#bb86fc</color><color name="color_background">#ffffff</color><color name="color_surface">#ffffff</color><color name="color_error">#b00020</color><color name="color_on_primary">#ffffff</color><color name="color_on_secondary">#000000</color><color name="color_on_background">#000000</color><color name="color_on_surface">#000000</color><color name="color_on_error">#ffffff</color><color name="dark_color_primary">#bb86fc</color><color name="dark_color_primary_variant">#8858c8</color><color name="dark_color_secondary">#efb7ff</color><color name="dark_color_background">#121212</color><color name="dark_color_surface">#424242</color><color name="dark_color_error">#cf6679</color><color name="dark_color_on_primary">#000000</color><color name="dark_color_on_secondary">#000000</color><color name="dark_color_on_background">#ffffff</color><color name="dark_color_on_surface">#ffffff</color><color name="dark_color_on_error">#000000</color><color name="white">#ffffff</color><color name="gray">#9CA9BA</color><color name="gray_dark">#675F7F</color><color name="gray_light">#ECECEC</color><color name="primary_text">#212121</color><color name="secondary_text">#727272</color><color name="dark">#000000</color><color name="grey600">#757575</color><color name="grey300">#E0E0E0</color><color name="primary_ligher">#E1E4F4</color><color name="primary_lightest">#F0F1F9</color><color name="icons">#FFFFFF</color><color name="transparent">@android:color/transparent</color></file><file path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\values\dimens.xml" qualifiers=""><dimen name="spacing_36">36dp</dimen><dimen name="spacing_30">30dp</dimen><dimen name="spacing_24">24dp</dimen><dimen name="spacing_16">16dp</dimen><dimen name="spacing_12">12dp</dimen><dimen name="spacing_8">8dp</dimen><dimen name="spacing_6">6dp</dimen><dimen name="spacing_4">4dp</dimen><dimen name="circle_button_size">56dp</dimen><dimen name="stroke_size">1dp</dimen></file><file path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">NewMotivate</string><string name="error">Error</string><string name="ok">OK</string><string name="press_once_again_to_exit">Press once again to exit</string><string name="btn_back"><![CDATA[<< Back]]></string><string name="empty_field_err">Please fill this field</string><string name="next_step">Next step</string><string name="edit_btn">Edit</string><string name="loading">loading</string><string name="title">Title</string><string name="description">Description</string><string name="remind_me">Remind Me</string><string name="remind_date_and_time">Reminder set for %1$s, %2$s %3$s</string><string name="date_reminder_default">Today</string><string name="date_error_check_again">The date you entered is in the past</string><string name="todo_error">Please enter a Todo</string><string name="about">About</string><string name="snooze">Snooze</string><string-array name="snooze_options">
         <item>10 Minutes</item>
         <item>30 Minutes</item>
         <item>1 Hour</item>
-    </string-array><string name="no_to_dos">You don\'t have any todos</string><string name="remove">Remove</string><string name="done_label">Done</string><string name="is_dark_theme">Dark theme</string><string name="repeat">Repeat</string><string name="duration">Duration</string><string name="today">Today</string><string name="tomorrow">Tomorrow</string><string name="select_a_date">Select a date</string><string name="cancel">Cancel</string><string name="repeat_every">Repeat every...</string><string name="monday">Mon</string><string name="tuesday">TUE</string><string name="wednesday">WED</string><string name="thursday">THU</string><string name="friday">FRI</string><string name="saturday">SAT</string><string name="sunday">SUN</string><string-array name="repeat_list">
+    </string-array><string name="no_to_dos">You don\'t have any todos</string><string name="remove">Remove</string><string name="done_label">Done</string><string name="is_dark_theme">Dark theme</string><string name="repeat">Repeat</string><string name="duration">Duration</string><string name="today">Today</string><string name="tomorrow">Tomorrow</string><string name="select_a_date">Select a date</string><string name="cancel">Cancel</string><string name="repeat_every">Repeat every...</string><string name="date">Date</string><string name="time">Time</string><string-array name="repeat_list">
         <item>Days</item>
         <item>Weeks</item>
         <item>Months</item>
         <item>Years</item>
-    </string-array></file><file path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\values\styles.xml" qualifiers=""><style name="CustomStyle.LightTheme" parent="Theme.MaterialComponents.Light">
+    </string-array><string-array name="days">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array><string-array name="short_days">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array></file><file path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\values\styles.xml" qualifiers=""><style name="CustomStyle.DarkMaterialCalendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="android:color">@color/white</item>
+    </style><style name="CustomStyle.Button.Circle.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton.Icon">
+        <item name="android:textColor">@color/grey600</item>
+        <item name="android:padding">0dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="shapeAppearance">@style/CustomStyle.Button.Circle.ShapeAppearance</item>
+    </style><style name="CustomStyle.Button.Circle.ShapeAppearance" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style><style name="LightPopup" parent="@style/ThemeOverlay.AppCompat.Light"/><style name="FloatingLabelTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@android:color/white</item>
+    </style><style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/></file><file path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\values\themes.xml" qualifiers=""><style name="CustomStyle.LightTheme" parent="Theme.MaterialComponents.Light">
 
         
         <item name="colorPrimary">@color/color_primary</item>
@@ -5726,6 +5733,7 @@
         <item name="colorOnError">@color/color_on_error</item>
 
         <item name="android:textColor">@color/dark</item>
+        <item name="android:textColorSecondary">@color/secondary_text</item>
 
         
         <item name="windowActionBar">false</item>
@@ -5739,8 +5747,20 @@
 
         
         <item name="materialCalendarStyle">@style/Widget.MaterialComponents.MaterialCalendar</item>
-        <item name="materialCalendarFullscreenTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen</item>
-        <item name="materialCalendarTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar</item>
+        <item name="materialCalendarFullscreenTheme">
+            @style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen
+        </item>
+        <item name="materialCalendarTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar
+        </item>
+
+        
+        <item name="dividerDrawable">@drawable/inset_divider</item>
+        <item name="setThemeDrawable">@drawable/ic_moon</item>
+        <item name="deleteDrawable">@drawable/ic_delete_grey_600_24dp</item>
+        <item name="dateRangeDrawable">@drawable/ic_date_range_grey_600_24dp</item>
+        <item name="addAlarmDrawable">@drawable/ic_add_alarm_grey_600_24dp</item>
+        <item name="repeatDrawable">@drawable/ic_repeat_grey_600_24dp</item>
+        <item name="clockDrawable">@drawable/ic_clock_grey_600_24dp</item>
     </style><style name="CustomStyle.DarkTheme" parent="Theme.MaterialComponents">
         
         <item name="colorPrimary">@color/dark_color_primary</item>
@@ -5758,6 +5778,7 @@
         <item name="colorOnError">@color/dark_color_on_error</item>
 
         <item name="android:textColor">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
 
         
         <item name="windowActionBar">false</item>
@@ -5771,37 +5792,21 @@
 
         
         <item name="materialCalendarStyle">@style/Widget.MaterialComponents.MaterialCalendar</item>
-        <item name="materialCalendarFullscreenTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen</item>
+        <item name="materialCalendarFullscreenTheme">
+            @style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen
+        </item>
         <item name="materialCalendarTheme">@style/CustomStyle.DarkMaterialCalendar</item>
-    </style><style name="CustomStyle.DarkMaterialCalendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
-        <item name="android:color">@color/white</item>
-    </style><style name="CustomStyle.Button.Circle.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton.Icon">
-        <item name="android:textColor">@color/grey600</item>
-        <item name="android:padding">0dp</item>
-        <item name="iconPadding">0dp</item>
-        <item name="android:textSize">12sp</item>
-        <item name="android:insetLeft">0dp</item>
-        <item name="android:insetRight">0dp</item>
-        <item name="android:insetTop">0dp</item>
-        <item name="android:insetBottom">0dp</item>
-        <item name="shapeAppearance">@style/CustomStyle.Button.Circle.ShapeAppearance</item>
-    </style><style name="CustomStyle.Button.Circle.Normal" parent="Widget.MaterialComponents.Button">
-        <item name="android:colorBackground">@color/color_primary</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:padding">0dp</item>
-        <item name="iconPadding">0dp</item>
-        <item name="android:textSize">12sp</item>
-        <item name="android:insetLeft">0dp</item>
-        <item name="android:insetRight">0dp</item>
-        <item name="android:insetTop">0dp</item>
-        <item name="android:insetBottom">0dp</item>
-        <item name="shapeAppearance">@style/CustomStyle.Button.Circle.ShapeAppearance</item>
-    </style><style name="CustomStyle.Button.Circle.ShapeAppearance" parent="">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
-    </style><style name="LightPopup" parent="@style/ThemeOverlay.AppCompat.Light"/><style name="FloatingLabelTextAppearance" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@android:color/white</item>
-    </style><style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/><style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/></file></source><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\build\generated\res\rs\debug"/><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="AlertDialog">
+
+        
+        <item name="dividerDrawable">@drawable/inset_divider_dark</item>
+        <item name="setThemeDrawable">@drawable/ic_sun</item>
+        <item name="deleteDrawable">@drawable/ic_delete_white_24dp</item>
+        <item name="dateRangeDrawable">@drawable/ic_date_range_white_24dp</item>
+        <item name="addAlarmDrawable">@drawable/ic_add_alarm_white_24dp</item>
+        <item name="repeatDrawable">@drawable/ic_repeat_white_24dp</item>
+        <item name="clockDrawable">@drawable/ic_clock_white_24dp</item>
+
+    </style></file></source><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\build\generated\res\rs\debug"/><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="AlertDialog">
         <attr name="android:layout"/>
         <attr format="reference" name="buttonPanelSideLayout"/>
         <attr format="reference" name="listLayout"/>
@@ -5862,7 +5867,13 @@
     <attr format="dimension" name="backgroundInsetTop"/>
     <attr format="dimension" name="backgroundInsetEnd"/>
     <attr format="dimension" name="backgroundInsetBottom"/>
-  </declare-styleable><declare-styleable name="GradientColorItem">
+  </declare-styleable><declare-styleable name="ImageButtons">
+        <attr format="reference" name="deleteDrawable"/>
+        <attr format="reference" name="dateRangeDrawable"/>
+        <attr format="reference" name="addAlarmDrawable"/>
+        <attr format="reference" name="repeatDrawable"/>
+        <attr format="reference" name="clockDrawable"/>
+    </declare-styleable><declare-styleable name="GradientColorItem">
         
         <attr name="android:offset"/>
         
@@ -6719,6 +6730,8 @@
         
         <attr name="android:inflatedId"/>
         <attr name="android:id"/>
+    </declare-styleable><declare-styleable name="Menu">
+        <attr format="reference" name="setThemeDrawable"/>
     </declare-styleable><declare-styleable name="SnackbarLayout">
     <attr name="android:maxWidth"/>
     <attr name="elevation"/>
@@ -6779,13 +6792,6 @@
             
             <enum name="forever" value="-1"/>
         </attr>
-    </declare-styleable><declare-styleable name="StateImageView">
-        <attr format="color|reference" name="normalBackground"/>
-        <attr format="color|reference" name="pressedBackground"/>
-        <attr format="color|reference" name="unableBackground"/>
-
-        
-        <attr format="integer|reference" name="AnimationDuration"/>
     </declare-styleable><declare-styleable name="ThemeEnforcement">
     
     <attr format="boolean" name="enforceMaterialTheme"/>
@@ -7100,35 +7106,6 @@
             
             <flag name="all" value="0x77"/>
         </attr>
-    </declare-styleable><declare-styleable name="StateButton">
-
-        
-        <attr format="color|reference" name="normalTextColor"/>
-        <attr format="color|reference" name="pressedTextColor"/>
-        <attr format="color|reference" name="unableTextColor"/>
-
-        
-        <attr format="dimension|reference" name="strokeDashWidth"/>
-        <attr format="dimension|reference" name="strokeDashGap"/>
-        <attr format="dimension|reference" name="normalStrokeWidth"/>
-        <attr format="dimension|reference" name="pressedStrokeWidth"/>
-        <attr format="dimension|reference" name="unableStrokeWidth"/>
-        <attr format="color|reference" name="normalStrokeColor"/>
-        <attr format="color|reference" name="pressedStrokeColor"/>
-        <attr format="color|reference" name="unableStrokeColor"/>
-
-        
-        <attr format="color|reference" name="normalBackgroundColor"/>
-        <attr format="color|reference" name="pressedBackgroundColor"/>
-        <attr format="color|reference" name="unableBackgroundColor"/>
-
-        
-        <attr format="dimension|reference" name="radius"/>
-        <attr format="boolean|reference" name="round"/>
-
-        
-        <attr format="integer|reference" name="animationDuration"/>
-
     </declare-styleable><declare-styleable name="NavigationView">
     <attr name="android:background"/>
     <attr name="android:fitsSystemWindows"/>
@@ -8140,4 +8117,6 @@
         
         <attr format="reference" name="submitBackground"/>
         <attr name="android:focusable"/>
+    </declare-styleable><declare-styleable name="Divider">
+        <attr format="reference" name="dividerDrawable"/>
     </declare-styleable></configuration></mergedItems></merger>
