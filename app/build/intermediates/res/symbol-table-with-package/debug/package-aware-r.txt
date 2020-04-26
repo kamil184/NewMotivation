@@ -46,6 +46,7 @@ animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 array days
+array quantity_array
 array repeat_list
 array short_days
 array snooze_options
@@ -1482,8 +1483,14 @@ drawable ic_repeat_grey_600_24dp
 drawable ic_repeat_primary_24dp
 drawable ic_repeat_primary_dark_24dp
 drawable ic_repeat_white_24dp
+drawable ic_run_primary_24dp
+drawable ic_run_primary_dark_24dp
 drawable ic_send_white_24dp
 drawable ic_sun
+drawable ic_water_primary_24dp
+drawable ic_water_primary_dark_24dp
+drawable ic_weight_primary_24dp
+drawable ic_weight_primary_dark_24dp
 drawable inset_divider
 drawable inset_divider_dark
 drawable mtrl_dialog_background
@@ -1627,10 +1634,6 @@ id dimensions
 id direct
 id disableHome
 id dropdown_menu
-id duration_delete
-id duration_image_view
-id duration_layout
-id duration_text_view
 id editTextParentLinearLayout
 id edit_query
 id end
@@ -1726,6 +1729,12 @@ id percent
 id pin
 id progress_circular
 id progress_horizontal
+id quantity_delete
+id quantity_image_view
+id quantity_layout
+id quantity_number_picker
+id quantity_text_picker
+id quantity_text_view
 id radio
 id reminder_delete
 id reminder_image_view
@@ -1959,6 +1968,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout quantity_dialog
 layout repeat_dialog
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
@@ -2024,7 +2034,6 @@ string date_error_check_again
 string date_reminder_default
 string description
 string done_label
-string duration
 string edit_btn
 string empty_field_err
 string error
@@ -2079,6 +2088,7 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string press_once_again_to_exit
+string quantity
 string remind_date_and_time
 string remind_me
 string remove

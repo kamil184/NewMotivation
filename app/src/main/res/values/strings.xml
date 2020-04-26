@@ -27,7 +27,7 @@
     <string name="done_label">Done</string>
     <string name="is_dark_theme">Dark theme</string>
     <string name="repeat">Repeat</string>
-    <string name="duration">Duration</string>
+    <string name="quantity">Quantity</string>
     <string name="today">Today</string>
     <string name="tomorrow">Tomorrow</string>
     <string name="select_a_date">Select a date</string>
@@ -61,6 +61,15 @@
         <item>Thu</item>
         <item>Fri</item>
         <item>Sat</item>
+    </string-array>
+
+    <string-array name="quantity_array">
+        <item>times</item>
+        <item>hour</item>
+        <item>min</item>
+        <item>kg</item>
+        <item>km</item>
+        <item>liter</item>
     </string-array>
 
 

@@ -19,6 +19,8 @@
             android:layout_marginStart="@dimen/spacing_30"
             android:inputType="number"
             android:maxLength="3"
+            android:gravity="center"
+            android:minWidth="@dimen/spacing_30"
             android:text="1" />
 
         <Spinner

@@ -11,9 +11,11 @@ public class ToDoItem implements Serializable {
 
     private boolean hasReminder;
     private boolean hasDate;
+    private boolean hasQuantity = false;
     private String title;
     private Repeat repeat;
-    private int duration; // in minutes
+    private int quantityNumber;
+    private int quantityTextPosition;
     private Calendar calendar;
 
     public ToDoItem() {
@@ -36,6 +38,14 @@ public class ToDoItem implements Serializable {
         this.hasDate = hasDate;
     }
 
+    public boolean hasDuration() {
+        return hasQuantity;
+    }
+
+    public void setHasQuantity(boolean hasQuantity) {
+        this.hasQuantity = hasQuantity;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -52,12 +62,21 @@ public class ToDoItem implements Serializable {
         this.repeat = repeat;
     }
 
-    public int getDuration() {
-        return duration;
+    public int getQuantityNumber() {
+        return quantityNumber;
     }
 
-    public void setDuration(int duration) {
-        this.duration = duration;
+    public void setQuantityNumber(int quantityNumber) {
+        this.quantityNumber = quantityNumber;
+    }
+
+    public int getQuantityTextPosition() {
+        return quantityTextPosition;
+    }
+
+    public void setQuantityTextPosition(int quantityTextPosition) {
+        this.quantityTextPosition = quantityTextPosition;
+        hasQuantity = true;
     }
 
     public Calendar getCalendar() {

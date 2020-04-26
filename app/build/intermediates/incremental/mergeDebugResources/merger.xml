@@ -5678,7 +5678,7 @@
         <item>10 Minutes</item>
         <item>30 Minutes</item>
         <item>1 Hour</item>
-    </string-array><string name="no_to_dos">You don\'t have any todos</string><string name="remove">Remove</string><string name="done_label">Done</string><string name="is_dark_theme">Dark theme</string><string name="repeat">Repeat</string><string name="duration">Duration</string><string name="today">Today</string><string name="tomorrow">Tomorrow</string><string name="select_a_date">Select a date</string><string name="cancel">Cancel</string><string name="repeat_every">Repeat every...</string><string name="date">Date</string><string name="time">Time</string><string-array name="repeat_list">
+    </string-array><string name="no_to_dos">You don\'t have any todos</string><string name="remove">Remove</string><string name="done_label">Done</string><string name="is_dark_theme">Dark theme</string><string name="repeat">Repeat</string><string name="today">Today</string><string name="tomorrow">Tomorrow</string><string name="select_a_date">Select a date</string><string name="cancel">Cancel</string><string name="repeat_every">Repeat every...</string><string name="date">Date</string><string name="time">Time</string><string-array name="repeat_list">
         <item>Days</item>
         <item>Weeks</item>
         <item>Months</item>
@@ -5699,7 +5699,14 @@
         <item>Thu</item>
         <item>Fri</item>
         <item>Sat</item>
-    </string-array></file><file path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\values\styles.xml" qualifiers=""><style name="CustomStyle.DarkMaterialCalendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+    </string-array><string-array name="quantity_array">
+        <item>times</item>
+        <item>hour</item>
+        <item>min</item>
+        <item>kg</item>
+        <item>km</item>
+        <item>liter</item>
+    </string-array><string name="quantity">Quantity</string></file><file path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\values\styles.xml" qualifiers=""><style name="CustomStyle.DarkMaterialCalendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
         <item name="android:color">@color/white</item>
     </style><style name="CustomStyle.Button.Circle.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton.Icon">
         <item name="android:textColor">@color/grey600</item>
@@ -5829,7 +5836,7 @@
     </style><style name="ShapeAppearance.MyTheme.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">0dp</item>
-    </style></file></source><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\build\generated\res\rs\debug"/><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="AlertDialog">
+    </style></file><file name="ic_weight_primary_dark_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_weight_primary_dark_24dp.xml" qualifiers="" type="drawable"/><file name="ic_water_primary_dark_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_water_primary_dark_24dp.xml" qualifiers="" type="drawable"/><file name="ic_weight_primary_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_weight_primary_24dp.xml" qualifiers="" type="drawable"/><file name="ic_water_primary_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_water_primary_24dp.xml" qualifiers="" type="drawable"/><file name="ic_run_primary_dark_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_run_primary_dark_24dp.xml" qualifiers="" type="drawable"/><file name="ic_run_primary_24dp" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\drawable\ic_run_primary_24dp.xml" qualifiers="" type="drawable"/><file name="quantity_dialog" path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\layout\quantity_dialog.xml" qualifiers="" type="layout"/></source><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\build\generated\res\rs\debug"/><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="AlertDialog">
         <attr name="android:layout"/>
         <attr format="reference" name="buttonPanelSideLayout"/>
         <attr format="reference" name="listLayout"/>

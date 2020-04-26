@@ -9,6 +9,14 @@
         <item>Friday</item>
         <item>Saturday</item>
     </string-array>
+    <string-array name="quantity_array">
+        <item>times</item>
+        <item>hour</item>
+        <item>min</item>
+        <item>kg</item>
+        <item>km</item>
+        <item>liter</item>
+    </string-array>
     <string-array name="repeat_list">
         <item>Days</item>
         <item>Weeks</item>
@@ -884,7 +892,6 @@
     <string name="date_reminder_default">Today</string>
     <string name="description">Description</string>
     <string name="done_label">Done</string>
-    <string name="duration">Duration</string>
     <string name="edit_btn">Edit</string>
     <string name="empty_field_err">Please fill this field</string>
     <string name="error">Error</string>
@@ -939,6 +946,7 @@
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
     <string name="press_once_again_to_exit">Press once again to exit</string>
+    <string name="quantity">Quantity</string>
     <string name="remind_date_and_time">Reminder set for %1$s, %2$s %3$s</string>
     <string name="remind_me">Remind Me</string>
     <string name="remove">Remove</string>
@@ -2858,7 +2866,7 @@
         <item name="android:color">@color/white</item>
     </style>
     <style name="CustomStyle.DarkTheme" parent="Theme.MaterialComponents">
-        <!--Material color attributes -->
+        
         <item name="colorPrimary">@color/dark_color_primary</item>
         <item name="colorPrimaryVariant">@color/dark_color_primary_variant</item>
         <item name="colorSecondary">@color/dark_color_secondary</item>
@@ -2876,29 +2884,29 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textColorSecondary">@color/white</item>
 
-        <!-- ActionBar -->
+        
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
 
-        <!--color of thumb when inactive-->
+        
         <item name="colorSwitchThumbNormal">@color/grey300</item>
-        <!--Inactive track color-->
+        
         <item name="android:colorForeground">@color/grey600</item>
 
-        <!-- Picker styles and themes. -->
+        
         <item name="materialCalendarStyle">@style/Widget.MaterialComponents.MaterialCalendar</item>
         <item name="materialCalendarFullscreenTheme">
             @style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen
         </item>
         <item name="materialCalendarTheme">@style/CustomStyle.DarkMaterialCalendar</item>
 
-        <!--Material shape attributes-->
+        
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyTheme.SmallComponent</item>
         <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MyTheme.MediumComponent</item>
         <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.MyTheme.LargeComponent</item>
 
-        <!-- Custom attrs -->
+        
         <item name="dividerDrawable">@drawable/inset_divider_dark</item>
         <item name="setThemeDrawable">@drawable/ic_sun</item>
         <item name="deleteDrawable">@drawable/ic_delete_white_24dp</item>
@@ -2911,7 +2919,7 @@
     </style>
     <style name="CustomStyle.LightTheme" parent="Theme.MaterialComponents.Light">
 
-        <!--Material color attributes -->
+        
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryVariant">@color/color_primary_variant</item>
         <item name="colorSecondary">@color/color_secondary</item>
@@ -2929,17 +2937,17 @@
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textColorSecondary">@color/secondary_text</item>
 
-        <!-- ActionBar -->
+        
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
 
-        <!--color of thumb when inactive-->
+        
         <item name="colorSwitchThumbNormal">@color/grey300</item>
-        <!--Inactive track color-->
+        
         <item name="android:colorForeground">@color/grey600</item>
 
-        <!-- Picker styles and themes. -->
+        
         <item name="materialCalendarStyle">@style/Widget.MaterialComponents.MaterialCalendar</item>
         <item name="materialCalendarFullscreenTheme">
             @style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen
@@ -2947,12 +2955,12 @@
         <item name="materialCalendarTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar
         </item>
 
-        <!--Material shape attributes-->
+        
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyTheme.SmallComponent</item>
         <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MyTheme.MediumComponent</item>
         <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.MyTheme.LargeComponent</item>
 
-        <!-- Custom attrs -->
+        
         <item name="dividerDrawable">@drawable/inset_divider</item>
         <item name="setThemeDrawable">@drawable/ic_moon</item>
         <item name="deleteDrawable">@drawable/ic_delete_grey_600_24dp</item>

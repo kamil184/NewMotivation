@@ -46,10 +46,10 @@ public class AddToDoActivity_ViewBinding implements Unbinder {
     target.repeatTextView = Utils.findRequiredViewAsType(source, R.id.repeat_text_view, "field 'repeatTextView'", TextView.class);
     target.repeatSecondTextView = Utils.findRequiredViewAsType(source, R.id.repeat_second_text_view, "field 'repeatSecondTextView'", TextView.class);
     target.repeatLayout = Utils.findRequiredViewAsType(source, R.id.repeat_layout, "field 'repeatLayout'", LinearLayout.class);
-    target.durationImageView = Utils.findRequiredViewAsType(source, R.id.duration_image_view, "field 'durationImageView'", ImageView.class);
-    target.durationDelete = Utils.findRequiredViewAsType(source, R.id.duration_delete, "field 'durationDelete'", ImageButton.class);
-    target.durationTextView = Utils.findRequiredViewAsType(source, R.id.duration_text_view, "field 'durationTextView'", TextView.class);
-    target.durationLayout = Utils.findRequiredViewAsType(source, R.id.duration_layout, "field 'durationLayout'", LinearLayout.class);
+    target.quantityImageView = Utils.findRequiredViewAsType(source, R.id.quantity_image_view, "field 'quantityImageView'", ImageView.class);
+    target.quantityDelete = Utils.findRequiredViewAsType(source, R.id.quantity_delete, "field 'quantityDelete'", ImageButton.class);
+    target.quantityTextView = Utils.findRequiredViewAsType(source, R.id.quantity_text_view, "field 'quantityTextView'", TextView.class);
+    target.quantityLayout = Utils.findRequiredViewAsType(source, R.id.quantity_layout, "field 'quantityLayout'", LinearLayout.class);
   }
 
   @Override
@@ -76,9 +76,9 @@ public class AddToDoActivity_ViewBinding implements Unbinder {
     target.repeatTextView = null;
     target.repeatSecondTextView = null;
     target.repeatLayout = null;
-    target.durationImageView = null;
-    target.durationDelete = null;
-    target.durationTextView = null;
-    target.durationLayout = null;
+    target.quantityImageView = null;
+    target.quantityDelete = null;
+    target.quantityTextView = null;
+    target.quantityLayout = null;
   }
 }

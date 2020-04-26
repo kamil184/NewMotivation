@@ -15,7 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointForward;
@@ -25,7 +24,6 @@ import com.kamil184.newmotivate.model.ToDoItem;
 import com.kamil184.newmotivate.ui.base.BaseActivity;
 import com.kamil184.newmotivate.util.DateUtils;
 
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -33,13 +31,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.kamil184.newmotivate.util.Constants.APP_PREFERENCES;
-import static com.kamil184.newmotivate.util.Constants.DARK_THEME;
 import static com.kamil184.newmotivate.util.Constants.LIGHT_THEME;
 import static com.kamil184.newmotivate.util.Constants.THEME;
 import static com.kamil184.newmotivate.util.Constants.TODO_ITEM;
 import static com.kamil184.newmotivate.util.DateUtils.getTodayInMillis;
 
-public class AddToDoActivity extends BaseActivity implements RepeatDialog.RepeatDialogListener, ReminderDialog.OnReminderPickedListener {
+public class AddToDoActivity extends BaseActivity implements RepeatDialog.RepeatDialogListener, ReminderDialog.OnReminderPickedListener, QuantityDialog.OnQuantityPickedListener {
 
     ToDoItem item;
     boolean is24HourFormat;
@@ -82,14 +79,14 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
     @BindView(R.id.repeat_layout)
     LinearLayout repeatLayout;
 
-    @BindView(R.id.duration_image_view)
-    ImageView durationImageView;
-    @BindView(R.id.duration_delete)
-    ImageButton durationDelete;
-    @BindView(R.id.duration_text_view)
-    TextView durationTextView;
-    @BindView(R.id.duration_layout)
-    LinearLayout durationLayout;
+    @BindView(R.id.quantity_image_view)
+    ImageView quantityImageView;
+    @BindView(R.id.quantity_delete)
+    ImageButton quantityDelete;
+    @BindView(R.id.quantity_text_view)
+    TextView quantityTextView;
+    @BindView(R.id.quantity_layout)
+    LinearLayout quantityLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,9 +107,8 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        if(theme == DARK_THEME){
-            toolbar.setNavigationIcon(R.drawable.ic_clear_white_24dp);
-        } else toolbar.setNavigationIcon(R.drawable.ic_clear_grey_600_24dp);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         //TODO настроить лаяуты, если item имеет что-то, то ставим в TextView
 
@@ -137,8 +133,8 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
             showRepeatDialog();
         });
 
-        durationLayout.setOnClickListener(view -> {
-            //showDurationDialog();
+        quantityLayout.setOnClickListener(view -> {
+            showDurationDialog();
         });
 
         dateDelete.setOnClickListener(view -> {
@@ -184,18 +180,18 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
             item.setRepeat(null);
         });
 
-        durationDelete.setOnClickListener(view -> {
-            durationDelete.setVisibility(View.GONE);
-            durationTextView.setText(getString(R.string.duration));
+        quantityDelete.setOnClickListener(view -> {
+            quantityDelete.setVisibility(View.GONE);
+            quantityTextView.setText(getString(R.string.quantity));
             if (theme == LIGHT_THEME) {
-                durationTextView.setTextColor(getResources().getColor(R.color.secondary_text));
-                repeatImageView.setImageResource(R.drawable.ic_clock_grey_600_24dp);
+                quantityTextView.setTextColor(getResources().getColor(R.color.secondary_text));
+                quantityImageView.setImageResource(R.drawable.ic_clock_grey_600_24dp);
             } else{
-                durationTextView.setTextColor(getResources().getColor(R.color.white));
-                repeatImageView.setImageResource(R.drawable.ic_clock_white_24dp);
+                quantityTextView.setTextColor(getResources().getColor(R.color.white));
+                quantityImageView.setImageResource(R.drawable.ic_clock_white_24dp);
             }
 
-            item.setDuration(0);
+            item.setHasQuantity(false);
         });
     }
 
@@ -274,6 +270,14 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
         args.putBoolean(THEME, theme);
         dialog.setArguments(args);
         dialog.show(getSupportFragmentManager(), RepeatDialog.class.getSimpleName());
+    }
+
+    private void showDurationDialog() {
+        QuantityDialog dialog;
+        if(item.hasDuration()){
+            dialog = new QuantityDialog(item.getQuantityNumber(), item.getQuantityTextPosition());
+        }else dialog = new QuantityDialog(1, 0);
+        dialog.show(getSupportFragmentManager(), QuantityDialog.class.getSimpleName());
     }
 
     @Override
@@ -361,5 +365,60 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
             todoTitle.clearFocus();
         }
         return super.dispatchTouchEvent(ev);
+    }
+
+    @Override
+    public void onQuantityPositiveClicked(int number, int textPosition) {
+        String[] resText = getResources().getStringArray(R.array.quantity_array);
+        quantityTextView.setText(number + " " + resText[textPosition]);
+        quantityDelete.setVisibility(View.VISIBLE);
+
+        if (theme == LIGHT_THEME) {
+            quantityTextView.setTextColor(getResources().getColor(R.color.color_primary));
+        } else {
+            quantityTextView.setTextColor(getResources().getColor(R.color.dark_color_primary));
+        }
+
+        switch (textPosition){
+            case 3:
+                if (theme == LIGHT_THEME) {
+                    quantityImageView.setImageResource(R.drawable.ic_weight_primary_24dp);
+                } else {
+                    quantityImageView.setImageResource(R.drawable.ic_weight_primary_dark_24dp);
+                }
+                break;
+
+            case 4:
+                if (theme == LIGHT_THEME) {
+                    quantityImageView.setImageResource(R.drawable.ic_run_primary_24dp);
+                } else {
+                    quantityImageView.setImageResource(R.drawable.ic_run_primary_dark_24dp);
+                }
+                break;
+
+            case 5:
+                if (theme == LIGHT_THEME) {
+                    quantityImageView.setImageResource(R.drawable.ic_water_primary_24dp);
+                } else {
+                    quantityImageView.setImageResource(R.drawable.ic_water_primary_dark_24dp);
+                }
+                break;
+
+            default:
+                if (theme == LIGHT_THEME) {
+                    quantityImageView.setImageResource(R.drawable.ic_clock_primary_24dp);
+                } else {
+                    quantityImageView.setImageResource(R.drawable.ic_clock_primary_dark_24dp);
+                }
+
+        }
+        item.setQuantityNumber(number);
+        item.setQuantityTextPosition(textPosition);
+        item.setHasQuantity(true);
+    }
+
+    @Override
+    public void onQuantityNegativeClicked() {
+
     }
 }
