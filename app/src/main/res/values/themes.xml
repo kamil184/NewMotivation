@@ -39,10 +39,16 @@
         <item name="materialCalendarTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar
         </item>
 
+        <!--Material shape attributes-->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyTheme.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MyTheme.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.MyTheme.LargeComponent</item>
+
         <!-- Custom attrs -->
         <item name="dividerDrawable">@drawable/inset_divider</item>
         <item name="setThemeDrawable">@drawable/ic_moon</item>
         <item name="deleteDrawable">@drawable/ic_delete_grey_600_24dp</item>
+        <item name="clearDrawable">@drawable/ic_clear_grey_600_24dp</item>
         <item name="dateRangeDrawable">@drawable/ic_date_range_grey_600_24dp</item>
         <item name="addAlarmDrawable">@drawable/ic_add_alarm_grey_600_24dp</item>
         <item name="repeatDrawable">@drawable/ic_repeat_grey_600_24dp</item>
@@ -85,10 +91,16 @@
         </item>
         <item name="materialCalendarTheme">@style/CustomStyle.DarkMaterialCalendar</item>
 
+        <!--Material shape attributes-->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyTheme.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MyTheme.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.MyTheme.LargeComponent</item>
+
         <!-- Custom attrs -->
         <item name="dividerDrawable">@drawable/inset_divider_dark</item>
         <item name="setThemeDrawable">@drawable/ic_sun</item>
         <item name="deleteDrawable">@drawable/ic_delete_white_24dp</item>
+        <item name="clearDrawable">@drawable/ic_clear_white_24dp</item>
         <item name="dateRangeDrawable">@drawable/ic_date_range_white_24dp</item>
         <item name="addAlarmDrawable">@drawable/ic_add_alarm_white_24dp</item>
         <item name="repeatDrawable">@drawable/ic_repeat_white_24dp</item>

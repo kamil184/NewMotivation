@@ -1,11 +1,13 @@
 package com.kamil184.newmotivate.ui.addTodo;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -31,6 +33,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.kamil184.newmotivate.util.Constants.APP_PREFERENCES;
+import static com.kamil184.newmotivate.util.Constants.DARK_THEME;
 import static com.kamil184.newmotivate.util.Constants.LIGHT_THEME;
 import static com.kamil184.newmotivate.util.Constants.THEME;
 import static com.kamil184.newmotivate.util.Constants.TODO_ITEM;
@@ -43,6 +46,8 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+    @BindView(R.id.todo_title_check_box)
+    CheckBox todoCheckBox;
     @BindView(R.id.todo_title_edit_text)
     EditText todoTitle;
     @BindView(R.id.note_edit_text)
@@ -105,7 +110,9 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        toolbar.setNavigationIcon(R.drawable.ic_clear_white_24dp);
+        if(theme == DARK_THEME){
+            toolbar.setNavigationIcon(R.drawable.ic_clear_white_24dp);
+        } else toolbar.setNavigationIcon(R.drawable.ic_clear_grey_600_24dp);
 
         //TODO настроить лаяуты, если item имеет что-то, то ставим в TextView
 
@@ -113,6 +120,11 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
 
         is24HourFormat = DateFormat.is24HourFormat(this);
 
+        todoCheckBox.setOnClickListener(view -> {
+            if(todoCheckBox.isChecked()){
+                todoTitle.setPaintFlags(todoTitle.getPaintFlags()| Paint.STRIKE_THRU_TEXT_FLAG);
+            }else todoTitle.setPaintFlags(todoTitle.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+        });
         dateLayout.setOnClickListener(view -> {
             showDateDialog();
         });

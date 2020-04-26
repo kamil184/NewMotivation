@@ -2,6 +2,7 @@
 package com.kamil184.newmotivate.ui.addTodo;
 
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -29,6 +30,7 @@ public class AddToDoActivity_ViewBinding implements Unbinder {
     this.target = target;
 
     target.toolbar = Utils.findRequiredViewAsType(source, R.id.toolbar, "field 'toolbar'", Toolbar.class);
+    target.todoCheckBox = Utils.findRequiredViewAsType(source, R.id.todo_title_check_box, "field 'todoCheckBox'", CheckBox.class);
     target.todoTitle = Utils.findRequiredViewAsType(source, R.id.todo_title_edit_text, "field 'todoTitle'", EditText.class);
     target.noteEditText = Utils.findRequiredViewAsType(source, R.id.note_edit_text, "field 'noteEditText'", EditText.class);
     target.reminderImageView = Utils.findRequiredViewAsType(source, R.id.reminder_image_view, "field 'reminderImageView'", ImageView.class);
@@ -58,6 +60,7 @@ public class AddToDoActivity_ViewBinding implements Unbinder {
     this.target = null;
 
     target.toolbar = null;
+    target.todoCheckBox = null;
     target.todoTitle = null;
     target.noteEditText = null;
     target.reminderImageView = null;

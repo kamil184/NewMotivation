@@ -6,348 +6,326 @@
     android:animateLayoutChanges="true"
     android:orientation="vertical">
 
-    <include layout="@layout/base_toolbar" />
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorSurface">
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/todo_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="@dimen/spacing_16"
+                app:srcCompat="?deleteDrawable" />
+        </FrameLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/editTextParentLinearLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="0dp"
+            android:layout_weight=".3"
+            android:orientation="horizontal"
+            android:background="?attr/colorSurface">
 
-            <LinearLayout
-                android:id="@+id/editTextParentLinearLayout"
+            <CheckBox
+                android:id="@+id/todo_title_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/spacing_16"
+                android:background="@android:color/transparent" />
+
+            <EditText
+                android:id="@+id/todo_title_edit_text"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight=".5"
-                android:background="?attr/colorPrimary">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/todo_title_text_input_layout"
-                    style="@style/Widget.Design.TextInputLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    app:hintTextAppearance="@style/FloatingLabelTextAppearance">
-
-                    <EditText
-                        android:id="@+id/todo_title_edit_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="@dimen/spacing_30"
-                        android:layout_marginRight="@dimen/spacing_30"
-                        android:gravity="start|bottom"
-                        android:hint="@string/title"
-                        android:inputType="textAutoCorrect|textCapSentences"
-                        android:lines="2"
-                        android:maxLength="30"
-                        android:maxLines="3"
-                        android:textColor="@color/white" />
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/spacing_4"
+                android:background="@android:color/transparent"
+                android:foregroundGravity="center"
+                android:gravity="start|center"
+                android:hint="@string/title"
+                android:inputType="textAutoCorrect|textCapSentences"
+                android:lines="2"
+                android:maxLength="30"
+                android:maxLines="3"
+                android:textSize="20sp" />
+        </LinearLayout>
 
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2.4"
-                android:overScrollMode="never"
-                android:scrollbars="none">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/spacing_24"
-                        android:layout_marginTop="@dimen/spacing_30"
-                        android:layout_marginRight="@dimen/spacing_24">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:divider="?dividerDrawable"
-                            android:orientation="vertical"
-                            android:showDividers="middle">
-
-                            <LinearLayout
-                                android:id="@+id/date_layout"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="?android:attr/selectableItemBackground"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:gravity="center"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:id="@+id/date_image_view"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:background="@android:color/transparent"
-                                    android:paddingStart="@dimen/spacing_16"
-                                    android:paddingTop="@dimen/spacing_12"
-                                    android:paddingEnd="@dimen/spacing_8"
-                                    android:paddingBottom="@dimen/spacing_12"
-                                    app:srcCompat="?dateRangeDrawable" />
-
-                                <TextView
-                                    android:id="@+id/date_text_view"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="2"
-                                    android:paddingStart="@dimen/spacing_8"
-                                    android:paddingTop="@dimen/spacing_12"
-                                    android:paddingEnd="@dimen/spacing_4"
-                                    android:paddingBottom="@dimen/spacing_12"
-                                    android:text="@string/date"
-                                    android:textAppearance="?attr/textAppearanceBody1"
-                                    android:textColor="?android:textColorSecondary" />
-
-                                <ImageButton
-                                    android:id="@+id/date_delete"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:background="?android:attr/selectableItemBackground"
-                                    android:paddingStart="@dimen/spacing_16"
-                                    android:paddingTop="@dimen/spacing_12"
-                                    android:paddingEnd="@dimen/spacing_16"
-                                    android:paddingBottom="@dimen/spacing_12"
-                                    android:visibility="gone"
-                                    app:srcCompat="@drawable/ic_clear_white_24dp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:id="@+id/reminder_layout"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="?android:attr/selectableItemBackground"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:gravity="center"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:id="@+id/reminder_image_view"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:background="@android:color/transparent"
-                                    android:paddingStart="@dimen/spacing_16"
-                                    android:paddingTop="@dimen/spacing_12"
-                                    android:paddingEnd="@dimen/spacing_8"
-                                    android:paddingBottom="@dimen/spacing_12"
-                                    app:srcCompat="?addAlarmDrawable" />
-
-                                <TextView
-                                    android:id="@+id/reminder_text_view"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="2"
-                                    android:paddingStart="@dimen/spacing_8"
-                                    android:paddingTop="@dimen/spacing_12"
-                                    android:paddingEnd="@dimen/spacing_4"
-                                    android:paddingBottom="@dimen/spacing_12"
-                                    android:text="@string/remind_me"
-                                    android:textAppearance="?attr/textAppearanceBody1"
-                                    android:textColor="?android:textColorSecondary" />
-
-                                <ImageButton
-                                    android:id="@+id/reminder_delete"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:background="?android:attr/selectableItemBackground"
-                                    android:paddingStart="@dimen/spacing_16"
-                                    android:paddingTop="@dimen/spacing_12"
-                                    android:paddingEnd="@dimen/spacing_16"
-                                    android:paddingBottom="@dimen/spacing_12"
-                                    android:visibility="gone"
-                                    app:srcCompat="@drawable/ic_clear_white_24dp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:id="@+id/repeat_layout"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="?android:attr/selectableItemBackground"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:gravity="center"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:id="@+id/repeat_image_view"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:background="@android:color/transparent"
-                                    android:paddingStart="@dimen/spacing_16"
-                                    android:paddingTop="@dimen/spacing_12"
-                                    android:paddingEnd="@dimen/spacing_8"
-                                    android:paddingBottom="@dimen/spacing_12"
-                                    app:srcCompat="?repeatDrawable" />
-
-                                <LinearLayout
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="2"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:id="@+id/repeat_text_view"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:paddingStart="@dimen/spacing_8"
-                                        android:paddingTop="@dimen/spacing_12"
-                                        android:paddingEnd="@dimen/spacing_4"
-                                        android:paddingBottom="@dimen/spacing_12"
-                                        android:text="@string/repeat"
-                                        android:textAppearance="?attr/textAppearanceBody1"
-                                        android:textColor="?android:textColorSecondary" />
-
-                                    <TextView
-                                        android:id="@+id/repeat_second_text_view"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:paddingStart="@dimen/spacing_8"
-                                        android:paddingEnd="@dimen/spacing_8"
-                                        android:paddingBottom="@dimen/spacing_12"
-                                        android:textAppearance="?attr/textAppearanceBody2"
-                                        android:textColor="?android:attr/textColorSecondary"
-                                        android:visibility="gone"
-                                        tools:text="Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday" />
-
-                                </LinearLayout>
-
-                                <ImageButton
-                                    android:id="@+id/repeat_delete"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:background="?android:attr/selectableItemBackground"
-                                    android:paddingStart="@dimen/spacing_16"
-                                    android:paddingTop="@dimen/spacing_12"
-                                    android:paddingEnd="@dimen/spacing_16"
-                                    android:paddingBottom="@dimen/spacing_12"
-                                    android:visibility="gone"
-                                    app:srcCompat="@drawable/ic_clear_white_24dp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:id="@+id/duration_layout"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="?android:attr/selectableItemBackground"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:gravity="center"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:id="@+id/duration_image_view"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:background="@android:color/transparent"
-                                    android:paddingStart="@dimen/spacing_16"
-                                    android:paddingTop="@dimen/spacing_12"
-                                    android:paddingEnd="@dimen/spacing_8"
-                                    android:paddingBottom="@dimen/spacing_12"
-                                    app:srcCompat="?clockDrawable" />
-
-                                <TextView
-                                    android:id="@+id/duration_text_view"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="2"
-                                    android:paddingStart="@dimen/spacing_8"
-                                    android:paddingTop="@dimen/spacing_12"
-                                    android:paddingEnd="@dimen/spacing_4"
-                                    android:paddingBottom="@dimen/spacing_12"
-                                    android:text="@string/duration"
-                                    android:textAppearance="?attr/textAppearanceBody1"
-                                    android:textColor="?android:textColorSecondary" />
-
-                                <ImageButton
-                                    android:id="@+id/duration_delete"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:background="?android:attr/selectableItemBackground"
-                                    android:paddingStart="@dimen/spacing_16"
-                                    android:paddingTop="@dimen/spacing_12"
-                                    android:paddingEnd="@dimen/spacing_16"
-                                    android:paddingBottom="@dimen/spacing_12"
-                                    android:visibility="gone"
-                                    app:srcCompat="@drawable/ic_clear_white_24dp" />
-                            </LinearLayout>
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/card"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/spacing_24"
-                        android:layout_marginTop="@dimen/spacing_30"
-                        android:layout_marginRight="@dimen/spacing_24">
-
-                        <EditText
-                            android:id="@+id/note_edit_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
-                            android:gravity="top"
-                            android:hint="Add a note"
-                            android:inputType="textMultiLine"
-                            android:minHeight="108dp"
-                            android:padding="@dimen/spacing_16" />
-                    </com.google.android.material.card.MaterialCardView>
-
-                </LinearLayout>
-            </ScrollView>
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.4"
+            android:overScrollMode="never"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/created_ago_text_view"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|start"
-                    android:padding="@dimen/spacing_8"
-                    android:textAppearance="?attr/textAppearanceBody1"
-                    android:textColor="?android:textColorSecondary"
-                    tools:text="Created 7 hours ago" />
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/spacing_16"
+                    android:layout_marginTop="@dimen/spacing_30"
+                    android:layout_marginRight="@dimen/spacing_16">
 
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="@dimen/spacing_4"
-                    android:layout_marginBottom="@dimen/spacing_4"
-                    android:layout_weight="0.15"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:padding="@dimen/spacing_8"
-                    app:srcCompat="?deleteDrawable" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="?dividerDrawable"
+                        android:orientation="vertical"
+                        android:showDividers="middle">
+
+                        <LinearLayout
+                            android:id="@+id/date_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/date_image_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:paddingStart="@dimen/spacing_16"
+                                android:paddingTop="@dimen/spacing_12"
+                                android:paddingEnd="@dimen/spacing_8"
+                                android:paddingBottom="@dimen/spacing_12"
+                                app:srcCompat="?dateRangeDrawable" />
+
+                            <TextView
+                                android:id="@+id/date_text_view"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:paddingStart="@dimen/spacing_8"
+                                android:paddingTop="@dimen/spacing_12"
+                                android:paddingEnd="@dimen/spacing_4"
+                                android:paddingBottom="@dimen/spacing_12"
+                                android:text="@string/date"
+                                android:textAppearance="?attr/textAppearanceBody1"
+                                android:textColor="?android:textColorSecondary" />
+
+                            <ImageButton
+                                android:id="@+id/date_delete"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:paddingStart="@dimen/spacing_16"
+                                android:paddingTop="@dimen/spacing_12"
+                                android:paddingEnd="@dimen/spacing_16"
+                                android:paddingBottom="@dimen/spacing_12"
+                                android:visibility="gone"
+                                app:srcCompat="?clearDrawable" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/reminder_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/reminder_image_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:paddingStart="@dimen/spacing_16"
+                                android:paddingTop="@dimen/spacing_12"
+                                android:paddingEnd="@dimen/spacing_8"
+                                android:paddingBottom="@dimen/spacing_12"
+                                app:srcCompat="?addAlarmDrawable" />
+
+                            <TextView
+                                android:id="@+id/reminder_text_view"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:paddingStart="@dimen/spacing_8"
+                                android:paddingTop="@dimen/spacing_12"
+                                android:paddingEnd="@dimen/spacing_4"
+                                android:paddingBottom="@dimen/spacing_12"
+                                android:text="@string/remind_me"
+                                android:textAppearance="?attr/textAppearanceBody1"
+                                android:textColor="?android:textColorSecondary" />
+
+                            <ImageButton
+                                android:id="@+id/reminder_delete"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:paddingStart="@dimen/spacing_16"
+                                android:paddingTop="@dimen/spacing_12"
+                                android:paddingEnd="@dimen/spacing_16"
+                                android:paddingBottom="@dimen/spacing_12"
+                                android:visibility="gone"
+                                app:srcCompat="?clearDrawable" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/repeat_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/repeat_image_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:paddingStart="@dimen/spacing_16"
+                                android:paddingTop="@dimen/spacing_12"
+                                android:paddingEnd="@dimen/spacing_8"
+                                android:paddingBottom="@dimen/spacing_12"
+                                app:srcCompat="?repeatDrawable" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/repeat_text_view"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingStart="@dimen/spacing_8"
+                                    android:paddingTop="@dimen/spacing_12"
+                                    android:paddingEnd="@dimen/spacing_4"
+                                    android:paddingBottom="@dimen/spacing_12"
+                                    android:text="@string/repeat"
+                                    android:textAppearance="?attr/textAppearanceBody1"
+                                    android:textColor="?android:textColorSecondary" />
+
+                                <TextView
+                                    android:id="@+id/repeat_second_text_view"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingStart="@dimen/spacing_8"
+                                    android:paddingEnd="@dimen/spacing_8"
+                                    android:paddingBottom="@dimen/spacing_12"
+                                    android:textAppearance="?attr/textAppearanceBody2"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:visibility="gone"
+                                    tools:text="Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday" />
+
+                            </LinearLayout>
+
+                            <ImageButton
+                                android:id="@+id/repeat_delete"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:paddingStart="@dimen/spacing_16"
+                                android:paddingTop="@dimen/spacing_12"
+                                android:paddingEnd="@dimen/spacing_16"
+                                android:paddingBottom="@dimen/spacing_12"
+                                android:visibility="gone"
+                                app:srcCompat="?clearDrawable" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/duration_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/duration_image_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:paddingStart="@dimen/spacing_16"
+                                android:paddingTop="@dimen/spacing_12"
+                                android:paddingEnd="@dimen/spacing_8"
+                                android:paddingBottom="@dimen/spacing_12"
+                                app:srcCompat="?clockDrawable" />
+
+                            <TextView
+                                android:id="@+id/duration_text_view"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:paddingStart="@dimen/spacing_8"
+                                android:paddingTop="@dimen/spacing_12"
+                                android:paddingEnd="@dimen/spacing_4"
+                                android:paddingBottom="@dimen/spacing_12"
+                                android:text="@string/duration"
+                                android:textAppearance="?attr/textAppearanceBody1"
+                                android:textColor="?android:textColorSecondary" />
+
+                            <ImageButton
+                                android:id="@+id/duration_delete"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:paddingStart="@dimen/spacing_16"
+                                android:paddingTop="@dimen/spacing_12"
+                                android:paddingEnd="@dimen/spacing_16"
+                                android:paddingBottom="@dimen/spacing_12"
+                                android:visibility="gone"
+                                app:srcCompat="?clearDrawable" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/spacing_16"
+                    android:layout_marginTop="@dimen/spacing_30"
+                    android:layout_marginRight="@dimen/spacing_16">
+
+                    <EditText
+                        android:id="@+id/note_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:gravity="top"
+                        android:hint="Add a note"
+                        android:inputType="textMultiLine"
+                        android:minHeight="108dp"
+                        android:padding="@dimen/spacing_16" />
+                </com.google.android.material.card.MaterialCardView>
+
             </LinearLayout>
+        </ScrollView>
 
-        </LinearLayout>
-
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/makeToDoFloatingActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            app:fabSize="normal"
-            app:layout_anchor="@id/editTextParentLinearLayout"
-            app:layout_anchorGravity="bottom|right"
-            app:srcCompat="@drawable/ic_send_white_24dp" />
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
 </LinearLayout>
