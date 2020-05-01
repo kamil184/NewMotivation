@@ -43,5 +43,8 @@
 
     <color name="grey600">#757575</color>
     <color name="grey300">#E0E0E0</color>
+    <color name="blue600">#1E88E5</color>
+    <color name="red600">#e53935</color>
+    <color name="yellow600">#FDD835</color>
 
 </resources>

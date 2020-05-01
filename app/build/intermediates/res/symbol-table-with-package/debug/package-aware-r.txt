@@ -46,6 +46,7 @@ animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 array days
+array priority_array
 array quantity_array
 array repeat_list
 array short_days
@@ -797,6 +798,7 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color blue600
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -975,6 +977,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color red600
 color ripple_material_dark
 color ripple_material_light
 color secondary_text
@@ -993,6 +996,7 @@ color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
 color white
+color yellow600
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1453,6 +1457,10 @@ drawable ic_add_alarm_primary_24dp
 drawable ic_add_alarm_primary_dark_24dp
 drawable ic_add_alarm_white_24dp
 drawable ic_add_white_24dp
+drawable ic_arrow_blue_600_24dp
+drawable ic_arrow_grey_600_24dp
+drawable ic_arrow_red_600_24dp
+drawable ic_arrow_yellow_600_24dp
 drawable ic_calendar_black_24dp
 drawable ic_clear_black_24dp
 drawable ic_clear_grey_600_24dp
@@ -1727,6 +1735,8 @@ id password_toggle
 id peekHeight
 id percent
 id pin
+id priority_spinner_item_image
+id priority_spinner_item_text
 id progress_circular
 id progress_horizontal
 id quantity_delete
@@ -1833,6 +1843,7 @@ id to_add_todo
 id todo_delete
 id todo_title_check_box
 id todo_title_edit_text
+id todo_title_spinner
 id toolbar
 id top
 id topPanel
@@ -1968,6 +1979,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout priority_spinner_item
 layout quantity_dialog
 layout repeat_dialog
 layout select_dialog_item_material

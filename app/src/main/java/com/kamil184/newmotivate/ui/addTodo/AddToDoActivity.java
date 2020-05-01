@@ -1,21 +1,33 @@
 package com.kamil184.newmotivate.ui.addTodo;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.CheckBox;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
+import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
@@ -30,7 +42,12 @@ import java.util.TimeZone;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.kamil184.newmotivate.model.ToDoItem.HIGH;
+import static com.kamil184.newmotivate.model.ToDoItem.LOW;
+import static com.kamil184.newmotivate.model.ToDoItem.MEDIUM;
+import static com.kamil184.newmotivate.model.ToDoItem.NO;
 import static com.kamil184.newmotivate.util.Constants.APP_PREFERENCES;
+import static com.kamil184.newmotivate.util.Constants.DARK_THEME;
 import static com.kamil184.newmotivate.util.Constants.LIGHT_THEME;
 import static com.kamil184.newmotivate.util.Constants.THEME;
 import static com.kamil184.newmotivate.util.Constants.TODO_ITEM;
@@ -38,17 +55,23 @@ import static com.kamil184.newmotivate.util.DateUtils.getTodayInMillis;
 
 public class AddToDoActivity extends BaseActivity implements RepeatDialog.RepeatDialogListener, ReminderDialog.OnReminderPickedListener, QuantityDialog.OnQuantityPickedListener {
 
+    static{
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+    }
+
     ToDoItem item;
     boolean is24HourFormat;
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.todo_title_check_box)
-    CheckBox todoCheckBox;
+    MaterialCheckBox todoCheckBox;
     @BindView(R.id.todo_title_edit_text)
     EditText todoTitle;
     @BindView(R.id.note_edit_text)
     EditText noteEditText;
+    @BindView(R.id.todo_title_spinner)
+    Spinner spinner;
 
     @BindView(R.id.reminder_image_view)
     ImageView reminderImageView;
@@ -121,6 +144,77 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
                 todoTitle.setPaintFlags(todoTitle.getPaintFlags()| Paint.STRIKE_THRU_TEXT_FLAG);
             }else todoTitle.setPaintFlags(todoTitle.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
         });
+
+        String[] resArray = getResources().getStringArray(R.array.priority_array);
+        PrioritySpinnerAdapter adapter = new PrioritySpinnerAdapter(this,
+                R.layout.priority_spinner_item, resArray);
+        spinner.setAdapter(adapter);
+        spinner.setSelection(item.getPriority());
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                int tintColor = 0;
+
+                ColorStateList colorStateList = null;
+
+                switch (i){
+                    case HIGH:
+                        colorStateList = new ColorStateList(
+                                new int[][]{
+                                        new int[]{android.R.attr.state_enabled}
+                                },
+                                new int[]{getResources().getColor(R.color.red600)}
+                        );
+                        break;
+
+                    case MEDIUM:
+                        colorStateList = new ColorStateList(
+                                new int[][]{
+                                        new int[]{android.R.attr.state_enabled}
+                                },
+                                new int[]{getResources().getColor(R.color.yellow600)}
+                        );
+                        break;
+
+                    case LOW:
+                        colorStateList = new ColorStateList(
+                                new int[][]{
+                                        new int[]{android.R.attr.state_enabled}
+                                },
+                                new int[]{getResources().getColor(R.color.blue600)}
+                        );
+                        break;
+
+                    case NO:
+                        int checkedColor;
+                        if (theme == DARK_THEME) {
+                            checkedColor = getResources().getColor(R.color.dark_color_primary);
+                        } else {
+                            checkedColor = getResources().getColor(R.color.color_primary);
+                        }
+
+                        colorStateList = new ColorStateList(
+                                new int[][]{
+                                        new int[]{android.R.attr.state_checked},
+                                        new int[]{}
+                                },
+                                new int[]{checkedColor, getResources().getColor(R.color.grey600)}
+                        );
+                        break;
+                }
+
+                todoCheckBox.setSupportButtonTintList(colorStateList);
+                item.setPriority(i);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         dateLayout.setOnClickListener(view -> {
             showDateDialog();
         });

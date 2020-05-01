@@ -2,17 +2,18 @@
 package com.kamil184.newmotivate.ui.addTodo;
 
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
 import androidx.appcompat.widget.Toolbar;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
+import com.google.android.material.checkbox.MaterialCheckBox;
 import com.kamil184.newmotivate.R;
 import java.lang.IllegalStateException;
 import java.lang.Override;
@@ -30,9 +31,10 @@ public class AddToDoActivity_ViewBinding implements Unbinder {
     this.target = target;
 
     target.toolbar = Utils.findRequiredViewAsType(source, R.id.toolbar, "field 'toolbar'", Toolbar.class);
-    target.todoCheckBox = Utils.findRequiredViewAsType(source, R.id.todo_title_check_box, "field 'todoCheckBox'", CheckBox.class);
+    target.todoCheckBox = Utils.findRequiredViewAsType(source, R.id.todo_title_check_box, "field 'todoCheckBox'", MaterialCheckBox.class);
     target.todoTitle = Utils.findRequiredViewAsType(source, R.id.todo_title_edit_text, "field 'todoTitle'", EditText.class);
     target.noteEditText = Utils.findRequiredViewAsType(source, R.id.note_edit_text, "field 'noteEditText'", EditText.class);
+    target.spinner = Utils.findRequiredViewAsType(source, R.id.todo_title_spinner, "field 'spinner'", Spinner.class);
     target.reminderImageView = Utils.findRequiredViewAsType(source, R.id.reminder_image_view, "field 'reminderImageView'", ImageView.class);
     target.reminderDelete = Utils.findRequiredViewAsType(source, R.id.reminder_delete, "field 'reminderDelete'", ImageButton.class);
     target.reminderTextView = Utils.findRequiredViewAsType(source, R.id.reminder_text_view, "field 'reminderTextView'", TextView.class);
@@ -63,6 +65,7 @@ public class AddToDoActivity_ViewBinding implements Unbinder {
     target.todoCheckBox = null;
     target.todoTitle = null;
     target.noteEditText = null;
+    target.spinner = null;
     target.reminderImageView = null;
     target.reminderDelete = null;
     target.reminderTextView = null;

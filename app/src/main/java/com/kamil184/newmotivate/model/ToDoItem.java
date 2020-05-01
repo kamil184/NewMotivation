@@ -9,6 +9,11 @@ public class ToDoItem implements Serializable {
     //public static final String DATE = "date";
     //public static final String HAS_REMINDER = "has reminder";
 
+    public static final int HIGH = 0;
+    public static final int MEDIUM = 1;
+    public static final int LOW = 2;
+    public static final int NO = 3;
+
     private boolean hasReminder;
     private boolean hasDate;
     private boolean hasQuantity = false;
@@ -17,6 +22,15 @@ public class ToDoItem implements Serializable {
     private int quantityNumber;
     private int quantityTextPosition;
     private Calendar calendar;
+    private int priority = NO;
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
 
     public ToDoItem() {
         calendar = Calendar.getInstance();

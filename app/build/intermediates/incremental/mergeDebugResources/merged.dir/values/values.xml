@@ -9,6 +9,12 @@
         <item>Friday</item>
         <item>Saturday</item>
     </string-array>
+    <string-array name="priority_array">
+        <item>High Priority</item>
+        <item>Medium Priority</item>
+        <item>Low Priority</item>
+        <item>No Priority</item>
+    </string-array>
     <string-array name="quantity_array">
         <item>times</item>
         <item>hour</item>
@@ -262,6 +268,7 @@
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
+    <color name="blue600">#1E88E5</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
     <color name="bright_foreground_inverse_material_dark">@color/bright_foreground_material_light</color>
@@ -377,6 +384,7 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
+    <color name="red600">#e53935</color>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
     <color name="secondary_text">#727272</color>
@@ -391,6 +399,7 @@
     <color name="tooltip_background_dark">#e6616161</color>
     <color name="tooltip_background_light">#e6FFFFFF</color>
     <color name="white">#ffffff</color>
+    <color name="yellow600">#FDD835</color>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_content_inset_with_nav">72dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
@@ -2882,6 +2891,7 @@
         <item name="colorOnError">@color/dark_color_on_error</item>
 
         <item name="android:textColor">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/white</item>
 
         
@@ -2935,6 +2945,7 @@
         <item name="colorOnError">@color/color_on_error</item>
 
         <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
         <item name="android:textColorSecondary">@color/secondary_text</item>
 
         
