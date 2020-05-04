@@ -1,7 +1,5 @@
 package com.kamil184.newmotivate.model;
 
-import android.util.Pair;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -30,16 +28,16 @@ public class ToDoItem implements Serializable {
     private List<Step> steps = new ArrayList<>();
     private boolean isCompleted;
 
+    public ToDoItem() {
+        calendar = Calendar.getInstance();
+    }
+
     public int getPriority() {
         return priority;
     }
 
     public void setPriority(int priority) {
         this.priority = priority;
-    }
-
-    public ToDoItem() {
-        calendar = Calendar.getInstance();
     }
 
     public boolean hasReminder() {

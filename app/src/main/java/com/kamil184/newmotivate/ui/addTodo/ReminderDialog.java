@@ -21,23 +21,23 @@ import butterknife.Unbinder;
 
 public class ReminderDialog extends DialogFragment {
 
-    private OnReminderPickedListener listener;
     @BindView(R.id.time_picker)
     TimePicker timePicker;
+    private OnReminderPickedListener listener;
     private int hour, minute;
     private boolean is24HourFormat;
     private Unbinder unbinder;
+
+    public ReminderDialog(int hour, int minute, boolean is24HourFormat) {
+        this.hour = hour;
+        this.is24HourFormat = is24HourFormat;
+        this.minute = minute;
+    }
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         listener = (OnReminderPickedListener) context;
-    }
-
-    public ReminderDialog(int hour, int minute, boolean is24HourFormat){
-        this.hour = hour;
-        this.is24HourFormat = is24HourFormat;
-        this.minute = minute;
     }
 
     @NonNull
@@ -67,14 +67,6 @@ public class ReminderDialog extends DialogFragment {
         return builder.create();
     }
 
-    public interface OnReminderPickedListener {
-
-        void onReminderPositiveClicked(int hour, int minute);
-
-        void onReminderNegativeClicked();
-
-    }
-
     private void setTime(int hour, int minute) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             timePicker.setHour(hour);
@@ -89,5 +81,13 @@ public class ReminderDialog extends DialogFragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    public interface OnReminderPickedListener {
+
+        void onReminderPositiveClicked(int hour, int minute);
+
+        void onReminderNegativeClicked();
+
     }
 }

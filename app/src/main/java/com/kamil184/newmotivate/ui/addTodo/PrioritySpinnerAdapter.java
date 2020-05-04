@@ -36,7 +36,7 @@ public class PrioritySpinnerAdapter extends ArrayAdapter<String> {
         item.findViewById(R.id.priority_spinner_item_text).setVisibility(View.GONE);
         ImageView icon = (ImageView) item.findViewById(R.id.priority_spinner_item_image);
 
-        switch (position){
+        switch (position) {
             case HIGH:
                 icon.setImageResource(R.drawable.ic_arrow_red_600_24dp);
                 break;
@@ -63,7 +63,7 @@ public class PrioritySpinnerAdapter extends ArrayAdapter<String> {
         label.setText(resArray[position]);
 
         ImageView icon = (ImageView) item.findViewById(R.id.priority_spinner_item_image);
-        switch (position){
+        switch (position) {
             case HIGH:
                 icon.setImageResource(R.drawable.ic_arrow_red_600_24dp);
                 break;

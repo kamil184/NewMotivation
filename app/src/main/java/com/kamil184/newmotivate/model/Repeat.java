@@ -43,7 +43,7 @@ public enum Repeat {
             boolean isDaily = true;
             if (count != 1) isDaily = false;
             for (int i = 0; i < 7; i++) {
-                if(!days[i]){
+                if (!days[i]) {
                     isDaily = false;
                     break;
                 }
@@ -93,9 +93,9 @@ public enum Repeat {
 
     public abstract String getText();
 
-    public abstract void setCount(int count);
-
     public abstract int getCount();
+
+    public abstract void setCount(int count);
 
     public int getSelection() {
         return selection;
@@ -105,5 +105,6 @@ public enum Repeat {
         return new boolean[0];
     }
 
-    public void setDays(boolean[] days) { }
+    public void setDays(boolean[] days) {
+    }
 }

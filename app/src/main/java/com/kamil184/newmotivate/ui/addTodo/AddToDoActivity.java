@@ -2,15 +2,12 @@ package com.kamil184.newmotivate.ui.addTodo;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -23,7 +20,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -61,7 +57,7 @@ import static com.kamil184.newmotivate.util.DateUtils.getTodayInMillis;
 public class AddToDoActivity extends BaseActivity implements RepeatDialog.RepeatDialogListener, ReminderDialog.OnReminderPickedListener,
         QuantityDialog.OnQuantityPickedListener, StepsItemTouchHelper.RecyclerItemTouchHelperListener {
 
-    static{
+    static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
     }
 
@@ -160,9 +156,9 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
         is24HourFormat = DateFormat.is24HourFormat(this);
 
         todoCheckBox.setOnClickListener(view -> {
-            if(todoCheckBox.isChecked()){
-                todoTitle.setPaintFlags(todoTitle.getPaintFlags()| Paint.STRIKE_THRU_TEXT_FLAG);
-            }else{
+            if (todoCheckBox.isChecked()) {
+                todoTitle.setPaintFlags(todoTitle.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            } else {
                 todoTitle.setPaintFlags(todoTitle.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
             }
             item.setCompleted(todoCheckBox.isChecked());
@@ -179,7 +175,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 ColorStateList colorStateList = null;
 
-                switch (i){
+                switch (i) {
                     case HIGH:
                         colorStateList = new ColorStateList(
                                 new int[][]{
@@ -259,7 +255,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
         });
 
         addStepEditText.setOnFocusChangeListener((view, hasFocus) -> {
-            if(!hasFocus){
+            if (!hasFocus) {
                 addStepButtonLayout.setVisibility(View.VISIBLE);
                 addStepEditLayout.setVisibility(View.GONE);
             }
@@ -294,7 +290,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
             if (theme == LIGHT_THEME) {
                 dateTextView.setTextColor(getResources().getColor(R.color.secondary_text));
                 dateImageView.setImageResource(R.drawable.ic_date_range_grey_600_24dp);
-            } else{
+            } else {
                 dateTextView.setTextColor(getResources().getColor(R.color.white));
                 dateImageView.setImageResource(R.drawable.ic_date_range_white_24dp);
             }
@@ -308,7 +304,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
             if (theme == LIGHT_THEME) {
                 reminderTextView.setTextColor(getResources().getColor(R.color.secondary_text));
                 reminderImageView.setImageResource(R.drawable.ic_add_alarm_grey_600_24dp);
-            } else{
+            } else {
                 reminderTextView.setTextColor(getResources().getColor(R.color.white));
                 reminderImageView.setImageResource(R.drawable.ic_add_alarm_white_24dp);
             }
@@ -323,7 +319,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
             if (theme == LIGHT_THEME) {
                 repeatTextView.setTextColor(getResources().getColor(R.color.secondary_text));
                 repeatImageView.setImageResource(R.drawable.ic_repeat_grey_600_24dp);
-            } else{
+            } else {
                 repeatTextView.setTextColor(getResources().getColor(R.color.white));
                 repeatImageView.setImageResource(R.drawable.ic_repeat_white_24dp);
             }
@@ -337,7 +333,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
             if (theme == LIGHT_THEME) {
                 quantityTextView.setTextColor(getResources().getColor(R.color.secondary_text));
                 quantityImageView.setImageResource(R.drawable.ic_clock_grey_600_24dp);
-            } else{
+            } else {
                 quantityTextView.setTextColor(getResources().getColor(R.color.white));
                 quantityImageView.setImageResource(R.drawable.ic_clock_white_24dp);
             }
@@ -389,7 +385,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
                     if (theme == LIGHT_THEME) {
                         dateTextView.setTextColor(getResources().getColor(R.color.color_primary));
                         dateImageView.setImageResource(R.drawable.ic_date_range_primary_24dp);
-                    } else{
+                    } else {
                         dateTextView.setTextColor(getResources().getColor(R.color.dark_color_primary));
                         dateImageView.setImageResource(R.drawable.ic_date_range_primary_dark_24dp);
                     }
@@ -425,9 +421,9 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
 
     private void showDurationDialog() {
         QuantityDialog dialog;
-        if(item.hasDuration()){
+        if (item.hasDuration()) {
             dialog = new QuantityDialog(item.getQuantityNumber(), item.getQuantityTextPosition());
-        }else dialog = new QuantityDialog(1, 0);
+        } else dialog = new QuantityDialog(1, 0);
         dialog.show(getSupportFragmentManager(), QuantityDialog.class.getSimpleName());
     }
 
@@ -442,7 +438,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
         if (theme == LIGHT_THEME) {
             repeatTextView.setTextColor(getResources().getColor(R.color.color_primary));
             repeatImageView.setImageResource(R.drawable.ic_repeat_primary_24dp);
-        } else{
+        } else {
             repeatTextView.setTextColor(getResources().getColor(R.color.dark_color_primary));
             repeatImageView.setImageResource(R.drawable.ic_repeat_primary_dark_24dp);
         }
@@ -530,7 +526,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
             quantityTextView.setTextColor(getResources().getColor(R.color.dark_color_primary));
         }
 
-        switch (textPosition){
+        switch (textPosition) {
             case 3:
                 if (theme == LIGHT_THEME) {
                     quantityImageView.setImageResource(R.drawable.ic_weight_primary_24dp);

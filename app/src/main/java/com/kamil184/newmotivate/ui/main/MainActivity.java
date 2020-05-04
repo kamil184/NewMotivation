@@ -11,9 +11,9 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.kamil184.newmotivate.R;
-import com.kamil184.newmotivate.ui.base.BaseActivity;
-import com.kamil184.newmotivate.ui.addTodo.AddToDoActivity;
 import com.kamil184.newmotivate.model.ToDoItem;
+import com.kamil184.newmotivate.ui.addTodo.AddToDoActivity;
+import com.kamil184.newmotivate.ui.base.BaseActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

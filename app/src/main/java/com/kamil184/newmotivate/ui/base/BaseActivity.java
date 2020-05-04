@@ -19,15 +19,13 @@ import com.kamil184.newmotivate.R;
 
 public class BaseActivity extends AppCompatActivity {
 
+    private static final long DOUBLE_CLICK_TO_EXIT_INTERVAL = 3000; // in milliseconds
     protected final String TAG = this.getClass().getSimpleName();
-    private long backPressedTime;
-
     protected SharedPreferences themePreferences;
     protected boolean theme;
 
     protected ProgressDialog progressDialog;
-
-    private static final long DOUBLE_CLICK_TO_EXIT_INTERVAL = 3000; // in milliseconds
+    private long backPressedTime;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,6 +50,7 @@ public class BaseActivity extends AppCompatActivity {
             progressDialog = null;
         }
     }
+
     public void hideKeyboard() {
         // Check if no view has focus:
         View view = this.getCurrentFocus();
@@ -113,6 +112,7 @@ public class BaseActivity extends AppCompatActivity {
         builder.setPositiveButton(R.string.ok, listener);
         builder.show();
     }
+
     public void attemptToExitIfRoot() {
         attemptToExitIfRoot(null);
     }

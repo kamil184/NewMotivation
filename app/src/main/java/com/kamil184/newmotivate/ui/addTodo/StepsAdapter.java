@@ -1,10 +1,8 @@
 package com.kamil184.newmotivate.ui.addTodo;
 
-import android.content.Context;
 import android.graphics.Paint;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,9 +40,9 @@ class StepsAdapter extends RecyclerView.Adapter<StepsAdapter.ViewHolder> {
         holder.editText.setText(step.getText());
 
         holder.checkBox.setOnClickListener(view1 -> {
-            if(holder.checkBox.isChecked()){
-                holder.editText.setPaintFlags(holder.editText.getPaintFlags()| Paint.STRIKE_THRU_TEXT_FLAG);
-            }else{
+            if (holder.checkBox.isChecked()) {
+                holder.editText.setPaintFlags(holder.editText.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            } else {
                 holder.editText.setPaintFlags(holder.editText.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
             }
             steps.get(position).setChecked(holder.checkBox.isChecked());
@@ -88,7 +86,7 @@ class StepsAdapter extends RecyclerView.Adapter<StepsAdapter.ViewHolder> {
 
     void addStep(Step step) {
         steps.add(step);
-        notifyItemInserted(steps.size()-1);
+        notifyItemInserted(steps.size() - 1);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

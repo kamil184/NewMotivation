@@ -4,6 +4,16 @@ public class Step {
     private boolean isChecked;
     private String text;
 
+    public Step(boolean isChecked, String text) {
+        this.isChecked = isChecked;
+        this.text = text;
+    }
+
+    public Step() {
+        isChecked = false;
+        text = "";
+    }
+
     public boolean isChecked() {
         return isChecked;
     }
@@ -18,15 +28,5 @@ public class Step {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public Step(boolean isChecked, String text) {
-        this.isChecked = isChecked;
-        this.text = text;
-    }
-
-    public Step() {
-        isChecked = false;
-        text = "";
     }
 }

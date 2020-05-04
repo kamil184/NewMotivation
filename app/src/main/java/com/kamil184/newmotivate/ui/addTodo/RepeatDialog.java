@@ -185,7 +185,7 @@ public class RepeatDialog extends DialogFragment implements StateCircularMateria
         for (int i = 0; i < 7; i++) {
             if (daysOfWeek.get(i).isClicked()) count++;
         }
-        return count>1;
+        return count > 1;
     }
 
     public interface RepeatDialogListener {

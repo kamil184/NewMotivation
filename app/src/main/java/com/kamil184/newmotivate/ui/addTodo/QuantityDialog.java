@@ -20,24 +20,23 @@ import butterknife.Unbinder;
 
 public class QuantityDialog extends DialogFragment {
 
-    private OnQuantityPickedListener listener;
-
     @BindView(R.id.quantity_number_picker)
     NumberPicker numberPicker;
     @BindView(R.id.quantity_text_picker)
     NumberPicker textPicker;
-    private Unbinder unbinder;
     int number, textPosition;
+    private OnQuantityPickedListener listener;
+    private Unbinder unbinder;
+
+    QuantityDialog(int number, int textPosition) {
+        this.number = number;
+        this.textPosition = textPosition;
+    }
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         listener = (OnQuantityPickedListener) context;
-    }
-
-    QuantityDialog(int number, int textPosition){
-        this.number = number;
-        this.textPosition = textPosition;
     }
 
     @NonNull
@@ -74,16 +73,17 @@ public class QuantityDialog extends DialogFragment {
         return builder.create();
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
+
     public interface OnQuantityPickedListener {
 
         void onQuantityPositiveClicked(int number, int textPosition);
 
         void onQuantityNegativeClicked();
 
-    }
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
     }
 }

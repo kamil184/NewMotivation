@@ -91,8 +91,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="?attr/colorSurface"
-                    android:paddingTop="@dimen/spacing_8"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/spacing_8">
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/steps_recycler"
@@ -101,7 +101,7 @@
                         android:overScrollMode="never"
                         tools:ignore="RtlSymmetry" />
 
-                    <include layout="@layout/add_step"/>
+                    <include layout="@layout/add_step" />
 
                 </LinearLayout>
 

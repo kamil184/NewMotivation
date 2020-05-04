@@ -64,7 +64,7 @@ public class StateCircularMaterialButton extends MaterialButton {
         });
     }
 
-    public void setListener(StateOnClickListener listener){
+    public void setListener(StateOnClickListener listener) {
         this.listener = listener;
     }
 
