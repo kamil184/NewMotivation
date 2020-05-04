@@ -1,0 +1,53 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="RtlSymmetry">
+
+    <RelativeLayout
+        android:id="@+id/step_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/red600">
+
+        <ImageView
+            android:id="@+id/step_delete_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/spacing_16"
+            app:srcCompat="@drawable/ic_delete_white_24dp" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/step_foreground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/spacing_24">
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/step_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent" />
+
+        <EditText
+            android:id="@+id/step_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:foregroundGravity="center"
+            android:hint="@string/step"
+            android:imeOptions="actionDone"
+            android:inputType="textAutoCorrect|textCapSentences"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</FrameLayout>

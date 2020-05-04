@@ -41,10 +41,11 @@
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#727272</color>
 
+    <color name="grey700">#616161</color>
     <color name="grey600">#757575</color>
+    <color name="grey500">#9E9E9E</color>
     <color name="grey300">#E0E0E0</color>
     <color name="blue600">#1E88E5</color>
     <color name="red600">#e53935</color>
     <color name="yellow600">#FDD835</color>
-
 </resources>

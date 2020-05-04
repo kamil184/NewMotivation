@@ -2,19 +2,17 @@ package com.kamil184.newmotivate.ui.addTodo;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
-import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -24,19 +22,26 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
-import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.android.material.snackbar.Snackbar;
 import com.kamil184.newmotivate.R;
+import com.kamil184.newmotivate.model.Repeat;
+import com.kamil184.newmotivate.model.Step;
 import com.kamil184.newmotivate.model.ToDoItem;
 import com.kamil184.newmotivate.ui.base.BaseActivity;
 import com.kamil184.newmotivate.util.DateUtils;
 
 import java.util.Calendar;
+import java.util.List;
 import java.util.TimeZone;
 
 import butterknife.BindView;
@@ -53,7 +58,8 @@ import static com.kamil184.newmotivate.util.Constants.THEME;
 import static com.kamil184.newmotivate.util.Constants.TODO_ITEM;
 import static com.kamil184.newmotivate.util.DateUtils.getTodayInMillis;
 
-public class AddToDoActivity extends BaseActivity implements RepeatDialog.RepeatDialogListener, ReminderDialog.OnReminderPickedListener, QuantityDialog.OnQuantityPickedListener {
+public class AddToDoActivity extends BaseActivity implements RepeatDialog.RepeatDialogListener, ReminderDialog.OnReminderPickedListener,
+        QuantityDialog.OnQuantityPickedListener, StepsItemTouchHelper.RecyclerItemTouchHelperListener {
 
     static{
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
@@ -61,6 +67,8 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
 
     ToDoItem item;
     boolean is24HourFormat;
+    List<Step> steps;
+    StepsAdapter stepsAdapter;
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -72,6 +80,16 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
     EditText noteEditText;
     @BindView(R.id.todo_title_spinner)
     Spinner spinner;
+    @BindView(R.id.add_step_button_layout)
+    LinearLayout addStepButtonLayout;
+    @BindView(R.id.add_step_edit_layout)
+    LinearLayout addStepEditLayout;
+    @BindView(R.id.add_step_edit_text)
+    EditText addStepEditText;
+    @BindView(R.id.add_step_check_box)
+    MaterialCheckBox addStepCheckBox;
+    @BindView(R.id.steps_recycler)
+    RecyclerView stepsRecycler;
 
     @BindView(R.id.reminder_image_view)
     ImageView reminderImageView;
@@ -133,7 +151,9 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        //TODO настроить лаяуты, если item имеет что-то, то ставим в TextView
+        //TODO настроить лаяуты, если item имеет что-то, то ставим в данные
+
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
         item = (ToDoItem) getIntent().getSerializableExtra(TODO_ITEM);
 
@@ -142,21 +162,21 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
         todoCheckBox.setOnClickListener(view -> {
             if(todoCheckBox.isChecked()){
                 todoTitle.setPaintFlags(todoTitle.getPaintFlags()| Paint.STRIKE_THRU_TEXT_FLAG);
-            }else todoTitle.setPaintFlags(todoTitle.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+            }else{
+                todoTitle.setPaintFlags(todoTitle.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+            }
+            item.setCompleted(todoCheckBox.isChecked());
         });
 
         String[] resArray = getResources().getStringArray(R.array.priority_array);
-        PrioritySpinnerAdapter adapter = new PrioritySpinnerAdapter(this,
+        PrioritySpinnerAdapter priorityAdapter = new PrioritySpinnerAdapter(this,
                 R.layout.priority_spinner_item, resArray);
-        spinner.setAdapter(adapter);
+        spinner.setAdapter(priorityAdapter);
         spinner.setSelection(item.getPriority());
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                int tintColor = 0;
-
                 ColorStateList colorStateList = null;
 
                 switch (i){
@@ -190,9 +210,16 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
                     case NO:
                         int checkedColor;
                         if (theme == DARK_THEME) {
-                            checkedColor = getResources().getColor(R.color.dark_color_primary);
+                            checkedColor = getResources().getColor(R.color.dark_color_secondary);
                         } else {
-                            checkedColor = getResources().getColor(R.color.color_primary);
+                            checkedColor = getResources().getColor(R.color.color_secondary);
+                        }
+
+                        int unCheckedColor;
+                        if (theme == DARK_THEME) {
+                            unCheckedColor = getResources().getColor(R.color.grey500);
+                        } else {
+                            unCheckedColor = getResources().getColor(R.color.grey600);
                         }
 
                         colorStateList = new ColorStateList(
@@ -200,7 +227,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
                                         new int[]{android.R.attr.state_checked},
                                         new int[]{}
                                 },
-                                new int[]{checkedColor, getResources().getColor(R.color.grey600)}
+                                new int[]{checkedColor, unCheckedColor}
                         );
                         break;
                 }
@@ -213,6 +240,36 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
+        });
+
+        stepsRecycler.setLayoutManager(new LinearLayoutManager(this));
+        steps = item.getSteps();
+        stepsAdapter = new StepsAdapter(steps);
+        stepsRecycler.setAdapter(stepsAdapter);
+        stepsRecycler.setItemAnimator(new DefaultItemAnimator());
+
+        ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new StepsItemTouchHelper(0, ItemTouchHelper.LEFT, this);
+        new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(stepsRecycler);
+
+        addStepButtonLayout.setOnClickListener(view -> {
+            addStepButtonLayout.setVisibility(View.GONE);
+            addStepEditLayout.setVisibility(View.VISIBLE);
+            addStepEditText.requestFocus();
+            imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+        });
+
+        addStepEditText.setOnFocusChangeListener((view, hasFocus) -> {
+            if(!hasFocus){
+                addStepButtonLayout.setVisibility(View.VISIBLE);
+                addStepEditLayout.setVisibility(View.GONE);
+            }
+        });
+
+        addStepEditText.setOnEditorActionListener((textView, i, keyEvent) -> {
+            stepsAdapter.addStep(new Step(false, addStepEditText.getText().toString()));
+            addStepEditText.setText("");
+            addStepEditText.requestFocus();
+            return true;
         });
 
         dateLayout.setOnClickListener(view -> {
@@ -375,7 +432,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
     }
 
     @Override
-    public void onRepeatPositiveClicked(ToDoItem.Repeat repeat) {
+    public void onRepeatPositiveClicked(Repeat repeat) {
         repeatTextView.setText(repeat.getText());
         boolean[] isDaysChecked = repeat.getDays();
         repeatDelete.setVisibility(View.VISIBLE);
@@ -514,5 +571,22 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
     @Override
     public void onQuantityNegativeClicked() {
 
+    }
+
+    @Override
+    public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction, int position) {
+        if (viewHolder instanceof StepsAdapter.ViewHolder) {
+            final Step deletedItem = steps.get(viewHolder.getAdapterPosition());
+            final int deletedIndex = viewHolder.getAdapterPosition();
+
+            stepsAdapter.removeItem(viewHolder.getAdapterPosition());
+
+            Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),
+                    "Step deleted", Snackbar.LENGTH_LONG);
+            snackbar.setAction("UNDO", view -> {
+                stepsAdapter.restoreItem(deletedItem, deletedIndex);
+            });
+            snackbar.show();
+        }
     }
 }

@@ -10,5 +10,5 @@
     <dimen name="spacing_4">4dp</dimen>
     <dimen name="circle_button_size">56dp</dimen>
     <dimen name="stroke_size">1dp</dimen>
-
+    <dimen name="thumbnail">90dp</dimen>
 </resources>

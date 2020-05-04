@@ -87,6 +87,7 @@ attr actionTextColorAlpha
 attr actionViewClass
 attr activityChooserViewStyle
 attr addAlarmDrawable
+attr addDrawable
 attr alertDialogButtonGroupStyle
 attr alertDialogCenterButtons
 attr alertDialogStyle
@@ -746,6 +747,7 @@ attr trackHeight
 attr trackTint
 attr trackTintMode
 attr ttcIndex
+attr uncheckable
 attr useCompatPadding
 attr useMaterialThemeColors
 attr verticalOffset
@@ -884,7 +886,9 @@ color gray
 color gray_dark
 color gray_light
 color grey300
+color grey500
 color grey600
+color grey700
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color material_blue_grey_800
@@ -1342,6 +1346,7 @@ dimen spacing_6
 dimen spacing_8
 dimen stroke_size
 dimen test_mtrl_calendar_day_cornerSize
+dimen thumbnail
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -1456,6 +1461,8 @@ drawable ic_add_alarm_grey_600_24dp
 drawable ic_add_alarm_primary_24dp
 drawable ic_add_alarm_primary_dark_24dp
 drawable ic_add_alarm_white_24dp
+drawable ic_add_primary_24dp
+drawable ic_add_primary_dark_24dp
 drawable ic_add_white_24dp
 drawable ic_arrow_blue_600_24dp
 drawable ic_arrow_grey_600_24dp
@@ -1589,6 +1596,10 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_step_button_layout
+id add_step_check_box
+id add_step_edit_layout
+id add_step_edit_text
 id alertTitle
 id all
 id always
@@ -1642,7 +1653,6 @@ id dimensions
 id direct
 id disableHome
 id dropdown_menu
-id editTextParentLinearLayout
 id edit_query
 id end
 id enterAlways
@@ -1804,6 +1814,12 @@ id src_in
 id src_over
 id standard
 id start
+id step_background
+id step_check_box
+id step_delete_icon
+id step_edit_text
+id step_foreground
+id steps_recycler
 id stretch
 id submenuarrow
 id submit_area
@@ -1927,6 +1943,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_to_do
 layout activity_main
+layout add_step
 layout base_toolbar
 layout content_main
 layout custom_dialog
@@ -1985,6 +2002,7 @@ layout repeat_dialog
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout step_item
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_design_checkbox
@@ -2031,6 +2049,7 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string about
+string add_step
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -2110,6 +2129,7 @@ string search_menu_title
 string select_a_date
 string snooze
 string status_bar_notification_info_overflow
+string step
 string time
 string title
 string today
@@ -2832,6 +2852,7 @@ styleable BottomNavigationView backgroundTint elevation itemBackground itemHoriz
 styleable BottomSheetBehavior_Layout android_elevation backgroundTint behavior_expandedOffset behavior_fitToContents behavior_halfExpandedRatio behavior_hideable behavior_peekHeight behavior_saveFlags behavior_skipCollapsed shapeAppearance shapeAppearanceOverlay
 styleable ButtonBarLayout allowStacking
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
+styleable CheckBox uncheckable
 styleable Chip android_textAppearance android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical selectionRequired singleLine singleSelection
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleEnabled toolbarId
@@ -2855,7 +2876,7 @@ styleable FontFamilyFont android_font android_fontWeight android_fontStyle andro
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
-styleable ImageButtons addAlarmDrawable clearDrawable clockDrawable dateRangeDrawable deleteDrawable repeatDrawable
+styleable ImageButtons addAlarmDrawable addDrawable clearDrawable clockDrawable dateRangeDrawable deleteDrawable repeatDrawable
 styleable Insets paddingBottomSystemWindowInsets paddingLeftSystemWindowInsets paddingRightSystemWindowInsets
 styleable LinearConstraintLayout android_orientation
 styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers

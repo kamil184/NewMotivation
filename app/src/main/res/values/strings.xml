@@ -35,6 +35,8 @@
     <string name="repeat_every">Repeat every...</string>
     <string name="date">Date</string>
     <string name="time">Time</string>
+    <string name="add_step">Add step</string>
+    <string name="step">Step</string>
 
     <string-array name="repeat_list">
         <item>Days</item>

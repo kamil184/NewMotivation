@@ -16,7 +16,7 @@ import androidx.fragment.app.DialogFragment;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.kamil184.newmotivate.R;
-import com.kamil184.newmotivate.model.ToDoItem.Repeat;
+import com.kamil184.newmotivate.model.Repeat;
 import com.kamil184.newmotivate.util.Constants;
 import com.kamil184.newmotivate.util.StateCircularMaterialButton;
 

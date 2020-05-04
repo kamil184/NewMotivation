@@ -54,6 +54,8 @@
         <item name="addAlarmDrawable">@drawable/ic_add_alarm_grey_600_24dp</item>
         <item name="repeatDrawable">@drawable/ic_repeat_grey_600_24dp</item>
         <item name="clockDrawable">@drawable/ic_clock_grey_600_24dp</item>
+        <item name="addDrawable">@drawable/ic_add_primary_24dp</item>
+        <item name="uncheckable">@color/grey300</item>
     </style>
 
     <style name="CustomStyle.DarkTheme" parent="Theme.MaterialComponents">
@@ -107,6 +109,7 @@
         <item name="addAlarmDrawable">@drawable/ic_add_alarm_white_24dp</item>
         <item name="repeatDrawable">@drawable/ic_repeat_white_24dp</item>
         <item name="clockDrawable">@drawable/ic_clock_white_24dp</item>
-
+        <item name="addDrawable">@drawable/ic_add_primary_dark_24dp</item>
+        <item name="uncheckable">@color/grey700</item>
     </style>
 </resources>

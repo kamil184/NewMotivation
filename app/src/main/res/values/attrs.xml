@@ -8,6 +8,10 @@
         <attr name="setThemeDrawable" format="reference" />
     </declare-styleable>
 
+    <declare-styleable name="CheckBox">
+        <attr name="uncheckable" format="color|reference" />
+    </declare-styleable>
+
     <declare-styleable name="ImageButtons">
         <attr name="deleteDrawable" format="reference" />
         <attr name="clearDrawable" format="reference" />
@@ -15,6 +19,7 @@
         <attr name="addAlarmDrawable" format="reference" />
         <attr name="repeatDrawable" format="reference" />
         <attr name="clockDrawable" format="reference" />
+        <attr name="addDrawable" format="reference" />
     </declare-styleable>
 
 </resources>
