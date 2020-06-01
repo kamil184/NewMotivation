@@ -43,18 +43,18 @@ import java.util.TimeZone;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.kamil184.newmotivate.model.ToDoItem.HIGH;
-import static com.kamil184.newmotivate.model.ToDoItem.LOW;
-import static com.kamil184.newmotivate.model.ToDoItem.MEDIUM;
-import static com.kamil184.newmotivate.model.ToDoItem.NO;
 import static com.kamil184.newmotivate.util.Constants.APP_PREFERENCES;
 import static com.kamil184.newmotivate.util.Constants.DARK_THEME;
+import static com.kamil184.newmotivate.util.Constants.HIGH;
 import static com.kamil184.newmotivate.util.Constants.LIGHT_THEME;
+import static com.kamil184.newmotivate.util.Constants.LOW;
+import static com.kamil184.newmotivate.util.Constants.MEDIUM;
+import static com.kamil184.newmotivate.util.Constants.NO;
 import static com.kamil184.newmotivate.util.Constants.THEME;
 import static com.kamil184.newmotivate.util.Constants.TODO_ITEM;
 import static com.kamil184.newmotivate.util.DateUtils.getTodayInMillis;
 
-public class AddToDoActivity extends BaseActivity implements RepeatDialog.RepeatDialogListener, ReminderDialog.OnReminderPickedListener,
+public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.RepeatCustomDialogListener, RepeatDialog.RepeatDialogListener, ReminderDialog.OnReminderPickedListener,
         QuantityDialog.OnQuantityPickedListener, StepsItemTouchHelper.RecyclerItemTouchHelperListener {
 
     static {
@@ -324,6 +324,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
                 repeatImageView.setImageResource(R.drawable.ic_repeat_white_24dp);
             }
 
+            item.setRepeatSelected(R.id.repeat_no);
             item.setRepeat(null);
         });
 
@@ -411,11 +412,17 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
         dialog.show(getSupportFragmentManager(), ReminderDialog.class.getSimpleName());
     }
 
-    private void showRepeatDialog() {
-        RepeatDialog dialog = new RepeatDialog(item.getRepeat());
+    private void showRepeatCustomDialog() {
+        RepeatCustomDialog dialog = new RepeatCustomDialog(item.getRepeat());
         Bundle args = new Bundle();
         args.putBoolean(THEME, theme);
         dialog.setArguments(args);
+        dialog.show(getSupportFragmentManager(), RepeatCustomDialog.class.getSimpleName());
+    }
+
+    private void showRepeatDialog() {
+        RepeatDialog dialog = new RepeatDialog(item.getRepeatSelected());
+        Log.d(TAG, "item.getRepeatSelected: " + item.getRepeatSelected());
         dialog.show(getSupportFragmentManager(), RepeatDialog.class.getSimpleName());
     }
 
@@ -428,7 +435,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
     }
 
     @Override
-    public void onRepeatPositiveClicked(Repeat repeat) {
+    public void onRepeatCustomPositiveClicked(Repeat repeat) {
         repeatTextView.setText(repeat.getText());
         boolean[] isDaysChecked = repeat.getDays();
         repeatDelete.setVisibility(View.VISIBLE);
@@ -443,6 +450,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
             repeatImageView.setImageResource(R.drawable.ic_repeat_primary_dark_24dp);
         }
 
+        //Don't touch
         boolean isDaily = false;
         if (repeat.getDays().length != 0) {
             isDaily = repeat.getCount() == 1;
@@ -472,11 +480,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
 
             repeatSecondTextView.setText(stringBuilder.toString());
         }
-    }
-
-    @Override
-    public void onRepeatNegativeClicked() {
-
+        if (isDaily) item.setRepeatSelected(R.id.repeat_daily);
     }
 
     @Override
@@ -578,11 +582,41 @@ public class AddToDoActivity extends BaseActivity implements RepeatDialog.Repeat
             stepsAdapter.removeItem(viewHolder.getAdapterPosition());
 
             Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),
-                    "Step deleted", Snackbar.LENGTH_LONG);
-            snackbar.setAction("UNDO", view -> {
+                    getResources().getString(R.string.step_deleted), Snackbar.LENGTH_LONG);
+
+            snackbar.setAction(getResources().getString(R.string.undo), view -> {
                 stepsAdapter.restoreItem(deletedItem, deletedIndex);
             });
             snackbar.show();
+        }
+    }
+
+    @Override
+    public void onRepeatPositiveClicked(int selected) {
+        item.setRepeatSelected(selected);
+        Repeat repeat;
+        switch (selected) {
+            case R.id.repeat_no:
+                repeatDelete.callOnClick();
+                break;
+
+            case R.id.repeat_daily:
+                repeat = Repeat.DAY;
+                repeat.setCount(1);
+                onRepeatCustomPositiveClicked(repeat);
+                break;
+
+            case R.id.repeat_every_weekday:
+                boolean[] days = {false, true, true, true, true, true, false};
+                repeat = Repeat.WEEK;
+                repeat.setCount(1);
+                repeat.setDays(DateUtils.getDaysWithShift(days));
+                onRepeatCustomPositiveClicked(repeat);
+                break;
+
+            case R.id.repeat_custom:
+                showRepeatCustomDialog();
+                break;
         }
     }
 }

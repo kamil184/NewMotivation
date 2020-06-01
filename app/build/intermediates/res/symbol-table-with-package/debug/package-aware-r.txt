@@ -1343,6 +1343,7 @@ dimen spacing_30
 dimen spacing_36
 dimen spacing_4
 dimen spacing_6
+dimen spacing_60
 dimen spacing_8
 dimen stroke_size
 dimen test_mtrl_calendar_day_cornerSize
@@ -1760,11 +1761,16 @@ id reminder_delete
 id reminder_image_view
 id reminder_layout
 id reminder_text_view
+id repeat_custom
+id repeat_daily
 id repeat_delete
 id repeat_dialog_edit_text
 id repeat_dialog_spinner
+id repeat_every_weekday
 id repeat_image_view
 id repeat_layout
+id repeat_no
+id repeat_radio_group
 id repeat_second_text_view
 id repeat_text_view
 id right
@@ -1999,6 +2005,7 @@ layout notification_template_part_time
 layout priority_spinner_item
 layout quantity_dialog
 layout repeat_dialog
+layout repeat_dialog_custom
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -2060,6 +2067,8 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string custom
+string daily
 string date
 string date_error_check_again
 string date_reminder_default
@@ -2069,6 +2078,7 @@ string edit_btn
 string empty_field_err
 string error
 string error_icon_content_description
+string every_weekday
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
@@ -2111,6 +2121,7 @@ string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string next_step
+string no_repeat
 string no_to_dos
 string ok
 string password_toggle_content_description
@@ -2130,11 +2141,13 @@ string select_a_date
 string snooze
 string status_bar_notification_info_overflow
 string step
+string step_deleted
 string time
 string title
 string today
 string todo_error
 string tomorrow
+string undo
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

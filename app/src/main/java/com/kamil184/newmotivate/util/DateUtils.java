@@ -1,7 +1,9 @@
 package com.kamil184.newmotivate.util;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class DateUtils {
 
@@ -45,5 +47,15 @@ public class DateUtils {
         calendar.clear();
         calendar.set(year, month, day);
         return calendar.getTimeInMillis();
+    }
+
+    public static boolean[] getDaysWithShift(boolean[] days){
+        Calendar calendar = new GregorianCalendar();
+        int shift = calendar.getFirstDayOfWeek() - 1;
+
+        boolean[] finalDays = Arrays.copyOf(days, days.length);
+        System.arraycopy(days, shift, days, 0, days.length - shift);
+        System.arraycopy(finalDays, 0, days, days.length - shift, shift);
+        return finalDays;
     }
 }

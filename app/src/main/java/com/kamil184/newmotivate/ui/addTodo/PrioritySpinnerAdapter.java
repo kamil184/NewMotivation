@@ -10,10 +10,10 @@ import android.widget.TextView;
 
 import com.kamil184.newmotivate.R;
 
-import static com.kamil184.newmotivate.model.ToDoItem.HIGH;
-import static com.kamil184.newmotivate.model.ToDoItem.LOW;
-import static com.kamil184.newmotivate.model.ToDoItem.MEDIUM;
-import static com.kamil184.newmotivate.model.ToDoItem.NO;
+import static com.kamil184.newmotivate.util.Constants.HIGH;
+import static com.kamil184.newmotivate.util.Constants.LOW;
+import static com.kamil184.newmotivate.util.Constants.MEDIUM;
+import static com.kamil184.newmotivate.util.Constants.NO;
 
 public class PrioritySpinnerAdapter extends ArrayAdapter<String> {
 

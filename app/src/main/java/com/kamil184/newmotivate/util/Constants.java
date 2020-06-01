@@ -7,6 +7,12 @@ public class Constants {
     public static final boolean LIGHT_THEME = false;
     public static final String TODO_ITEM = "to do item";
 
+    //PRIORITY
+    public static final int HIGH = 0;
+    public static final int MEDIUM = 1;
+    public static final int LOW = 2;
+    public static final int NO = 3;
+
     public static final byte IS_DATE = 0;
     public static final byte IS_TIME = 1;
 }

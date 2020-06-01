@@ -1,98 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/repeat_radio_group"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/spacing_16"
+    android:paddingTop="@dimen/spacing_16"
+    android:paddingEnd="@dimen/spacing_16"
+    android:paddingBottom="@dimen/spacing_8">
 
-    <LinearLayout
+    <RadioButton
+        android:id="@+id/repeat_no"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing_30"
-        android:layout_marginTop="@dimen/spacing_30"
-        android:layout_marginEnd="@dimen/spacing_30"
-        android:orientation="horizontal">
+        android:background="?attr/selectableItemBackground"
+        android:paddingStart="@dimen/spacing_16"
+        android:text="@string/no_repeat"
+        android:textSize="16sp"
+        tools:ignore="RtlSymmetry" />
 
-        <EditText
-            android:id="@+id/repeat_dialog_edit_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_30"
-            android:gravity="center"
-            android:inputType="number"
-            android:maxLength="3"
-            android:minWidth="@dimen/spacing_30"
-            android:text="1" />
-
-        <Spinner
-            android:id="@+id/repeat_dialog_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_30"
-            android:entries="@array/repeat_list" />
-    </LinearLayout>
-
-    <GridLayout
-        android:layout_width="wrap_content"
+    <RadioButton
+        android:id="@+id/repeat_daily"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="@dimen/spacing_8"
-        android:columnCount="4">
+        android:background="?attr/selectableItemBackground"
+        android:paddingStart="@dimen/spacing_16"
+        android:text="@string/daily"
+        android:textSize="16sp"
+        tools:ignore="RtlSymmetry" />
 
-        <com.kamil184.newmotivate.util.StateCircularMaterialButton
-            android:id="@+id/monday"
-            style="@style/CustomStyle.Button.Circle.Outlined"
-            android:layout_width="@dimen/circle_button_size"
-            android:layout_height="@dimen/circle_button_size"
-            android:layout_margin="@dimen/spacing_8"
-            android:textColor="?android:textColorSecondary" />
+    <RadioButton
+        android:id="@+id/repeat_every_weekday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:paddingStart="@dimen/spacing_16"
+        android:text="@string/every_weekday"
+        android:textSize="16sp"
+        tools:ignore="RtlSymmetry" />
 
-        <com.kamil184.newmotivate.util.StateCircularMaterialButton
-            android:id="@+id/tuesday"
-            style="@style/CustomStyle.Button.Circle.Outlined"
-            android:layout_width="@dimen/circle_button_size"
-            android:layout_height="@dimen/circle_button_size"
-            android:layout_margin="@dimen/spacing_8"
-            android:textColor="?android:textColorSecondary" />
-
-        <com.kamil184.newmotivate.util.StateCircularMaterialButton
-            android:id="@+id/wednesday"
-            style="@style/CustomStyle.Button.Circle.Outlined"
-            android:layout_width="@dimen/circle_button_size"
-            android:layout_height="@dimen/circle_button_size"
-            android:layout_margin="@dimen/spacing_8"
-            android:textColor="?android:textColorSecondary" />
-
-        <com.kamil184.newmotivate.util.StateCircularMaterialButton
-            android:id="@+id/thursday"
-            style="@style/CustomStyle.Button.Circle.Outlined"
-            android:layout_width="@dimen/circle_button_size"
-            android:layout_height="@dimen/circle_button_size"
-            android:layout_margin="@dimen/spacing_8"
-            android:textColor="?android:textColorSecondary" />
-
-        <com.kamil184.newmotivate.util.StateCircularMaterialButton
-            android:id="@+id/friday"
-            style="@style/CustomStyle.Button.Circle.Outlined"
-            android:layout_width="@dimen/circle_button_size"
-            android:layout_height="@dimen/circle_button_size"
-            android:layout_margin="@dimen/spacing_8"
-            android:textColor="?android:textColorSecondary" />
-
-        <com.kamil184.newmotivate.util.StateCircularMaterialButton
-            android:id="@+id/saturday"
-            style="@style/CustomStyle.Button.Circle.Outlined"
-            android:layout_width="@dimen/circle_button_size"
-            android:layout_height="@dimen/circle_button_size"
-            android:layout_margin="@dimen/spacing_8"
-            android:textColor="?android:textColorSecondary" />
-
-        <com.kamil184.newmotivate.util.StateCircularMaterialButton
-            android:id="@+id/sunday"
-            style="@style/CustomStyle.Button.Circle.Outlined"
-            android:layout_width="@dimen/circle_button_size"
-            android:layout_height="@dimen/circle_button_size"
-            android:layout_margin="@dimen/spacing_8"
-            android:textColor="?android:textColorSecondary" />
-
-    </GridLayout>
-</LinearLayout>
+    <RadioButton
+        android:id="@+id/repeat_custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:paddingStart="@dimen/spacing_16"
+        android:text="@string/custom"
+        android:textSize="16sp"
+        tools:ignore="RtlSymmetry" />
+</RadioGroup>

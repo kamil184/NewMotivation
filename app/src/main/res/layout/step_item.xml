@@ -36,13 +36,13 @@
             android:id="@+id/step_check_box"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent" />
+            android:background="@null" />
 
         <EditText
             android:id="@+id/step_edit_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/transparent"
+            android:background="@null"
             android:foregroundGravity="center"
             android:hint="@string/step"
             android:imeOptions="actionDone"
