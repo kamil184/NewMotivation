@@ -83,8 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/colorSurface"
-                android:orientation="vertical"
-                android:paddingTop="@dimen/spacing_8">
+                android:orientation="vertical">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/steps_recycler"
@@ -105,7 +104,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/spacing_16"
                 android:layout_marginTop="@dimen/spacing_30"
-                android:layout_marginRight="@dimen/spacing_16">
+                android:layout_marginRight="@dimen/spacing_16"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.MaterialCardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -330,7 +330,8 @@
                 android:layout_marginLeft="@dimen/spacing_16"
                 android:layout_marginTop="@dimen/spacing_30"
                 android:layout_marginRight="@dimen/spacing_16"
-                android:layout_marginBottom="@dimen/spacing_36">
+                android:layout_marginBottom="@dimen/spacing_36"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.MaterialCardView">
 
                 <EditText
                     android:id="@+id/note_edit_text"

@@ -3,6 +3,7 @@ package com.kamil184.newmotivate.ui.addTodo;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Paint;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -52,10 +53,11 @@ import static com.kamil184.newmotivate.util.Constants.MEDIUM;
 import static com.kamil184.newmotivate.util.Constants.NO;
 import static com.kamil184.newmotivate.util.Constants.THEME;
 import static com.kamil184.newmotivate.util.Constants.TODO_ITEM;
+import static com.kamil184.newmotivate.util.DateUtils.getFormattedDate;
 import static com.kamil184.newmotivate.util.DateUtils.getTodayInMillis;
 
 public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.RepeatCustomDialogListener, RepeatDialog.RepeatDialogListener, ReminderDialog.OnReminderPickedListener,
-        QuantityDialog.OnQuantityPickedListener, StepsItemTouchHelper.RecyclerItemTouchHelperListener {
+        DatePickerDialog.OnDatePickedListener, QuantityDialog.OnQuantityPickedListener, StepsItemTouchHelper.RecyclerItemTouchHelperListener {
 
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
@@ -269,7 +271,11 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
         });
 
         dateLayout.setOnClickListener(view -> {
-            showDateDialog();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                showMaterialDateDialog();
+            } else {
+                showDateDialog();
+            }
         });
 
         reminderLayout.setOnClickListener(view -> {
@@ -343,7 +349,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
         });
     }
 
-    private void showDateDialog() {
+    private void showMaterialDateDialog() {
         Calendar itemCalendar = item.getCalendar();
         int year = itemCalendar.get(Calendar.YEAR);
         int month = itemCalendar.get(Calendar.MONTH);
@@ -401,6 +407,16 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
 
             //TODO ВОТ ПРЯМ СЕРЬЕЗНО!!!!!
         });
+    }
+
+    private void showDateDialog() {
+        Calendar itemCalendar = item.getCalendar();
+        int year = itemCalendar.get(Calendar.YEAR);
+        int month = itemCalendar.get(Calendar.MONTH);
+        int day = itemCalendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog dialog = new DatePickerDialog(year, month, day);
+        dialog.show(getSupportFragmentManager(), ReminderDialog.class.getSimpleName());
     }
 
     private void showReminderDialog() {
@@ -495,7 +511,6 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
             reminderTextView.setTextColor(getResources().getColor(R.color.dark_color_primary));
             reminderImageView.setImageResource(R.drawable.ic_add_alarm_primary_dark_24dp);
         }
-
 
         Calendar itemCalendar = item.getCalendar();
         itemCalendar.set(Calendar.HOUR_OF_DAY, hour);
@@ -618,5 +633,38 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
                 showRepeatCustomDialog();
                 break;
         }
+    }
+
+    @Override
+    public void onDatePositiveClicked(int year, int month, int day) {
+
+        String string = DateUtils.getFormattedDate(year, month, day);
+        if (string.equals("Today")) {
+            dateTextView.setText(getString(R.string.today));
+        } else if (string.equals("Tomorrow")) {
+            dateTextView.setText(getString(R.string.tomorrow));
+        } else {
+            dateTextView.setText(string);
+        }
+
+        if (theme == LIGHT_THEME) {
+            dateTextView.setTextColor(getResources().getColor(R.color.color_primary));
+            dateImageView.setImageResource(R.drawable.ic_date_range_primary_24dp);
+        } else {
+            dateTextView.setTextColor(getResources().getColor(R.color.dark_color_primary));
+            dateImageView.setImageResource(R.drawable.ic_date_range_primary_dark_24dp);
+        }
+        dateDelete.setVisibility(View.VISIBLE);
+
+        Calendar itemCalendar = item.getCalendar();
+        itemCalendar.set(Calendar.YEAR, year);
+        itemCalendar.set(Calendar.MONTH, month);
+        itemCalendar.set(Calendar.DAY_OF_MONTH, day);
+        item.setHasDate(true);
+    }
+
+    @Override
+    public void onDateNegativeClicked() {
+
     }
 }

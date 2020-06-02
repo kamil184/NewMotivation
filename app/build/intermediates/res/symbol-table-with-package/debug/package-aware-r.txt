@@ -1640,6 +1640,7 @@ id cut
 id date_delete
 id date_image_view
 id date_layout
+id date_picker
 id date_picker_actions
 id date_text_view
 id decor_content_parent
@@ -1953,6 +1954,7 @@ layout add_step
 layout base_toolbar
 layout content_main
 layout custom_dialog
+layout date_picker_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -2372,9 +2374,10 @@ style CardView_Dark
 style CardView_Light
 style CustomStyle_Button_Circle_Outlined
 style CustomStyle_Button_Circle_ShapeAppearance
-style CustomStyle_DarkMaterialCalendar
 style CustomStyle_DarkTheme
 style CustomStyle_LightTheme
+style CustomStyle_MaterialAlertDialog
+style CustomStyle_MaterialCalendar
 style EmptyTheme
 style FloatingLabelTextAppearance
 style LightPopup
@@ -2425,6 +2428,7 @@ style ShapeAppearance_MaterialComponents_MediumComponent
 style ShapeAppearance_MaterialComponents_SmallComponent
 style ShapeAppearance_MaterialComponents_Test
 style ShapeAppearance_MaterialComponents_Tooltip
+style ShapeAppearance_MyApp_MaterialDialog
 style ShapeAppearance_MyTheme_LargeComponent
 style ShapeAppearance_MyTheme_MediumComponent
 style ShapeAppearance_MyTheme_SmallComponent
@@ -2441,6 +2445,7 @@ style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day
 style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen
 style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year
 style ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox
+style ShapeAppearanceOverlay_MyApp_MaterialCardView
 style ShapeAppearanceOverlay_TopLeftCut
 style ShapeAppearanceOverlay_TopRightDifferentCornerSize
 style Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day

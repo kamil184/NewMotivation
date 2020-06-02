@@ -1,7 +1,10 @@
 <resources>
 
-    <style name="CustomStyle.DarkMaterialCalendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
-        <item name="android:color">@color/white</item>
+    <style name="CustomStyle.MaterialCalendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="shapeAppearance">@style/ShapeAppearance.MyTheme.MediumComponent</item>
+    </style>
+    <style name="CustomStyle.MaterialAlertDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="shapeAppearance">@style/ShapeAppearance.MyApp.MaterialDialog</item>
     </style>
 
     <style name="CustomStyle.Button.Circle.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton.Icon">

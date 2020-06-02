@@ -124,6 +124,10 @@
         "source": "C:\\Users\\tukta\\.gradle\\caches\\transforms-2\\files-2.1\\2014148b24e65696114617c9c8baf138\\material-1.2.0-alpha03\\res\\color\\mtrl_btn_stroke_color_selector.xml"
     },
     {
+        "merged": "C:\\Users\\tukta\\AndroidStudioProjects\\NewMotivate\\app\\build\\intermediates\\res\\merged\\debug\\layout_date_picker_dialog.xml.flat",
+        "source": "C:\\Users\\tukta\\AndroidStudioProjects\\NewMotivate\\app\\src\\main\\res\\layout\\date_picker_dialog.xml"
+    },
+    {
         "merged": "C:\\Users\\tukta\\AndroidStudioProjects\\NewMotivate\\app\\build\\intermediates\\res\\merged\\debug\\color_material_slider_active_tick_marks_color.xml.flat",
         "source": "C:\\Users\\tukta\\.gradle\\caches\\transforms-2\\files-2.1\\2014148b24e65696114617c9c8baf138\\material-1.2.0-alpha03\\res\\color\\material_slider_active_tick_marks_color.xml"
     },
