@@ -622,10 +622,9 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
                 break;
 
             case R.id.repeat_every_weekday:
-                boolean[] days = {false, true, true, true, true, true, false};
                 repeat = Repeat.WEEK;
                 repeat.setCount(1);
-                repeat.setDays(DateUtils.getDaysWithShift(days));
+                repeat.setDays(DateUtils.getWeekDays());
                 onRepeatCustomPositiveClicked(repeat);
                 break;
 

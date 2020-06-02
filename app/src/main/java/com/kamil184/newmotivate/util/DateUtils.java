@@ -49,13 +49,28 @@ public class DateUtils {
         return calendar.getTimeInMillis();
     }
 
-    public static boolean[] getDaysWithShift(boolean[] days){
+    public static boolean[] getWeekDays(){
         Calendar calendar = new GregorianCalendar();
         int shift = calendar.getFirstDayOfWeek() - 1;
 
-        boolean[] finalDays = Arrays.copyOf(days, days.length);
-        System.arraycopy(days, shift, days, 0, days.length - shift);
-        System.arraycopy(finalDays, 0, days, days.length - shift, shift);
+        boolean[] days = {false, true, true, true, true, true, false};
+        boolean[] finalDays = {false, true, true, true, true, true, false};
+
+        int lastI = 7;
+        for (int i = 0; i < 7; i++) {
+            if (i + shift < 7) {
+                finalDays[i] = days[i + shift];
+            } else {
+                lastI = i;
+                break;
+            }
+        }
+
+        int temp = 0;
+        for (int i = lastI; i < 7; i++) {
+            finalDays[i] = days[temp++];
+        }
+
         return finalDays;
     }
 }
