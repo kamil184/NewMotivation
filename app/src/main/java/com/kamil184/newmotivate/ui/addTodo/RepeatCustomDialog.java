@@ -173,6 +173,7 @@ public class RepeatCustomDialog extends DialogFragment implements StateCircularM
                 })
                 .setNegativeButton(R.string.cancel, (dialog, id) -> {
                     RepeatCustomDialog.this.getDialog().cancel();
+                    listener.onRepeatCustomNegativeClicked();
                 });
         return builder.create();
     }
@@ -194,5 +195,7 @@ public class RepeatCustomDialog extends DialogFragment implements StateCircularM
 
     public interface RepeatCustomDialogListener {
         void onRepeatCustomPositiveClicked(Repeat repeat);
+
+        void onRepeatCustomNegativeClicked();
     }
 }

@@ -26,16 +26,12 @@ public class PrioritySpinnerAdapter extends ArrayAdapter<String> {
 
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
-        return getCustomView(position, convertView, parent);
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View item = inflater.inflate(R.layout.priority_spinner_item, parent, false);
-        item.findViewById(R.id.priority_spinner_item_text).setVisibility(View.GONE);
-        ImageView icon = (ImageView) item.findViewById(R.id.priority_spinner_item_image);
+        TextView label = (TextView) item.findViewById(R.id.priority_spinner_item_text);
+        label.setText(resArray[position]);
 
+        ImageView icon = (ImageView) item.findViewById(R.id.priority_spinner_item_image);
         switch (position) {
             case HIGH:
                 icon.setImageResource(R.drawable.ic_arrow_red_600_24dp);
@@ -56,13 +52,13 @@ public class PrioritySpinnerAdapter extends ArrayAdapter<String> {
         return item;
     }
 
-    private View getCustomView(int position, View convertView, ViewGroup parent) {
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View item = inflater.inflate(R.layout.priority_spinner_item, parent, false);
-        TextView label = (TextView) item.findViewById(R.id.priority_spinner_item_text);
-        label.setText(resArray[position]);
-
+        item.findViewById(R.id.priority_spinner_item_text).setVisibility(View.GONE);
         ImageView icon = (ImageView) item.findViewById(R.id.priority_spinner_item_image);
+
         switch (position) {
             case HIGH:
                 icon.setImageResource(R.drawable.ic_arrow_red_600_24dp);

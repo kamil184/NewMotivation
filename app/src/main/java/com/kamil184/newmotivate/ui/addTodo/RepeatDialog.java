@@ -56,6 +56,7 @@ public class RepeatDialog extends DialogFragment {
                 })
                 .setNegativeButton(R.string.cancel, (dialog, id) -> {
                     RepeatDialog.this.getDialog().cancel();
+                    listener.onRepeatNegativeClicked();
                 });
         return builder.create();
     }
@@ -68,5 +69,7 @@ public class RepeatDialog extends DialogFragment {
 
     public interface RepeatDialogListener {
         void onRepeatPositiveClicked(int selected);
+
+        void onRepeatNegativeClicked();
     }
 }

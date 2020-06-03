@@ -32,14 +32,6 @@
         <!--Inactive track color-->
         <item name="android:colorForeground">@color/grey600</item>
 
-        <!-- Picker styles and themes. -->
-        <item name="materialCalendarStyle">@style/Widget.MaterialComponents.MaterialCalendar</item>
-        <item name="materialCalendarFullscreenTheme">
-            @style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen
-        </item>
-        <item name="materialCalendarTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar
-        </item>
-
         <!--Material shape attributes-->
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyTheme.SmallComponent
         </item>
@@ -90,9 +82,6 @@
         <item name="colorSwitchThumbNormal">@color/grey300</item>
         <!--Inactive track color-->
         <item name="android:colorForeground">@color/grey600</item>
-
-        <!-- Picker styles and themes. -->
-        <item name="materialCalendarStyle">@style/CustomStyle.MaterialCalendar</item>
 
         <!--Material shape attributes-->
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyTheme.SmallComponent

@@ -39,13 +39,19 @@ class StepsAdapter extends RecyclerView.Adapter<StepsAdapter.ViewHolder> {
         holder.checkBox.setChecked(step.isChecked());
         holder.editText.setText(step.getText());
 
+        if (holder.checkBox.isChecked()) {
+            holder.editText.setPaintFlags(holder.editText.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        } else {
+            holder.editText.setPaintFlags(holder.editText.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+        }
+
         holder.checkBox.setOnClickListener(view1 -> {
+            steps.get(position).setChecked(holder.checkBox.isChecked());
             if (holder.checkBox.isChecked()) {
                 holder.editText.setPaintFlags(holder.editText.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
             } else {
                 holder.editText.setPaintFlags(holder.editText.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
             }
-            steps.get(position).setChecked(holder.checkBox.isChecked());
         });
 
         holder.editText.addTextChangedListener(new TextWatcher() {
@@ -56,12 +62,14 @@ class StepsAdapter extends RecyclerView.Adapter<StepsAdapter.ViewHolder> {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+                if (position < steps.size()) {
+                    steps.get(position).setText(charSequence.toString());
+                }
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
-                steps.get(position).setText(holder.editText.getText().toString());
+
             }
         });
     }
@@ -69,6 +77,11 @@ class StepsAdapter extends RecyclerView.Adapter<StepsAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return steps.size();
+    }
+
+
+    Step getStep(int position) {
+        return steps.get(position);
     }
 
     void removeItem(int position) {

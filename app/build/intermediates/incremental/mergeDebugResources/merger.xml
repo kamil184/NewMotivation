@@ -5693,6 +5693,9 @@
     </style><style name="ShapeAppearance.MyApp.MaterialDialog" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">16dp</item>
+    </style><style name="ShapeAppearance.MyApp.CircleButton" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style></file><file path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">NewMotivate</string><string name="error">Error</string><string name="ok">OK</string><string name="press_once_again_to_exit">Press once again to exit</string><string name="btn_back"><![CDATA[<< Back]]></string><string name="empty_field_err">Please fill this field</string><string name="next_step">Next step</string><string name="edit_btn">Edit</string><string name="loading">loading</string><string name="title">Title</string><string name="description">Description</string><string name="remind_me">Remind Me</string><string name="remind_date_and_time">Reminder set for %1$s, %2$s %3$s</string><string name="date_reminder_default">Today</string><string name="date_error_check_again">The date you entered is in the past</string><string name="todo_error">Please enter a Todo</string><string name="about">About</string><string name="snooze">Snooze</string><string-array name="snooze_options">
         <item>10 Minutes</item>
         <item>30 Minutes</item>
@@ -5732,6 +5735,7 @@
         <item>No Priority</item>
     </string-array><string name="undo">UNDO</string><string name="step_deleted">Step deleted</string></file><file path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\values\styles.xml" qualifiers=""><style name="CustomStyle.Button.Circle.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton.Icon">
         <item name="android:textColor">@color/grey600</item>
+        <item name="rippleColor">@null</item>
         <item name="android:padding">0dp</item>
         <item name="iconPadding">0dp</item>
         <item name="android:textSize">12sp</item>
@@ -5739,17 +5743,10 @@
         <item name="android:insetRight">0dp</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
-        <item name="shapeAppearance">@style/CustomStyle.Button.Circle.ShapeAppearance</item>
-    </style><style name="CustomStyle.Button.Circle.ShapeAppearance" parent="">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.MyApp.CircleButton</item>
     </style><style name="LightPopup" parent="@style/ThemeOverlay.AppCompat.Light"/><style name="FloatingLabelTextAppearance" parent="TextAppearance.AppCompat">
         <item name="android:textColor">@android:color/white</item>
-    </style><style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/><style name="CustomStyle.MaterialCalendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
-        <item name="shapeAppearance">@style/ShapeAppearance.MyTheme.MediumComponent</item>
-    </style><style name="CustomStyle.MaterialAlertDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
-        <item name="shapeAppearance">@style/ShapeAppearance.MyApp.MaterialDialog</item>
-    </style></file><file path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\values\themes.xml" qualifiers=""><style name="CustomStyle.LightTheme" parent="Theme.MaterialComponents.Light">
+    </style><style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/></file><file path="C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\res\values\themes.xml" qualifiers=""><style name="CustomStyle.LightTheme" parent="Theme.MaterialComponents.Light">
 
         
         <item name="colorPrimary">@color/color_primary</item>
@@ -5779,14 +5776,6 @@
         <item name="colorSwitchThumbNormal">@color/grey300</item>
         
         <item name="android:colorForeground">@color/grey600</item>
-
-        
-        <item name="materialCalendarStyle">@style/Widget.MaterialComponents.MaterialCalendar</item>
-        <item name="materialCalendarFullscreenTheme">
-            @style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen
-        </item>
-        <item name="materialCalendarTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar
-        </item>
 
         
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyTheme.SmallComponent
@@ -5836,9 +5825,6 @@
         <item name="colorSwitchThumbNormal">@color/grey300</item>
         
         <item name="android:colorForeground">@color/grey600</item>
-
-        
-        <item name="materialCalendarStyle">@style/CustomStyle.MaterialCalendar</item>
 
         
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyTheme.SmallComponent

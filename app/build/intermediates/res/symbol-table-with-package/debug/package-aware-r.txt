@@ -2373,11 +2373,8 @@ style CardView
 style CardView_Dark
 style CardView_Light
 style CustomStyle_Button_Circle_Outlined
-style CustomStyle_Button_Circle_ShapeAppearance
 style CustomStyle_DarkTheme
 style CustomStyle_LightTheme
-style CustomStyle_MaterialAlertDialog
-style CustomStyle_MaterialCalendar
 style EmptyTheme
 style FloatingLabelTextAppearance
 style LightPopup
@@ -2428,6 +2425,7 @@ style ShapeAppearance_MaterialComponents_MediumComponent
 style ShapeAppearance_MaterialComponents_SmallComponent
 style ShapeAppearance_MaterialComponents_Test
 style ShapeAppearance_MaterialComponents_Tooltip
+style ShapeAppearance_MyApp_CircleButton
 style ShapeAppearance_MyApp_MaterialDialog
 style ShapeAppearance_MyTheme_LargeComponent
 style ShapeAppearance_MyTheme_MediumComponent

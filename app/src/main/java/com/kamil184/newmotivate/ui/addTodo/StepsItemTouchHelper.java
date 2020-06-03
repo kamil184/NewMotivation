@@ -1,16 +1,25 @@
 package com.kamil184.newmotivate.ui.addTodo;
 
 import android.graphics.Canvas;
+import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class StepsItemTouchHelper extends ItemTouchHelper.SimpleCallback {
-    private RecyclerItemTouchHelperListener listener;
+import com.kamil184.newmotivate.R;
+import com.kamil184.newmotivate.model.Step;
 
-    public StepsItemTouchHelper(int dragDirs, int swipeDirs, RecyclerItemTouchHelperListener listener) {
-        super(dragDirs, swipeDirs);
+public class StepsItemTouchHelper extends ItemTouchHelper.SimpleCallback {
+
+    private RecyclerItemTouchHelperListener listener;
+    private StepsAdapter adapter;
+
+    StepsItemTouchHelper(StepsAdapter adapter, RecyclerItemTouchHelperListener listener) {
+        super(0, ItemTouchHelper.LEFT);
+        this.adapter = adapter;
         this.listener = listener;
     }
 
@@ -55,7 +64,13 @@ public class StepsItemTouchHelper extends ItemTouchHelper.SimpleCallback {
 
     @Override
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-        listener.onSwiped(viewHolder, direction, viewHolder.getAdapterPosition());
+        int position = viewHolder.getAdapterPosition();
+        //Step step = adapter.getStep(position);
+        EditText editText = viewHolder.itemView.findViewById(R.id.step_edit_text);
+        CheckBox checkBox = viewHolder.itemView.findViewById(R.id.step_check_box);
+
+        adapter.removeItem(position);
+        listener.onSwiped(new Step(checkBox.isChecked(), editText.getText().toString()), position);
     }
 
     @Override
@@ -64,6 +79,6 @@ public class StepsItemTouchHelper extends ItemTouchHelper.SimpleCallback {
     }
 
     public interface RecyclerItemTouchHelperListener {
-        void onSwiped(RecyclerView.ViewHolder viewHolder, int direction, int position);
+        void onSwiped(Step step, int position);
     }
 }

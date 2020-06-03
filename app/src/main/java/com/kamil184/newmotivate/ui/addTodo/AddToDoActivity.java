@@ -53,7 +53,6 @@ import static com.kamil184.newmotivate.util.Constants.MEDIUM;
 import static com.kamil184.newmotivate.util.Constants.NO;
 import static com.kamil184.newmotivate.util.Constants.THEME;
 import static com.kamil184.newmotivate.util.Constants.TODO_ITEM;
-import static com.kamil184.newmotivate.util.DateUtils.getFormattedDate;
 import static com.kamil184.newmotivate.util.DateUtils.getTodayInMillis;
 
 public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.RepeatCustomDialogListener, RepeatDialog.RepeatDialogListener, ReminderDialog.OnReminderPickedListener,
@@ -246,7 +245,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
         stepsRecycler.setAdapter(stepsAdapter);
         stepsRecycler.setItemAnimator(new DefaultItemAnimator());
 
-        ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new StepsItemTouchHelper(0, ItemTouchHelper.LEFT, this);
+        ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new StepsItemTouchHelper(stepsAdapter, this::onSwiped);
         new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(stepsRecycler);
 
         addStepButtonLayout.setOnClickListener(view -> {
@@ -500,6 +499,13 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
     }
 
     @Override
+    public void onRepeatCustomNegativeClicked() {
+        if (item.getRepeat() == null) {
+            item.setRepeatSelected(R.id.repeat_no);
+        }
+    }
+
+    @Override
     public void onReminderPositiveClicked(int hour, int minute) {
         reminderTextView.setText(DateUtils.getFormattedTime(hour, minute, is24HourFormat));
         reminderDelete.setVisibility(View.VISIBLE);
@@ -589,21 +595,13 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
     }
 
     @Override
-    public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction, int position) {
-        if (viewHolder instanceof StepsAdapter.ViewHolder) {
-            final Step deletedItem = steps.get(viewHolder.getAdapterPosition());
-            final int deletedIndex = viewHolder.getAdapterPosition();
+    public void onSwiped(Step step, int position) {
+        Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),
+                getResources().getString(R.string.step_deleted), Snackbar.LENGTH_LONG);
 
-            stepsAdapter.removeItem(viewHolder.getAdapterPosition());
-
-            Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),
-                    getResources().getString(R.string.step_deleted), Snackbar.LENGTH_LONG);
-
-            snackbar.setAction(getResources().getString(R.string.undo), view -> {
-                stepsAdapter.restoreItem(deletedItem, deletedIndex);
-            });
-            snackbar.show();
-        }
+        snackbar.setAction(getResources().getString(R.string.undo), view -> {
+            stepsAdapter.restoreItem(step, position);
+        }).show();
     }
 
     @Override
@@ -632,6 +630,11 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
                 showRepeatCustomDialog();
                 break;
         }
+    }
+
+    @Override
+    public void onRepeatNegativeClicked() {
+
     }
 
     @Override
