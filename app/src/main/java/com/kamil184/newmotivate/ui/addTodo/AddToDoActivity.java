@@ -1,6 +1,7 @@
 package com.kamil184.newmotivate.ui.addTodo;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Paint;
 import android.os.Build;
@@ -18,8 +19,10 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
+import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -34,7 +37,6 @@ import com.kamil184.newmotivate.R;
 import com.kamil184.newmotivate.model.Repeat;
 import com.kamil184.newmotivate.model.Step;
 import com.kamil184.newmotivate.model.ToDoItem;
-import com.kamil184.newmotivate.ui.base.BaseActivity;
 import com.kamil184.newmotivate.util.DateUtils;
 
 import java.util.Calendar;
@@ -44,7 +46,6 @@ import java.util.TimeZone;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.kamil184.newmotivate.util.Constants.APP_PREFERENCES;
 import static com.kamil184.newmotivate.util.Constants.DARK_THEME;
 import static com.kamil184.newmotivate.util.Constants.HIGH;
 import static com.kamil184.newmotivate.util.Constants.LIGHT_THEME;
@@ -55,17 +56,21 @@ import static com.kamil184.newmotivate.util.Constants.THEME;
 import static com.kamil184.newmotivate.util.Constants.TODO_ITEM;
 import static com.kamil184.newmotivate.util.DateUtils.getTodayInMillis;
 
-public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.RepeatCustomDialogListener, RepeatDialog.RepeatDialogListener, ReminderDialog.OnReminderPickedListener,
+public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDialog.RepeatCustomDialogListener, RepeatDialog.RepeatDialogListener, ReminderDialog.OnReminderPickedListener,
         DatePickerDialog.OnDatePickedListener, QuantityDialog.OnQuantityPickedListener, StepsItemTouchHelper.RecyclerItemTouchHelperListener {
 
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
     }
 
+    private final String TAG = AddToDoActivity.class.getSimpleName();
+
     ToDoItem item;
     boolean is24HourFormat;
     List<Step> steps;
     StepsAdapter stepsAdapter;
+    boolean theme;
+    SharedPreferences preference;
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -128,8 +133,8 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        themePreferences = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
-        theme = themePreferences.getBoolean(THEME, LIGHT_THEME);
+        preference = PreferenceManager.getDefaultSharedPreferences(this);
+        theme = preference.getBoolean(THEME, LIGHT_THEME);
         if (theme == LIGHT_THEME) {
             setTheme(R.style.CustomStyle_LightTheme);
         } else {
@@ -170,6 +175,21 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
                 R.layout.priority_spinner_item, resArray);
         spinner.setAdapter(priorityAdapter);
         spinner.setSelection(item.getPriority());
+
+        if (item.hasDate()) {
+            Calendar calendar = item.getCalendar();
+            setDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+        }
+        if (item.hasQuantity()) {
+            setQuantity(item.getQuantityNumber(), item.getQuantityTextPosition());
+        }
+        if(item.hasReminder()){
+            Calendar calendar = item.getCalendar();
+            setReminder(calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE));
+        }
+        if (item.getRepeat() != null){
+            setRepeat(item.getRepeat());
+        }
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -286,7 +306,7 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
         });
 
         quantityLayout.setOnClickListener(view -> {
-            showDurationDialog();
+            showQuantityDialog();
         });
 
         dateDelete.setOnClickListener(view -> {
@@ -441,9 +461,9 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
         dialog.show(getSupportFragmentManager(), RepeatDialog.class.getSimpleName());
     }
 
-    private void showDurationDialog() {
+    private void showQuantityDialog() {
         QuantityDialog dialog;
-        if (item.hasDuration()) {
+        if (item.hasQuantity()) {
             dialog = new QuantityDialog(item.getQuantityNumber(), item.getQuantityTextPosition());
         } else dialog = new QuantityDialog(1, 0);
         dialog.show(getSupportFragmentManager(), QuantityDialog.class.getSimpleName());
@@ -451,11 +471,15 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
 
     @Override
     public void onRepeatCustomPositiveClicked(Repeat repeat) {
+        setRepeat(repeat);
+
+        item.setRepeat(repeat);
+    }
+
+    void setRepeat(Repeat repeat) {
         repeatTextView.setText(repeat.getText());
         boolean[] isDaysChecked = repeat.getDays();
         repeatDelete.setVisibility(View.VISIBLE);
-
-        item.setRepeat(repeat);
 
         if (theme == LIGHT_THEME) {
             repeatTextView.setTextColor(getResources().getColor(R.color.color_primary));
@@ -507,6 +531,15 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
 
     @Override
     public void onReminderPositiveClicked(int hour, int minute) {
+        setReminder(hour, minute);
+
+        Calendar itemCalendar = item.getCalendar();
+        itemCalendar.set(Calendar.HOUR_OF_DAY, hour);
+        itemCalendar.set(Calendar.MINUTE, minute);
+        item.setHasReminder(true);
+    }
+
+    private void setReminder(int hour, int minute) {
         reminderTextView.setText(DateUtils.getFormattedTime(hour, minute, is24HourFormat));
         reminderDelete.setVisibility(View.VISIBLE);
 
@@ -517,11 +550,6 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
             reminderTextView.setTextColor(getResources().getColor(R.color.dark_color_primary));
             reminderImageView.setImageResource(R.drawable.ic_add_alarm_primary_dark_24dp);
         }
-
-        Calendar itemCalendar = item.getCalendar();
-        itemCalendar.set(Calendar.HOUR_OF_DAY, hour);
-        itemCalendar.set(Calendar.MINUTE, minute);
-        item.setHasReminder(true);
     }
 
     @Override
@@ -541,6 +569,14 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
 
     @Override
     public void onQuantityPositiveClicked(int number, int textPosition) {
+        setQuantity(number, textPosition);
+
+        item.setQuantityNumber(number);
+        item.setQuantityTextPosition(textPosition);
+        item.setHasQuantity(true);
+    }
+
+    private void setQuantity(int number, int textPosition) {
         String[] resText = getResources().getStringArray(R.array.quantity_array);
         quantityTextView.setText(number + " " + resText[textPosition]);
         quantityDelete.setVisibility(View.VISIBLE);
@@ -584,9 +620,6 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
                 }
 
         }
-        item.setQuantityNumber(number);
-        item.setQuantityTextPosition(textPosition);
-        item.setHasQuantity(true);
     }
 
     @Override
@@ -640,6 +673,16 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
     @Override
     public void onDatePositiveClicked(int year, int month, int day) {
 
+        setDate(year, month, day);
+
+        Calendar itemCalendar = item.getCalendar();
+        itemCalendar.set(Calendar.YEAR, year);
+        itemCalendar.set(Calendar.MONTH, month);
+        itemCalendar.set(Calendar.DAY_OF_MONTH, day);
+        item.setHasDate(true);
+    }
+
+    private void setDate(int year, int month, int day) {
         String string = DateUtils.getFormattedDate(year, month, day);
         if (string.equals("Today")) {
             dateTextView.setText(getString(R.string.today));
@@ -657,12 +700,15 @@ public class AddToDoActivity extends BaseActivity implements RepeatCustomDialog.
             dateImageView.setImageResource(R.drawable.ic_date_range_primary_dark_24dp);
         }
         dateDelete.setVisibility(View.VISIBLE);
+    }
 
-        Calendar itemCalendar = item.getCalendar();
-        itemCalendar.set(Calendar.YEAR, year);
-        itemCalendar.set(Calendar.MONTH, month);
-        itemCalendar.set(Calendar.DAY_OF_MONTH, day);
-        item.setHasDate(true);
+    public void hideKeyboard() {
+        // Check if no view has focus:
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 
     @Override

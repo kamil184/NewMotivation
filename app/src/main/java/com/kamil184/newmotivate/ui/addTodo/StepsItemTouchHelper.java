@@ -1,7 +1,6 @@
 package com.kamil184.newmotivate.ui.addTodo;
 
 import android.graphics.Canvas;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -58,6 +57,14 @@ public class StepsItemTouchHelper extends ItemTouchHelper.SimpleCallback {
                             int actionState, boolean isCurrentlyActive) {
         final View foregroundView = ((StepsAdapter.ViewHolder) viewHolder).viewForeground;
 
+        /*if (dX > 0) {
+            viewHolder.itemView.findViewById(R.id.step_delete_background).setVisibility(View.GONE);
+            viewHolder.itemView.findViewById(R.id.step_done_background).setVisibility(View.VISIBLE);
+        } else {
+            viewHolder.itemView.findViewById(R.id.step_delete_background).setVisibility(View.VISIBLE);
+            viewHolder.itemView.findViewById(R.id.step_done_background).setVisibility(View.GONE);
+        }*/
+
         getDefaultUIUtil().onDraw(c, recyclerView, foregroundView, dX, dY,
                 actionState, isCurrentlyActive);
     }
@@ -66,6 +73,7 @@ public class StepsItemTouchHelper extends ItemTouchHelper.SimpleCallback {
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
         int position = viewHolder.getAdapterPosition();
         //Step step = adapter.getStep(position);
+        //сделано так, потому что пример выше выдавал не тот элемент, что был удален
         EditText editText = viewHolder.itemView.findViewById(R.id.step_edit_text);
         CheckBox checkBox = viewHolder.itemView.findViewById(R.id.step_check_box);
 

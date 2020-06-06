@@ -56,7 +56,7 @@ public class ToDoItem implements Serializable {
         this.hasDate = hasDate;
     }
 
-    public boolean hasDuration() {
+    public boolean hasQuantity() {
         return hasQuantity;
     }
 

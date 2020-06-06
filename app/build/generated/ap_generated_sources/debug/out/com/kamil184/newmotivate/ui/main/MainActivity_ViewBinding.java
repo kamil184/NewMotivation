@@ -4,9 +4,9 @@ package com.kamil184.newmotivate.ui.main;
 import android.view.View;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
-import androidx.appcompat.widget.Toolbar;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.kamil184.newmotivate.R;
 import java.lang.IllegalStateException;
 import java.lang.Override;
@@ -23,7 +23,7 @@ public class MainActivity_ViewBinding implements Unbinder {
   public MainActivity_ViewBinding(MainActivity target, View source) {
     this.target = target;
 
-    target.toolbar = Utils.findRequiredViewAsType(source, R.id.toolbar, "field 'toolbar'", Toolbar.class);
+    target.navView = Utils.findRequiredViewAsType(source, R.id.main_bottom_nav, "field 'navView'", BottomNavigationView.class);
   }
 
   @Override
@@ -33,6 +33,6 @@ public class MainActivity_ViewBinding implements Unbinder {
     if (target == null) throw new IllegalStateException("Bindings already cleared.");
     this.target = null;
 
-    target.toolbar = null;
+    target.navView = null;
   }
 }
