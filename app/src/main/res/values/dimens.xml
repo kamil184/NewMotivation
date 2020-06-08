@@ -12,4 +12,5 @@
     <dimen name="stroke_size">1dp</dimen>
     <dimen name="thumbnail">90dp</dimen>
     <dimen name="spacing_60">60dp</dimen>
+    <dimen name="spacing_20">20dp</dimen>
 </resources>

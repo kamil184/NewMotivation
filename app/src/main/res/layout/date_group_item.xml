@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?colorSurface">
+
+    <TextView
+        android:id="@+id/date_group_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_16"
+        android:layout_marginTop="@dimen/spacing_16"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text="Today" />
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true">
+
+        <ImageButton
+            android:id="@+id/date_group_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="@dimen/spacing_16"
+            android:visibility="gone"
+            app:srcCompat="?addDrawable" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/date_group_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_4"
+            android:checkable="false"
+            android:clickable="false"
+            android:textSize="20sp"
+            app:chipBackgroundColor="?colorSurface"
+            app:chipStrokeWidth="1dp"
+            app:rippleColor="@null"
+            tools:text="10" />
+    </FrameLayout>
+</RelativeLayout>

@@ -8,21 +8,39 @@
     tools:context=".ui.main.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        app:elevation="0dp">
+        android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/tasks_toolbar"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/tasks_appbarlayout"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
-    </com.google.android.material.appbar.AppBarLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:layout_alignParentTop="true"
+            app:elevation="0dp">
 
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tasks_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tasks_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?colorSurface"
+            android:layout_below="@+id/tasks_appbarlayout"/>
+
+    </RelativeLayout>
+
+
+    <!-- menu из fab'oв, как Tappsk
+    нижняя панель, то есть поле ввода и app:fabSize="mini", как Any.do-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/to_add_todo"
+        android:id="@+id/tasks_add_todo_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

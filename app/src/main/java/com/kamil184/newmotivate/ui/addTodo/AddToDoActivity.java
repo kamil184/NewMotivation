@@ -148,6 +148,7 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //TODO кнопка назад не работает (arrow button)
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -157,7 +158,7 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
 
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
-        item = (ToDoItem) getIntent().getSerializableExtra(TODO_ITEM);
+        item = (ToDoItem) getIntent().getParcelableExtra(TODO_ITEM);
 
         is24HourFormat = DateFormat.is24HourFormat(this);
 

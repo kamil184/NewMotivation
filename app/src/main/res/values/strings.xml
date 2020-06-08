@@ -43,6 +43,8 @@
     <string name="every_weekday">Every Weekday (Mon-Fri)</string>
     <string name="step_deleted">Step deleted</string>
     <string name="undo">UNDO</string>
+    <string name="next_week">Next Week</string>
+    <string name="someday">Someday</string>
 
     <string-array name="repeat_list">
         <item>Days</item>

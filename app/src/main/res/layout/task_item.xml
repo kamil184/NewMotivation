@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorSurface"
+    android:padding="@dimen/spacing_4">
+
+    <CheckBox
+        android:id="@+id/task_item_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_8"
+        android:background="@null" />
+
+    <TextView
+        android:id="@+id/task_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_4"
+        android:layout_marginStart="-8dp"
+        android:layout_toEndOf="@+id/task_item_checkbox"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:maxLength="26"
+        android:textSize="16sp"
+        tools:text="Сделать покупки, очень большие причем" />
+
+    <TextView
+        android:id="@+id/task_item_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/task_item_title"
+        android:layout_alignStart="@+id/task_item_title"
+        android:layout_toEndOf="@+id/task_item_checkbox"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="13sp"
+        tools:text="Срочно!" />
+
+    <TextView
+        android:id="@+id/task_item_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/spacing_12"
+        android:layout_alignTop="@+id/task_item_title"
+        android:text="пн, 12:30"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:id="@+id/task_item_repeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/task_item_date"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/spacing_12"
+        app:srcCompat="?repeatDrawable" />
+</RelativeLayout>

@@ -1,24 +1,23 @@
 package com.kamil184.newmotivate.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.kamil184.newmotivate.R;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 import static com.kamil184.newmotivate.util.Constants.NO;
 
-public class ToDoItem implements Serializable {
-
-    //public static final String TITLE = "title";
-    //public static final String DATE = "date";
-    //public static final String HAS_REMINDER = "has reminder";
+public class ToDoItem implements Parcelable {
 
     private boolean hasReminder;
     private boolean hasDate;
     private boolean hasQuantity = false;
     private String title;
+    private String note = "";
     private Repeat repeat;
     private int quantityNumber;
     private int quantityTextPosition;
@@ -129,4 +128,63 @@ public class ToDoItem implements Serializable {
         this.repeatSelected = repeatSelected;
     }
 
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeByte(this.hasReminder ? (byte) 1 : (byte) 0);
+        dest.writeByte(this.hasDate ? (byte) 1 : (byte) 0);
+        dest.writeByte(this.hasQuantity ? (byte) 1 : (byte) 0);
+        dest.writeString(this.title);
+        dest.writeString(this.note);
+        dest.writeInt(this.repeat == null ? -1 : this.repeat.ordinal());
+        dest.writeInt(this.quantityNumber);
+        dest.writeInt(this.quantityTextPosition);
+        dest.writeSerializable(this.calendar);
+        dest.writeInt(this.priority);
+        dest.writeList(this.steps);
+        dest.writeByte(this.isCompleted ? (byte) 1 : (byte) 0);
+        dest.writeInt(this.repeatSelected);
+    }
+
+    protected ToDoItem(Parcel in) {
+        this.hasReminder = in.readByte() != 0;
+        this.hasDate = in.readByte() != 0;
+        this.hasQuantity = in.readByte() != 0;
+        this.title = in.readString();
+        this.note = in.readString();
+        int tmpRepeat = in.readInt();
+        this.repeat = tmpRepeat == -1 ? null : Repeat.values()[tmpRepeat];
+        this.quantityNumber = in.readInt();
+        this.quantityTextPosition = in.readInt();
+        this.calendar = (Calendar) in.readSerializable();
+        this.priority = in.readInt();
+        this.steps = new ArrayList<Step>();
+        in.readList(this.steps, Step.class.getClassLoader());
+        this.isCompleted = in.readByte() != 0;
+        this.repeatSelected = in.readInt();
+    }
+
+    public static final Parcelable.Creator<ToDoItem> CREATOR = new Parcelable.Creator<ToDoItem>() {
+        @Override
+        public ToDoItem createFromParcel(Parcel source) {
+            return new ToDoItem(source);
+        }
+
+        @Override
+        public ToDoItem[] newArray(int size) {
+            return new ToDoItem[size];
+        }
+    };
 }

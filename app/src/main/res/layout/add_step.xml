@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_8"
             android:padding="@dimen/spacing_16"
-            app:srcCompat="?attr/addDrawable" />
+            app:srcCompat="?attr/addPrimaryDrawable" />
 
         <TextView
             android:layout_width="match_parent"

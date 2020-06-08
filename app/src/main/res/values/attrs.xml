@@ -19,6 +19,7 @@
         <attr name="addAlarmDrawable" format="reference" />
         <attr name="repeatDrawable" format="reference" />
         <attr name="clockDrawable" format="reference" />
+        <attr name="addPrimaryDrawable" format="reference" />
         <attr name="addDrawable" format="reference" />
     </declare-styleable>
 
