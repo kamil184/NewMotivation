@@ -1,5 +1,7 @@
 package com.kamil184.newmotivate.ui.tasks;
 
+import android.content.Context;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.view.ViewGroup.MarginLayoutParams;
 import android.widget.CheckBox;
@@ -26,14 +28,15 @@ public class TaskViewHolder extends ChildViewHolder {
     CheckBox checkBox;
     @BindView(R.id.task_item_repeat)
     ImageView repeat;
+
     private boolean is24HourFormat;
     private int dp4;
 
-    public TaskViewHolder(View itemView, boolean is24HourFormat, int dp4) {
+    public TaskViewHolder(View itemView, Context context, int dp4) {
         super(itemView);
         ButterKnife.bind(this, itemView);
-        this.is24HourFormat = is24HourFormat;
         this.dp4 = dp4;
+        is24HourFormat = DateFormat.is24HourFormat(context);
     }
 
     public void onBind(ToDoItem item) {

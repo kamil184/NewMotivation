@@ -51,7 +51,7 @@ public class TasksFragment extends Fragment {
         dateGroups = DateGroup.getDateGroups(getString(R.string.today), getString(R.string.tomorrow),
                 getString(R.string.next_week), getString(R.string.someday));
 
-        adapter = new DateGroupAdapter(dateGroups, DateFormat.is24HourFormat(getContext()), getResources().getDimensionPixelSize(R.dimen.spacing_4));
+        adapter = new DateGroupAdapter(dateGroups, getContext(), getResources().getDimensionPixelSize(R.dimen.spacing_4));
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(adapter);
 

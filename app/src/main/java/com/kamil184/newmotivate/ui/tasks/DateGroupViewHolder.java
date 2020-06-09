@@ -1,6 +1,9 @@
 package com.kamil184.newmotivate.ui.tasks;
 
+import android.content.Context;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,40 +24,102 @@ public class DateGroupViewHolder extends GroupViewHolder {
     @BindView(R.id.date_group_count)
     Chip count;
 
-    int size;
+    private int size;
+    private Context context;
 
-    public DateGroupViewHolder(View itemView) {
+    public DateGroupViewHolder(View itemView, Context context) {
         super(itemView);
         ButterKnife.bind(this, itemView);
+        this.context = context;
     }
 
     public void onBind(ExpandableGroup group) {
         title.setText(group.getTitle());
         size = group.getItemCount();
-        if(size == 0){
+        if (size == 0) {
             add.setVisibility(View.VISIBLE);
             count.setVisibility(View.GONE);
-        }else {
+        } else {
             count.setText(String.valueOf(size));
         }
     }
 
     @Override
     public void expand() {
-        //TODO плавная анимация перехода
-        add.setVisibility(View.VISIBLE);
-        count.setVisibility(View.GONE);
+        if (size != 0) {
+            Animation fadeIn = AnimationUtils.loadAnimation(context, R.anim.fade_in);
+            Animation fadeOut = AnimationUtils.loadAnimation(context, R.anim.fade_out);
+            fadeIn.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    add.setVisibility(View.VISIBLE);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+                }
+            });
+            fadeOut.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    count.setVisibility(View.GONE);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+                }
+            });
+            add.startAnimation(fadeIn);
+            count.startAnimation(fadeOut);
+        }
     }
 
     @Override
     public void collapse() {
-        //TODO плавная анимация перехода
-        if(size == 0){
+        if (size == 0) {
             add.setVisibility(View.VISIBLE);
             count.setVisibility(View.GONE);
-        }else {
-            add.setVisibility(View.GONE);
-            count.setVisibility(View.VISIBLE);
+        } else {
+            Animation fadeIn = AnimationUtils.loadAnimation(context, R.anim.fade_in);
+            Animation fadeOut = AnimationUtils.loadAnimation(context, R.anim.fade_out);
+            fadeIn.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    count.setVisibility(View.VISIBLE);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+                }
+            });
+            fadeOut.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    add.setVisibility(View.GONE);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+                }
+            });
+            count.startAnimation(fadeIn);
+            add.startAnimation(fadeOut);
         }
     }
 }

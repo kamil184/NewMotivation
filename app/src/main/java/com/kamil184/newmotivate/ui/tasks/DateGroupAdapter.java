@@ -1,5 +1,6 @@
 package com.kamil184.newmotivate.ui.tasks;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,25 +14,25 @@ import java.util.List;
 
 public class DateGroupAdapter extends ExpandableRecyclerViewAdapter<DateGroupViewHolder, TaskViewHolder> {
 
-    private boolean is24HourFormat;
     private int dp4;
+    private Context context;
 
-    public DateGroupAdapter(List<? extends ExpandableGroup> groups, boolean is24HourFormat, int dp4) {
+    public DateGroupAdapter(List<? extends ExpandableGroup> groups, Context context, int dp4) {
         super(groups);
-        this.is24HourFormat = is24HourFormat;
         this.dp4 = dp4;
+        this.context = context;
     }
 
     @Override
     public DateGroupViewHolder onCreateGroupViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.date_group_item, parent, false);
-        return new DateGroupViewHolder(view);
+        return new DateGroupViewHolder(view, context);
     }
 
     @Override
     public TaskViewHolder onCreateChildViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_item, parent, false);
-        return new TaskViewHolder(view, is24HourFormat, dp4);
+        return new TaskViewHolder(view, context, dp4);
     }
 
     @Override
