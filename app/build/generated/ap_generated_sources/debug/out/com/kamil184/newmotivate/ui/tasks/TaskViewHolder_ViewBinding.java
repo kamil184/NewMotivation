@@ -2,13 +2,14 @@
 package com.kamil184.newmotivate.ui.tasks;
 
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
+import com.google.android.material.checkbox.MaterialCheckBox;
 import com.kamil184.newmotivate.R;
 import java.lang.IllegalStateException;
 import java.lang.Override;
@@ -20,10 +21,11 @@ public class TaskViewHolder_ViewBinding implements Unbinder {
   public TaskViewHolder_ViewBinding(TaskViewHolder target, View source) {
     this.target = target;
 
+    target.layout = Utils.findRequiredViewAsType(source, R.id.task_item_layout, "field 'layout'", RelativeLayout.class);
     target.title = Utils.findRequiredViewAsType(source, R.id.task_item_title, "field 'title'", TextView.class);
     target.note = Utils.findRequiredViewAsType(source, R.id.task_item_note, "field 'note'", TextView.class);
     target.date = Utils.findRequiredViewAsType(source, R.id.task_item_date, "field 'date'", TextView.class);
-    target.checkBox = Utils.findRequiredViewAsType(source, R.id.task_item_checkbox, "field 'checkBox'", CheckBox.class);
+    target.checkBox = Utils.findRequiredViewAsType(source, R.id.task_item_checkbox, "field 'checkBox'", MaterialCheckBox.class);
     target.repeat = Utils.findRequiredViewAsType(source, R.id.task_item_repeat, "field 'repeat'", ImageView.class);
   }
 
@@ -34,6 +36,7 @@ public class TaskViewHolder_ViewBinding implements Unbinder {
     if (target == null) throw new IllegalStateException("Bindings already cleared.");
     this.target = null;
 
+    target.layout = null;
     target.title = null;
     target.note = null;
     target.date = null;

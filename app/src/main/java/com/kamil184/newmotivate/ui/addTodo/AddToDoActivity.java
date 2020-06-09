@@ -37,6 +37,7 @@ import com.kamil184.newmotivate.R;
 import com.kamil184.newmotivate.model.Repeat;
 import com.kamil184.newmotivate.model.Step;
 import com.kamil184.newmotivate.model.ToDoItem;
+import com.kamil184.newmotivate.util.ColorUtils;
 import com.kamil184.newmotivate.util.DateUtils;
 
 import java.util.Calendar;
@@ -195,62 +196,7 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                ColorStateList colorStateList = null;
-
-                switch (i) {
-                    case HIGH:
-                        colorStateList = new ColorStateList(
-                                new int[][]{
-                                        new int[]{android.R.attr.state_enabled}
-                                },
-                                new int[]{getResources().getColor(R.color.red600)}
-                        );
-                        break;
-
-                    case MEDIUM:
-                        colorStateList = new ColorStateList(
-                                new int[][]{
-                                        new int[]{android.R.attr.state_enabled}
-                                },
-                                new int[]{getResources().getColor(R.color.yellow600)}
-                        );
-                        break;
-
-                    case LOW:
-                        colorStateList = new ColorStateList(
-                                new int[][]{
-                                        new int[]{android.R.attr.state_enabled}
-                                },
-                                new int[]{getResources().getColor(R.color.blue600)}
-                        );
-                        break;
-
-                    case NO:
-                        int checkedColor;
-                        if (theme == DARK_THEME) {
-                            checkedColor = getResources().getColor(R.color.dark_color_secondary);
-                        } else {
-                            checkedColor = getResources().getColor(R.color.color_secondary);
-                        }
-
-                        int unCheckedColor;
-                        if (theme == DARK_THEME) {
-                            unCheckedColor = getResources().getColor(R.color.grey500);
-                        } else {
-                            unCheckedColor = getResources().getColor(R.color.grey600);
-                        }
-
-                        colorStateList = new ColorStateList(
-                                new int[][]{
-                                        new int[]{android.R.attr.state_checked},
-                                        new int[]{}
-                                },
-                                new int[]{checkedColor, unCheckedColor}
-                        );
-                        break;
-                }
-
-                todoCheckBox.setSupportButtonTintList(colorStateList);
+                todoCheckBox.setSupportButtonTintList(ColorUtils.getPriorityColorList(i, AddToDoActivity.this, theme));
                 item.setPriority(i);
             }
 

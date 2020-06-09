@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:theme="@style/AppTheme.AppBarOverlay"
+            android:background="?colorSurface"
             android:layout_alignParentTop="true"
             app:elevation="0dp">
 
@@ -31,7 +32,6 @@
             android:id="@+id/tasks_recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="?colorSurface"
             android:layout_below="@+id/tasks_appbarlayout"/>
 
     </RelativeLayout>
