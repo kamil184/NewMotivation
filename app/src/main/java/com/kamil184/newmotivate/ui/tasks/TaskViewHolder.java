@@ -46,11 +46,11 @@ public class TaskViewHolder extends ChildViewHolder {
     private boolean is24HourFormat;
     private int dp4;
 
-    public TaskViewHolder(View itemView, Context context, int dp4) {
+    public TaskViewHolder(View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
-        this.context = context;
-        this.dp4 = dp4;
+        context = itemView.getContext();
+        dp4 = context.getResources().getDimensionPixelSize(R.dimen.spacing_4);
         is24HourFormat = DateFormat.is24HourFormat(context);
     }
 
@@ -82,7 +82,7 @@ public class TaskViewHolder extends ChildViewHolder {
 
         boolean isTodayOrTomorrow = dateText.equals(context.getString(R.string.today)) || dateText.equals(context.getString(R.string.tomorrow));
         if (!isTodayOrTomorrow && item.hasDate() && item.hasReminder()) {
-            date.setText(dateText + ", " + timeText);
+            date.setText(dateText + ",\n" + timeText);
         } else if (!isTodayOrTomorrow && item.hasDate()) {
             date.setText(dateText);
         } else if (item.hasReminder()) {

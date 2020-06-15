@@ -3,6 +3,7 @@ package com.kamil184.newmotivate.model;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -25,7 +26,9 @@ public class DateGroup extends ExpandableGroup<ToDoItem> {
         ToDoItem toDoItem2 = new ToDoItem();
         toDoItem2.setTitle("Немецкий, причем очень долгий, ведь надо как бы DSD2 сдавать, но мы об этом не думаем, ведь мы тупое быдлооооооооо ");
         toDoItem2.setNote("Срочно!!!");
-        toDoItem2.setCalendar(new GregorianCalendar());
+        Calendar calendar = new GregorianCalendar();
+        calendar.set(2020, 6, 9);
+        toDoItem2.setCalendar(calendar);
         toDoItem2.setHasDate(true);
         toDoItem2.setHasReminder(true);
         Repeat repeat2 = Repeat.DAY;

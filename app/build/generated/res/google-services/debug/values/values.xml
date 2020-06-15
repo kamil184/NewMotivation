@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">212206290000-ouslg13en1n9355ij6lrvejskp0fhl5k.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://motivate-kamil184.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">212206290000</string>
+    <string name="google_api_key" translatable="false">AIzaSyBJIR78a8nJwJ8KYkLBidyfsn73zUWht28</string>
+    <string name="google_app_id" translatable="false">1:212206290000:android:883c0b9212acccd62cfd55</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBJIR78a8nJwJ8KYkLBidyfsn73zUWht28</string>
+    <string name="google_storage_bucket" translatable="false">motivate-kamil184.appspot.com</string>
+    <string name="project_id" translatable="false">motivate-kamil184</string>
+</resources>

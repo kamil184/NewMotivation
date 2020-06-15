@@ -8,10 +8,13 @@ import com.kamil184.newmotivate.R;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.UUID;
 
 import static com.kamil184.newmotivate.util.Constants.NO;
 
 public class ToDoItem implements Parcelable {
+
+    public static final String TODO_JSON_FILENAME = "ToDoItems.json";
 
     private boolean hasReminder;
     private boolean hasDate;
@@ -26,10 +29,51 @@ public class ToDoItem implements Parcelable {
     private List<Step> steps = new ArrayList<>();
     private boolean isCompleted;
     private int repeatSelected = R.id.repeat_no;
+    private List<Tag> tags = new ArrayList<>();
+    private UUID uuid;
 
     public ToDoItem() {
         calendar = Calendar.getInstance();
+        uuid = UUID.randomUUID();
     }
+
+   /* public ToDoItem(JSONObject jsonObject) throws JSONException {
+        hasReminder = jsonObject.getBoolean("hasReminder");
+        hasDate = jsonObject.getBoolean("hasDate");
+        hasQuantity = jsonObject.getBoolean("hasQuantity");
+        title = jsonObject.getString("title");
+        note = jsonObject.getString("note");
+        repeat = (Repeat) jsonObject.get("repeat"); //выглядит опасно, так же как и calendar, steps, tags
+        quantityNumber = jsonObject.getInt("quantityNumber");
+        quantityTextPosition = jsonObject.getInt("quantityTextPosition");
+        calendar = (Calendar) jsonObject.get("calendar");
+        priority = jsonObject.getInt("priority");
+        steps = (List<Step>) jsonObject.getJSONArray("steps");
+        isCompleted = jsonObject.getBoolean("isCompleted");
+        repeatSelected = jsonObject.getInt("repeatSelected");
+        tags = (List<Tag>) jsonObject.getJSONArray("tags");
+        uuid = UUID.fromString(jsonObject.getString("uuid"));
+    }*/
+
+    /*public JSONObject toJSON() throws JSONException {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("hasReminder", hasReminder);
+        jsonObject.put("hasDate", hasDate);
+        jsonObject.put("hasQuantity", hasQuantity);
+        jsonObject.put("title", title);
+        jsonObject.put("note", note);
+        jsonObject.put("repeat", repeat);
+        jsonObject.put("quantityNumber", quantityNumber);
+        jsonObject.put("quantityTextPosition", quantityTextPosition);
+        jsonObject.put("calendar", calendar);
+        jsonObject.put("priority", priority);
+        jsonObject.put("steps", steps);
+        jsonObject.put("isCompleted", isCompleted);
+        jsonObject.put("repeatSelected", repeatSelected);
+        jsonObject.put("tags", tags);
+        jsonObject.put("uuid", uuid);
+        return jsonObject;
+    }*/
 
     public int getPriority() {
         return priority;
@@ -136,6 +180,22 @@ public class ToDoItem implements Parcelable {
         this.note = note;
     }
 
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
+    public void addTag(Tag tag) {
+        tags.add(tag);
+    }
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -156,6 +216,8 @@ public class ToDoItem implements Parcelable {
         dest.writeList(this.steps);
         dest.writeByte(this.isCompleted ? (byte) 1 : (byte) 0);
         dest.writeInt(this.repeatSelected);
+        dest.writeList(this.tags);
+        dest.writeSerializable(this.uuid);
     }
 
     protected ToDoItem(Parcel in) {
@@ -174,9 +236,12 @@ public class ToDoItem implements Parcelable {
         in.readList(this.steps, Step.class.getClassLoader());
         this.isCompleted = in.readByte() != 0;
         this.repeatSelected = in.readInt();
+        this.tags = new ArrayList<Tag>();
+        in.readList(this.tags, Tag.class.getClassLoader());
+        this.uuid = (UUID) in.readSerializable();
     }
 
-    public static final Parcelable.Creator<ToDoItem> CREATOR = new Parcelable.Creator<ToDoItem>() {
+    public static final Creator<ToDoItem> CREATOR = new Creator<ToDoItem>() {
         @Override
         public ToDoItem createFromParcel(Parcel source) {
             return new ToDoItem(source);

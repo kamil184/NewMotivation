@@ -1,5 +1,7 @@
 package com.kamil184.newmotivate.util;
 
+import android.os.Parcelable;
+
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -11,14 +13,7 @@ public class DateUtils {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, hour);
         calendar.set(Calendar.MINUTE, minute);
-        SimpleDateFormat dateFormat;
-        if (is24HourFormat) {
-            dateFormat = new SimpleDateFormat("H:mm");
-            return dateFormat.format(calendar.getTime());
-        } else {
-            dateFormat = new SimpleDateFormat("h:mm a");
-            return dateFormat.format(calendar.getTime());
-        }
+        return getFormattedTime(calendar, is24HourFormat);
     }
 
     public static String getFormattedTime(Calendar calendar, boolean is24HourFormat) {
@@ -46,7 +41,12 @@ public class DateUtils {
         calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, month);
         calendar.set(Calendar.DAY_OF_MONTH, day);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM d, yyyy");
+        SimpleDateFormat dateFormat;
+        if(year == year1) {
+             dateFormat = new SimpleDateFormat("MMM d");
+        } else {
+             dateFormat = new SimpleDateFormat("MMM d, yyyy");
+        }
         return dateFormat.format(calendar.getTime());
     }
 
@@ -54,21 +54,7 @@ public class DateUtils {
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
-        Calendar calendar1 = Calendar.getInstance();
-        int year1 = calendar1.get(Calendar.YEAR);
-        int month1 = calendar1.get(Calendar.MONTH);
-        int day1 = calendar1.get(Calendar.DAY_OF_MONTH);
-        if (year == year1 && month == month1 && day == day1) {
-            return "Today";
-        }
-        if (year == year1 && month == month1 && day == day1 + 1) {
-            return "Tomorrow";
-        }
-        calendar1.set(Calendar.YEAR, year);
-        calendar1.set(Calendar.MONTH, month);
-        calendar1.set(Calendar.DAY_OF_MONTH, day);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM d, yyyy");
-        return dateFormat.format(calendar1.getTime());
+        return getFormattedDate(year, month, day);
     }
 
     public static long getTodayInMillis() {

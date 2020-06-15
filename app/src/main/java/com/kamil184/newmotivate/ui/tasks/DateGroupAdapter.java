@@ -14,25 +14,20 @@ import java.util.List;
 
 public class DateGroupAdapter extends ExpandableRecyclerViewAdapter<DateGroupViewHolder, TaskViewHolder> {
 
-    private int dp4;
-    private Context context;
-
-    public DateGroupAdapter(List<? extends ExpandableGroup> groups, Context context, int dp4) {
+    public DateGroupAdapter(List<? extends ExpandableGroup> groups) {
         super(groups);
-        this.dp4 = dp4;
-        this.context = context;
     }
 
     @Override
     public DateGroupViewHolder onCreateGroupViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.date_group_item, parent, false);
-        return new DateGroupViewHolder(view, context);
+        return new DateGroupViewHolder(view);
     }
 
     @Override
     public TaskViewHolder onCreateChildViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_item, parent, false);
-        return new TaskViewHolder(view, context, dp4);
+        return new TaskViewHolder(view);
     }
 
     @Override

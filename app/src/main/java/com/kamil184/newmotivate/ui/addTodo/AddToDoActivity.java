@@ -1,13 +1,17 @@
 package com.kamil184.newmotivate.ui.addTodo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
 import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -36,6 +40,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.kamil184.newmotivate.R;
 import com.kamil184.newmotivate.model.Repeat;
 import com.kamil184.newmotivate.model.Step;
+import com.kamil184.newmotivate.model.Tag;
 import com.kamil184.newmotivate.model.ToDoItem;
 import com.kamil184.newmotivate.util.ColorUtils;
 import com.kamil184.newmotivate.util.DateUtils;
@@ -47,18 +52,13 @@ import java.util.TimeZone;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.kamil184.newmotivate.util.Constants.DARK_THEME;
-import static com.kamil184.newmotivate.util.Constants.HIGH;
 import static com.kamil184.newmotivate.util.Constants.LIGHT_THEME;
-import static com.kamil184.newmotivate.util.Constants.LOW;
-import static com.kamil184.newmotivate.util.Constants.MEDIUM;
-import static com.kamil184.newmotivate.util.Constants.NO;
 import static com.kamil184.newmotivate.util.Constants.THEME;
 import static com.kamil184.newmotivate.util.Constants.TODO_ITEM;
 import static com.kamil184.newmotivate.util.DateUtils.getTodayInMillis;
 
 public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDialog.RepeatCustomDialogListener, RepeatDialog.RepeatDialogListener, ReminderDialog.OnReminderPickedListener,
-        DatePickerDialog.OnDatePickedListener, QuantityDialog.OnQuantityPickedListener, StepsItemTouchHelper.RecyclerItemTouchHelperListener {
+        DatePickerDialog.OnDatePickedListener, QuantityDialog.OnQuantityPickedListener, StepsItemTouchHelper.RecyclerItemTouchHelperListener, TagsDialog.OnTagsPickedListener {
 
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
@@ -149,19 +149,45 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //TODO кнопка назад не работает (arrow button)
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-
-        //TODO настроить лаяуты, если item имеет что-то, то ставим в данные
+        toolbar.setNavigationOnClickListener(view -> {
+            onBackPressed();
+        });
 
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
         item = (ToDoItem) getIntent().getParcelableExtra(TODO_ITEM);
 
         is24HourFormat = DateFormat.is24HourFormat(this);
+
+        //fill fields
+        todoCheckBox.setChecked(item.isCompleted());
+        todoTitle.setText(item.getTitle());
+        noteEditText.setText(item.getNote());
+
+        if (todoCheckBox.isChecked()) {
+            todoTitle.setPaintFlags(todoTitle.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        } else {
+            todoTitle.setPaintFlags(todoTitle.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+        }
+        item.setCompleted(todoCheckBox.isChecked());
+
+        if (item.hasDate()) {
+            Calendar calendar = item.getCalendar();
+            setDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+        }
+        if (item.hasQuantity()) {
+            setQuantity(item.getQuantityNumber(), item.getQuantityTextPosition());
+        }
+        if (item.hasReminder()) {
+            Calendar calendar = item.getCalendar();
+            setReminder(calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE));
+        }
+        if (item.getRepeat() != null) {
+            setRepeat(item.getRepeat());
+        }
 
         todoCheckBox.setOnClickListener(view -> {
             if (todoCheckBox.isChecked()) {
@@ -172,26 +198,37 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
             item.setCompleted(todoCheckBox.isChecked());
         });
 
+        todoTitle.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                item.setTitle(charSequence.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) { }
+        });
+
+        noteEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                item.setNote(charSequence.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) { }
+        });
+
         String[] resArray = getResources().getStringArray(R.array.priority_array);
         PrioritySpinnerAdapter priorityAdapter = new PrioritySpinnerAdapter(this,
                 R.layout.priority_spinner_item, resArray);
         spinner.setAdapter(priorityAdapter);
         spinner.setSelection(item.getPriority());
-
-        if (item.hasDate()) {
-            Calendar calendar = item.getCalendar();
-            setDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
-        }
-        if (item.hasQuantity()) {
-            setQuantity(item.getQuantityNumber(), item.getQuantityTextPosition());
-        }
-        if(item.hasReminder()){
-            Calendar calendar = item.getCalendar();
-            setReminder(calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE));
-        }
-        if (item.getRepeat() != null){
-            setRepeat(item.getRepeat());
-        }
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -416,6 +453,11 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
         dialog.show(getSupportFragmentManager(), QuantityDialog.class.getSimpleName());
     }
 
+    private void showTagsDialog() {
+        TagsDialog dialog = new TagsDialog(item.getTags());
+        dialog.show(getSupportFragmentManager(), TagsDialog.class.getSimpleName());
+    }
+
     @Override
     public void onRepeatCustomPositiveClicked(Repeat repeat) {
         setRepeat(repeat);
@@ -502,16 +544,6 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
     @Override
     public void onReminderNegativeClicked() {
 
-    }
-
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
-            hideKeyboard();
-            noteEditText.clearFocus();
-            todoTitle.clearFocus();
-        }
-        return super.dispatchTouchEvent(ev);
     }
 
     @Override
@@ -649,6 +681,21 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
         dateDelete.setVisibility(View.VISIBLE);
     }
 
+    @Override
+    public void onDateNegativeClicked() {
+
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+            hideKeyboard();
+            noteEditText.clearFocus();
+            todoTitle.clearFocus();
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
     public void hideKeyboard() {
         // Check if no view has focus:
         View view = this.getCurrentFocus();
@@ -659,7 +706,44 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
     }
 
     @Override
-    public void onDateNegativeClicked() {
+    public void onBackPressed() {
+        Intent intent = new Intent();
+        item.setSteps(steps);
+        intent.putExtra(TODO_ITEM, item);
+        setResult(RESULT_OK, intent);
+        finish();
+        //super.onBackPressed();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_add_todo, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch(id){
+            case R.id.menu_add_todo_tags_item :
+                showTagsDialog();
+                return true;
+
+            case R.id.menu_add_todo_delete_item:
+
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onTagsPositiveClicked(List<Tag> selectedTags) {
+        item.setTags(selectedTags);
+        //TODO chips
+    }
+
+    @Override
+    public void onTagsNegativeClicked() {
 
     }
 }

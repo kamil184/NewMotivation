@@ -27,10 +27,10 @@ public class DateGroupViewHolder extends GroupViewHolder {
     private int size;
     private Context context;
 
-    public DateGroupViewHolder(View itemView, Context context) {
+    public DateGroupViewHolder(View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
-        this.context = context;
+        context = itemView.getContext();
     }
 
     public void onBind(ExpandableGroup group) {
@@ -42,6 +42,10 @@ public class DateGroupViewHolder extends GroupViewHolder {
         } else {
             count.setText(String.valueOf(size));
         }
+
+        add.setOnClickListener(view -> {
+            //TODO
+        });
     }
 
     @Override

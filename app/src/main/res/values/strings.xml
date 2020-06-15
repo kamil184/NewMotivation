@@ -45,6 +45,11 @@
     <string name="undo">UNDO</string>
     <string name="next_week">Next Week</string>
     <string name="someday">Someday</string>
+    <string name="add_tag">Add Tag</string>
+    <string name="tags">Tags</string>
+    <string name="delete">Delete</string>
+    <string name="enter_tag">Enter tag</string>
+    <string name="create">Create</string>
 
     <string-array name="repeat_list">
         <item>Days</item>

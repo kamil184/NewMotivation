@@ -2,7 +2,6 @@ package com.kamil184.newmotivate.ui.main;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity  {
             }
         };
 
-        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        navController = Navigation.findNavController(this, R.id.main_nav_fragment);
         NavigationUI.setupWithNavController(navView, navController);
 
         /*if (theme == LIGHT_THEME) {

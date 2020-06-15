@@ -21,6 +21,8 @@
         <attr name="clockDrawable" format="reference" />
         <attr name="addPrimaryDrawable" format="reference" />
         <attr name="addDrawable" format="reference" />
+        <attr name="tagDrawable" format="reference" />
+        <attr name="editDrawable" format="reference" />
     </declare-styleable>
 
 </resources>

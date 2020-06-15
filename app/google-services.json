@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "212206290000",
+    "firebase_url": "https://motivate-kamil184.firebaseio.com",
+    "project_id": "motivate-kamil184",
+    "storage_bucket": "motivate-kamil184.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212206290000:android:883c0b9212acccd62cfd55",
+        "android_client_info": {
+          "package_name": "com.kamil184.newmotivate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "212206290000-ouslg13en1n9355ij6lrvejskp0fhl5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJIR78a8nJwJ8KYkLBidyfsn73zUWht28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212206290000-ouslg13en1n9355ij6lrvejskp0fhl5k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
