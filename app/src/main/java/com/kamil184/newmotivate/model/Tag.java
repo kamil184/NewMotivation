@@ -3,25 +3,12 @@ package com.kamil184.newmotivate.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import androidx.annotation.Nullable;
-
-import com.kamil184.newmotivate.util.ColorGenerator;
-
 public class Tag implements Parcelable {
 
     public static final String TAG_JSON_FILENAME = "Tags.json";
 
     private String text;
     private int color;
-
-    public Tag(String text){
-        this.text = text;
-        /*int R = (int)(Math.random()*256);
-        int G = (int)(Math.random()*256);
-        int B = (int)(Math.random()*256);
-        color = Color.rgb(R, G, B);*/
-        color = new ColorGenerator().getRandomColor();
-    }
 
     public Tag(String text, int color) {
         this.text = text;

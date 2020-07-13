@@ -524,14 +524,6 @@
     <dimen name="compat_control_corner_material">2dp</dimen>
     <dimen name="compat_notification_large_icon_max_height">320dp</dimen>
     <dimen name="compat_notification_large_icon_max_width">320dp</dimen>
-    <dimen name="cpv_color_preference_large">40dp</dimen>
-    <dimen name="cpv_color_preference_normal">28dp</dimen>
-    <dimen name="cpv_column_width">58dp</dimen>
-    <dimen name="cpv_dialog_preview_height">34dp</dimen>
-    <dimen name="cpv_dialog_preview_width">66dp</dimen>
-    <dimen name="cpv_item_horizontal_padding">8dp</dimen>
-    <dimen name="cpv_item_size">50dp</dimen>
-    <dimen name="cpv_required_padding">6dp</dimen>
     <dimen name="default_dimension">100dp</dimen>
     <dimen name="design_appbar_elevation">4dp</dimen>
     <dimen name="design_bottom_navigation_active_item_max_width">168dp</dimen>
@@ -846,10 +838,6 @@
     <item name="action_bar_spinner" type="id"/>
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
-    <item name="cpv_color_panel_new" type="id"/>
-    <item name="cpv_color_panel_old" type="id"/>
-    <item name="cpv_color_picker_view" type="id"/>
-    <item name="cpv_preference_preview_color_panel" type="id"/>
     <item name="fragment_container_view_tag" type="id"/>
     <item name="ghost_view" type="id"/>
     <item name="ghost_view_holder" type="id"/>
@@ -981,11 +969,6 @@
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="copy">Copy</string>
-    <string name="cpv_custom">Custom</string>
-    <string name="cpv_default_title">Select a Color</string>
-    <string name="cpv_presets">Presets</string>
-    <string name="cpv_select">Select</string>
-    <string name="cpv_transparency">Transparency</string>
     <string name="create">Create</string>
     <string name="custom">Custom</string>
     <string name="daily">Daily</string>
@@ -3059,7 +3042,7 @@
         </item>
 
         <!-- Custom attrs -->
-        <item name="dividerDrawable">@drawable/inset_divider_dark</item>
+        <item name="insetDividerDrawable">@drawable/inset_divider_dark</item>
         <item name="setThemeDrawable">@drawable/ic_sun</item>
         <item name="deleteDrawable">@drawable/ic_delete_white_24dp</item>
         <item name="clearDrawable">@drawable/ic_clear_white_24dp</item>
@@ -3113,7 +3096,7 @@
         </item>
 
         <!-- Custom attrs -->
-        <item name="dividerDrawable">@drawable/inset_divider</item>
+        <item name="insetDividerDrawable">@drawable/inset_divider</item>
         <item name="setThemeDrawable">@drawable/ic_moon</item>
         <item name="deleteDrawable">@drawable/ic_delete_grey_600_24dp</item>
         <item name="clearDrawable">@drawable/ic_clear_grey_600_24dp</item>
@@ -3587,10 +3570,6 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
-    <style name="ShapeAppearance.MyApp.MaterialDialog" parent="">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">16dp</item>
-    </style>
     <style name="ShapeAppearance.MyTheme.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">0dp</item>
@@ -3598,7 +3577,7 @@
     <style name="ShapeAppearance.MyTheme.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <!--Your custom shape here-->
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">16dp</item>
+        <item name="cornerSize">12dp</item>
     </style>
     <style name="ShapeAppearance.MyTheme.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerFamily">rounded</item>
@@ -5025,10 +5004,6 @@
     <style name="Widget.Support.CoordinatorLayout" parent="android:Widget">
         <item name="statusBarBackground">#000000</item>
     </style>
-    <style name="cpv_ColorPickerViewStyle">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">315dp</item>
-  </style>
     <declare-styleable name="ActionBar">
         <!-- The type of navigation to use. -->
         <attr name="navigationMode">
@@ -6284,38 +6259,6 @@
          be between 0.0 and 1.0. -->
     <attr format="float" name="layout_collapseParallaxMultiplier"/>
   </declare-styleable>
-    <declare-styleable name="ColorPanelView">
-    <attr format="boolean" name="cpv_showOldColor"/>
-    <attr format="enum" name="cpv_colorShape">
-      <enum name="square" value="0"/>
-      <enum name="circle" value="1"/>
-    </attr>
-    <attr format="color|reference" name="cpv_borderColor"/>
-  </declare-styleable>
-    <declare-styleable name="ColorPickerView" parent="ColorPanelView">
-    <attr format="boolean|reference" name="cpv_alphaChannelVisible"/>
-    <attr format="string|reference" name="cpv_alphaChannelText"/>
-    <attr format="color|reference" name="cpv_sliderColor"/>
-    <attr name="cpv_borderColor"/>
-  </declare-styleable>
-    <declare-styleable name="ColorPreference" parent="ColorPickerDialog">
-    <attr format="boolean|reference" name="cpv_showAlphaSlider"/>
-    <attr format="enum" name="cpv_previewSize">
-      <enum name="regular" value="0"/>
-      <enum name="large" value="1"/>
-    </attr>
-    <attr name="cpv_colorShape"/>
-    <attr format="reference" name="cpv_dialogTitle"/>
-    <attr format="reference" name="cpv_colorPresets"/>
-    <attr format="enum" name="cpv_dialogType">
-      <enum name="custom" value="0"/>
-      <enum name="preset" value="1"/>
-    </attr>
-    <attr format="boolean|reference" name="cpv_showColorShades"/>
-    <attr format="boolean|reference" name="cpv_allowPresets"/>
-    <attr format="boolean|reference" name="cpv_allowCustom"/>
-    <attr format="boolean|reference" name="cpv_showDialog"/>
-  </declare-styleable>
     <declare-styleable name="ColorStateListItem">
         <!-- Base color for this state. -->
         <attr name="android:color"/>
@@ -6477,7 +6420,7 @@
         <attr name="android:dialogLayout"/>
     </declare-styleable>
     <declare-styleable name="Divider">
-        <attr format="reference" name="dividerDrawable"/>
+        <attr format="reference" name="insetDividerDrawable"/>
     </declare-styleable>
     <declare-styleable name="DrawerArrowToggle">
         <!-- The drawing color for the bars -->

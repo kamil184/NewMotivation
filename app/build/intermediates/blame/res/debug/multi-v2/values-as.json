@@ -55,6 +55,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\tukta\\.gradle\\caches\\transforms-2\\files-2.1\\92bd16339fbe8f83d0f9352a76346624\\jetified-play-services-basement-17.0.0\\res\\values-as\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "184",
+                        "endOffsets": "431"
+                    },
+                    "to": {
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "3971",
+                        "endColumns": "184",
+                        "endOffsets": "4151"
+                    }
+                },
+                {
                     "source": "C:\\Users\\tukta\\.gradle\\caches\\transforms-2\\files-2.1\\13a17c470fac778e0f65f71f9087584d\\preference-1.1.1\\res\\values-as\\values-as.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
@@ -72,7 +89,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\tukta\\.gradle\\caches\\transforms-2\\files-2.1\\53ccceef26069dfc17d16285f1e323fa\\jetified-navigation-ui-1.0.0\\res\\values-as\\values-as.xml",
+                    "source": "C:\\Users\\tukta\\.gradle\\caches\\transforms-2\\files-2.1\\e510cd0e6c87384a8464fd3aff837222\\jetified-navigation-ui-1.0.0\\res\\values-as\\values-as.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -86,23 +103,6 @@
                         "startOffsets": "5611,5716",
                         "endColumns": "104,116",
                         "endOffsets": "5711,5828"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\tukta\\.gradle\\caches\\transforms-2\\files-2.1\\e3cc92c6b192f8e23ee92f9ddd7a8ed2\\jetified-play-services-basement-17.0.0\\res\\values-as\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "184",
-                        "endOffsets": "431"
-                    },
-                    "to": {
-                        "startLines": "37",
-                        "startColumns": "4",
-                        "startOffsets": "3971",
-                        "endColumns": "184",
-                        "endOffsets": "4151"
                     }
                 }
             ]

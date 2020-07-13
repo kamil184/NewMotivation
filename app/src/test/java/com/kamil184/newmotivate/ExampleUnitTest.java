@@ -44,4 +44,12 @@ public class ExampleUnitTest {
         System.out.println(Arrays.toString(finalDays));
 
     }
+
+    @Test
+    public void te(){
+        int proportion = 123;
+        System.out.println(proportion / 100);
+        System.out.println(proportion / 10 % 10);
+        System.out.println(proportion % 10);
+    }
 }

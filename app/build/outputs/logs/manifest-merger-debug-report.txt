@@ -4,14 +4,13 @@ ADDED from C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\Android
 INJECTED from C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\AndroidManifest.xml:2:1-29:12
 INJECTED from C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\AndroidManifest.xml:2:1-29:12
 INJECTED from C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\AndroidManifest.xml:2:1-29:12
-MERGED from [android.arch.navigation:navigation-ui:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\53ccceef26069dfc17d16285f1e323fa\jetified-navigation-ui-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.navigation:navigation-ui:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e510cd0e6c87384a8464fd3aff837222\jetified-navigation-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.material:material:1.3.0-alpha01] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\aa7e8ffc8e19ea9858f8b796c60f34aa\material-1.3.0-alpha01\AndroidManifest.xml:17:1-24:12
-MERGED from [com.jaredrummler:colorpicker:1.1.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5ebe4485f44050c4df9a592459f31d31\colorpicker-1.1.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.preference:preference:1.1.1] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\13a17c470fac778e0f65f71f9087584d\preference-1.1.1\AndroidManifest.xml:17:1-24:12
-MERGED from [com.thoughtbot:expandablerecyclerview:1.3] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\83078df956aa34a24c24d16ceb42ded0\jetified-expandablerecyclerview-1.3\AndroidManifest.xml:2:1-12:12
+MERGED from [com.thoughtbot:expandablerecyclerview:1.3] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3b44154c440c4b00af25455a3ad8eb47\jetified-expandablerecyclerview-1.3\AndroidManifest.xml:2:1-12:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\fb8f7031ef66b8147647717c2aecca12\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\81a362b35962fa2496d450cbee5c4ecc\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
-MERGED from [android.arch.navigation:navigation-fragment:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\bd0173d25af0556f96f01817163b21fc\jetified-navigation-fragment-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.navigation:navigation-fragment:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\35f11828745055394f9353352ace6da2\jetified-navigation-fragment-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.jakewharton:butterknife:10.2.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\8aece8355df3d438647276056c05a563\butterknife-10.2.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-analytics:17.4.3] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\6bd15564fb01c65c2759fe01dca4d56a\firebase-analytics-17.4.3\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\bf49d1e9988754dbe0dc022e3b661608\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -32,22 +31,22 @@ MERGED from [com.google.android.gms:play-services-measurement-base:17.4.3] C:\Us
 MERGED from [com.google.firebase:firebase-iid:20.1.5] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\d8c791917fd8d28cde2a17c097f0a8ce\firebase-iid-20.1.5\AndroidManifest.xml:17:1-47:12
 MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\dd64b0e5e5a7f144b8735df05b5509e0\play-services-stats-17.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-installations:16.2.1] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\c19539b70283b21499a0a95e30087126\firebase-installations-16.2.1\AndroidManifest.xml:2:1-23:12
-MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:15:1-39:12
+MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:15:1-39:12
 MERGED from [com.google.firebase:firebase-installations-interop:16.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\d728d729680c9fdf00b5a0338120f05d\firebase-installations-interop-16.0.0\AndroidManifest.xml:15:1-23:12
 MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\72c10e262845a1c2de4f6980a55c9ba9\firebase-iid-interop-17.0.0\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\b989d78505a527364775fcd163b70614\play-services-base-17.0.0\AndroidManifest.xml:17:1-29:12
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\edc036483ef40607e8355e7cf0a3668d\play-services-tasks-17.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\103107df96b740ba2a049c2d6e82f159\firebase-measurement-connector-18.0.0\AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\bb7f6bd7a0a2da7328d8fd0afe87a97a\play-services-ads-identifier-17.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e3cc92c6b192f8e23ee92f9ddd7a8ed2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\92bd16339fbe8f83d0f9352a76346624\jetified-play-services-basement-17.0.0\AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.fragment:fragment:1.2.4] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\35d948ade2d3b0622338f356457e9890\fragment-1.2.4\AndroidManifest.xml:17:1-24:12
 MERGED from [com.jakewharton:butterknife-runtime:10.2.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\63bb62c2ea0d3a84a679071fe7125dde\butterknife-runtime-10.2.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\808d7e10cd964edb4db3a496265dbbef\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\8d38c20afe116acc8f623a554a3e696f\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\2b97e8589c8f9cc9adcb585b2c3183a0\customview-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.navigation:navigation-runtime:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\23fd234cf3cc84389390738bebcd6dfa\jetified-navigation-runtime-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.navigation:navigation-runtime:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\9f0eb3d8160b3894a3f92e79733aa1d8\jetified-navigation-runtime-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\b18a22a7d488d5a4c630bd657737271b\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.navigation:navigation-common:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\67a1af45b256bb0294c7f0e0cdc47f57\jetified-navigation-common-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.navigation:navigation-common:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\817e2f75a064ee103657c43d737a045c\jetified-navigation-common-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\55c8e6e745aacceb492535bf431d5720\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.1.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\1ae3364b295200fe77a675675ba001ee\activity-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.2.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\d5a97e410e2c366a50d3e0f1ca998460\core-1.2.0\AndroidManifest.xml:17:1-26:12
@@ -55,7 +54,7 @@ MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\tukta\.gradle\caches\tra
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\f3d3c9ef953af10d388177573d1cb616\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\364fe258ba9528c1204e694726c18ae0\lifecycle-viewmodel-savedstate-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\53ce58af168475235510719cd04c481c\lifecycle-viewmodel-2.2.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.firebase:firebase-components:16.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\ba2af0c1b001bf1dd53b1bec670d74b4\jetified-firebase-components-16.0.0\AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.firebase:firebase-components:16.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\69e3686c26d33f3fefb6df099d9a3735\jetified-firebase-components-16.0.0\AndroidManifest.xml:15:1-23:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5080ea4c3a94602e590d65de9668e7d9\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\a072b7027d050ba4a28e8ed0f5aedf24\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\31e1e0ea40abf50bc1f09972fcda6618\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -107,8 +106,8 @@ MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\tukta\.
 MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\dd64b0e5e5a7f144b8735df05b5509e0\play-services-stats-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-installations:16.2.1] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\c19539b70283b21499a0a95e30087126\firebase-installations-16.2.1\AndroidManifest.xml:13:5-21:19
 MERGED from [com.google.firebase:firebase-installations:16.2.1] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\c19539b70283b21499a0a95e30087126\firebase-installations-16.2.1\AndroidManifest.xml:13:5-21:19
-MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:25:5-37:19
-MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:25:5-37:19
+MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:25:5-37:19
+MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:25:5-37:19
 MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\72c10e262845a1c2de4f6980a55c9ba9\firebase-iid-interop-17.0.0\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\72c10e262845a1c2de4f6980a55c9ba9\firebase-iid-interop-17.0.0\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\b989d78505a527364775fcd163b70614\play-services-base-17.0.0\AndroidManifest.xml:22:5-27:19
@@ -119,8 +118,8 @@ MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] C:\Users
 MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\103107df96b740ba2a049c2d6e82f159\firebase-measurement-connector-18.0.0\AndroidManifest.xml:22:5-23:19
 MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\bb7f6bd7a0a2da7328d8fd0afe87a97a\play-services-ads-identifier-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\bb7f6bd7a0a2da7328d8fd0afe87a97a\play-services-ads-identifier-17.0.0\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e3cc92c6b192f8e23ee92f9ddd7a8ed2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e3cc92c6b192f8e23ee92f9ddd7a8ed2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\92bd16339fbe8f83d0f9352a76346624\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\92bd16339fbe8f83d0f9352a76346624\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.core:core:1.2.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\d5a97e410e2c366a50d3e0f1ca998460\core-1.2.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.2.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\d5a97e410e2c366a50d3e0f1ca998460\core-1.2.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\f3d3c9ef953af10d388177573d1cb616\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
@@ -169,22 +168,20 @@ uses-sdk
 INJECTED from C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\tukta\AndroidStudioProjects\NewMotivate\app\src\main\AndroidManifest.xml
-MERGED from [android.arch.navigation:navigation-ui:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\53ccceef26069dfc17d16285f1e323fa\jetified-navigation-ui-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.navigation:navigation-ui:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\53ccceef26069dfc17d16285f1e323fa\jetified-navigation-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.navigation:navigation-ui:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e510cd0e6c87384a8464fd3aff837222\jetified-navigation-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.navigation:navigation-ui:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e510cd0e6c87384a8464fd3aff837222\jetified-navigation-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.3.0-alpha01] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\aa7e8ffc8e19ea9858f8b796c60f34aa\material-1.3.0-alpha01\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.3.0-alpha01] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\aa7e8ffc8e19ea9858f8b796c60f34aa\material-1.3.0-alpha01\AndroidManifest.xml:20:5-44
-MERGED from [com.jaredrummler:colorpicker:1.1.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5ebe4485f44050c4df9a592459f31d31\colorpicker-1.1.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.jaredrummler:colorpicker:1.1.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5ebe4485f44050c4df9a592459f31d31\colorpicker-1.1.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.preference:preference:1.1.1] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\13a17c470fac778e0f65f71f9087584d\preference-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.preference:preference:1.1.1] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\13a17c470fac778e0f65f71f9087584d\preference-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [com.thoughtbot:expandablerecyclerview:1.3] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\83078df956aa34a24c24d16ceb42ded0\jetified-expandablerecyclerview-1.3\AndroidManifest.xml:8:5-10:41
-MERGED from [com.thoughtbot:expandablerecyclerview:1.3] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\83078df956aa34a24c24d16ceb42ded0\jetified-expandablerecyclerview-1.3\AndroidManifest.xml:8:5-10:41
+MERGED from [com.thoughtbot:expandablerecyclerview:1.3] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3b44154c440c4b00af25455a3ad8eb47\jetified-expandablerecyclerview-1.3\AndroidManifest.xml:8:5-10:41
+MERGED from [com.thoughtbot:expandablerecyclerview:1.3] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3b44154c440c4b00af25455a3ad8eb47\jetified-expandablerecyclerview-1.3\AndroidManifest.xml:8:5-10:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\fb8f7031ef66b8147647717c2aecca12\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\fb8f7031ef66b8147647717c2aecca12\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\81a362b35962fa2496d450cbee5c4ecc\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\81a362b35962fa2496d450cbee5c4ecc\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
-MERGED from [android.arch.navigation:navigation-fragment:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\bd0173d25af0556f96f01817163b21fc\jetified-navigation-fragment-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.navigation:navigation-fragment:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\bd0173d25af0556f96f01817163b21fc\jetified-navigation-fragment-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.navigation:navigation-fragment:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\35f11828745055394f9353352ace6da2\jetified-navigation-fragment-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.navigation:navigation-fragment:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\35f11828745055394f9353352ace6da2\jetified-navigation-fragment-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.jakewharton:butterknife:10.2.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\8aece8355df3d438647276056c05a563\butterknife-10.2.0\AndroidManifest.xml:5:5-44
 MERGED from [com.jakewharton:butterknife:10.2.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\8aece8355df3d438647276056c05a563\butterknife-10.2.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics:17.4.3] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\6bd15564fb01c65c2759fe01dca4d56a\firebase-analytics-17.4.3\AndroidManifest.xml:5:5-44
@@ -225,8 +222,8 @@ MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\tukta\.
 MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\dd64b0e5e5a7f144b8735df05b5509e0\play-services-stats-17.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-installations:16.2.1] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\c19539b70283b21499a0a95e30087126\firebase-installations-16.2.1\AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-installations:16.2.1] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\c19539b70283b21499a0a95e30087126\firebase-installations-16.2.1\AndroidManifest.xml:6:5-8:41
-MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-installations-interop:16.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\d728d729680c9fdf00b5a0338120f05d\firebase-installations-interop-16.0.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-installations-interop:16.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\d728d729680c9fdf00b5a0338120f05d\firebase-installations-interop-16.0.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\72c10e262845a1c2de4f6980a55c9ba9\firebase-iid-interop-17.0.0\AndroidManifest.xml:5:5-44
@@ -239,8 +236,8 @@ MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] C:\Users
 MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\103107df96b740ba2a049c2d6e82f159\firebase-measurement-connector-18.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\bb7f6bd7a0a2da7328d8fd0afe87a97a\play-services-ads-identifier-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\bb7f6bd7a0a2da7328d8fd0afe87a97a\play-services-ads-identifier-17.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e3cc92c6b192f8e23ee92f9ddd7a8ed2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e3cc92c6b192f8e23ee92f9ddd7a8ed2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\92bd16339fbe8f83d0f9352a76346624\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\92bd16339fbe8f83d0f9352a76346624\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.2.4] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\35d948ade2d3b0622338f356457e9890\fragment-1.2.4\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.2.4] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\35d948ade2d3b0622338f356457e9890\fragment-1.2.4\AndroidManifest.xml:20:5-22:41
 MERGED from [com.jakewharton:butterknife-runtime:10.2.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\63bb62c2ea0d3a84a679071fe7125dde\butterknife-runtime-10.2.0\AndroidManifest.xml:5:5-44
@@ -251,12 +248,12 @@ MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\tukta\.gradle\caches\t
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\8d38c20afe116acc8f623a554a3e696f\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\2b97e8589c8f9cc9adcb585b2c3183a0\customview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\2b97e8589c8f9cc9adcb585b2c3183a0\customview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.navigation:navigation-runtime:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\23fd234cf3cc84389390738bebcd6dfa\jetified-navigation-runtime-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.navigation:navigation-runtime:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\23fd234cf3cc84389390738bebcd6dfa\jetified-navigation-runtime-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.navigation:navigation-runtime:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\9f0eb3d8160b3894a3f92e79733aa1d8\jetified-navigation-runtime-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.navigation:navigation-runtime:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\9f0eb3d8160b3894a3f92e79733aa1d8\jetified-navigation-runtime-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\b18a22a7d488d5a4c630bd657737271b\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\b18a22a7d488d5a4c630bd657737271b\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.navigation:navigation-common:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\67a1af45b256bb0294c7f0e0cdc47f57\jetified-navigation-common-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.navigation:navigation-common:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\67a1af45b256bb0294c7f0e0cdc47f57\jetified-navigation-common-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.navigation:navigation-common:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\817e2f75a064ee103657c43d737a045c\jetified-navigation-common-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.navigation:navigation-common:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\817e2f75a064ee103657c43d737a045c\jetified-navigation-common-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\55c8e6e745aacceb492535bf431d5720\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\55c8e6e745aacceb492535bf431d5720\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.1.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\1ae3364b295200fe77a675675ba001ee\activity-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -271,8 +268,8 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] C:\Users\t
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\364fe258ba9528c1204e694726c18ae0\lifecycle-viewmodel-savedstate-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\53ce58af168475235510719cd04c481c\lifecycle-viewmodel-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\53ce58af168475235510719cd04c481c\lifecycle-viewmodel-2.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.firebase:firebase-components:16.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\ba2af0c1b001bf1dd53b1bec670d74b4\jetified-firebase-components-16.0.0\AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.firebase:firebase-components:16.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\ba2af0c1b001bf1dd53b1bec670d74b4\jetified-firebase-components-16.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-components:16.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\69e3686c26d33f3fefb6df099d9a3735\jetified-firebase-components-16.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-components:16.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\69e3686c26d33f3fefb6df099d9a3735\jetified-firebase-components-16.0.0\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5080ea4c3a94602e590d65de9668e7d9\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5080ea4c3a94602e590d65de9668e7d9\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\a072b7027d050ba4a28e8ed0f5aedf24\documentfile-1.0.0\AndroidManifest.xml:20:5-44
@@ -381,14 +378,14 @@ MERGED from [com.google.firebase:firebase-iid:20.1.5] C:\Users\tukta\.gradle\cac
 MERGED from [com.google.firebase:firebase-iid:20.1.5] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\d8c791917fd8d28cde2a17c097f0a8ce\firebase-iid-20.1.5\AndroidManifest.xml:29:9-35:19
 MERGED from [com.google.firebase:firebase-installations:16.2.1] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\c19539b70283b21499a0a95e30087126\firebase-installations-16.2.1\AndroidManifest.xml:14:9-20:19
 MERGED from [com.google.firebase:firebase-installations:16.2.1] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\c19539b70283b21499a0a95e30087126\firebase-installations-16.2.1\AndroidManifest.xml:14:9-20:19
-MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:32:9-36:35
-MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:32:9-36:35
+MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:32:9-36:35
+MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:32:9-36:35
 	android:exported
 		ADDED from [com.google.android.gms:play-services-measurement-api:17.4.3] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e56a2fcd76b120438df459f1cf422194\play-services-measurement-api-17.4.3\AndroidManifest.xml:29:13-37
 	tools:targetApi
-		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:36:13-32
+		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:36:13-32
 	android:directBootAware
-		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
 	android:name
 		ADDED from [com.google.android.gms:play-services-measurement-api:17.4.3] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e56a2fcd76b120438df459f1cf422194\play-services-measurement-api-17.4.3\AndroidManifest.xml:28:13-84
 meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
@@ -428,15 +425,15 @@ ADDED from [com.google.firebase:firebase-installations:16.2.1] C:\Users\tukta\.g
 	android:name
 		ADDED from [com.google.firebase:firebase-installations:16.2.1] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\c19539b70283b21499a0a95e30087126\firebase-installations-16.2.1\AndroidManifest.xml:18:17-127
 provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
 	android:authorities
-		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
 	android:exported
-		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
 	android:initOrder
-		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
 	android:name
-		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+		ADDED from [com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\b989d78505a527364775fcd163b70614\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
 	android:exported
@@ -446,8 +443,8 @@ ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\tukta\.gr
 	android:name
 		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\b989d78505a527364775fcd163b70614\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e3cc92c6b192f8e23ee92f9ddd7a8ed2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\92bd16339fbe8f83d0f9352a76346624\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e3cc92c6b192f8e23ee92f9ddd7a8ed2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\92bd16339fbe8f83d0f9352a76346624\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e3cc92c6b192f8e23ee92f9ddd7a8ed2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\92bd16339fbe8f83d0f9352a76346624\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58

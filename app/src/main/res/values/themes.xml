@@ -41,7 +41,7 @@
         </item>
 
         <!-- Custom attrs -->
-        <item name="dividerDrawable">@drawable/inset_divider</item>
+        <item name="insetDividerDrawable">@drawable/inset_divider</item>
         <item name="setThemeDrawable">@drawable/ic_moon</item>
         <item name="deleteDrawable">@drawable/ic_delete_grey_600_24dp</item>
         <item name="clearDrawable">@drawable/ic_clear_grey_600_24dp</item>
@@ -95,7 +95,7 @@
         </item>
 
         <!-- Custom attrs -->
-        <item name="dividerDrawable">@drawable/inset_divider_dark</item>
+        <item name="insetDividerDrawable">@drawable/inset_divider_dark</item>
         <item name="setThemeDrawable">@drawable/ic_sun</item>
         <item name="deleteDrawable">@drawable/ic_delete_white_24dp</item>
         <item name="clearDrawable">@drawable/ic_clear_white_24dp</item>

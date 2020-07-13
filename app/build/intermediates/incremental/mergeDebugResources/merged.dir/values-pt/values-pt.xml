@@ -28,11 +28,6 @@
     <string msgid="9009661856846212431" name="abc_shareactionprovider_share_with_application">"Compartilhar com <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
     <string msgid="6389460216547290468" name="abc_toolbar_collapse_description">"Recolher"</string>
     <string msgid="3209159573327985035" name="copy">"Copiar"</string>
-    <string name="cpv_custom">Personalizar</string>
-    <string name="cpv_default_title">Selecionar uma cor</string>
-    <string name="cpv_presets">Predefinidos</string>
-    <string name="cpv_select">Selecionar</string>
-    <string name="cpv_transparency">Transparência</string>
     <string msgid="1234962710353108940" name="expand_button_title">"Avançado"</string>
     <string msgid="6301633601645100427" name="nav_app_bar_navigate_up_description">"Navegar para cima"</string>
     <string msgid="7456070600745802113" name="nav_app_bar_open_drawer_description">"Abrir gaveta de navegação"</string>

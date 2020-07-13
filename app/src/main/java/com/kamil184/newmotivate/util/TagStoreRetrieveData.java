@@ -21,6 +21,7 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+//TODO совместить с TodoStoreRetrieveData
 public class TagStoreRetrieveData {
     private Context context;
     private String fileName;
@@ -30,7 +31,7 @@ public class TagStoreRetrieveData {
         fileName = filename;
     }
 
-    public static JSONArray toJSONArray(List<Tag> tags) throws JSONException {
+    private static JSONArray toJSONArray(List<Tag> tags) throws JSONException {
         JSONArray jsonArray = new JSONArray();
         for (Tag tag : tags) {
             Gson gson = new GsonBuilder().create();
@@ -50,7 +51,7 @@ public class TagStoreRetrieveData {
         fileOutputStream.close();
     }
 
-    public List<Tag> loadFromFile() throws IOException, JSONException {
+    private List<Tag> loadFromFile() throws IOException, JSONException {
         List<Tag> tags = new ArrayList<>();
         BufferedReader bufferedReader = null;
         FileInputStream fileInputStream = null;

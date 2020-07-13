@@ -46,11 +46,6 @@
     <string msgid="3441753203274453993" name="common_signin_button_text">"ログイン"</string>
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Googleにログイン"</string>
     <string msgid="3209159573327985035" name="copy">"コピー"</string>
-    <string name="cpv_custom">カスタム</string>
-    <string name="cpv_default_title">色を選択</string>
-    <string name="cpv_presets">プリセット</string>
-    <string name="cpv_select">選択</string>
-    <string name="cpv_transparency">透明度</string>
     <string msgid="1234962710353108940" name="expand_button_title">"詳細設定"</string>
     <string msgid="6301633601645100427" name="nav_app_bar_navigate_up_description">"上へ移動"</string>
     <string msgid="7456070600745802113" name="nav_app_bar_open_drawer_description">"ナビゲーション ドロワーを開く"</string>

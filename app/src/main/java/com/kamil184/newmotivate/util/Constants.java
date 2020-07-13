@@ -6,6 +6,7 @@ public class Constants {
     public static final boolean DARK_THEME = true;
     public static final boolean LIGHT_THEME = false;
     public static final String TODO_ITEM = "to do item";
+    public static final String IS_FIRST_TIME_COLORS = "is first time colors";
 
     //PRIORITY
     public static final int HIGH = 0;

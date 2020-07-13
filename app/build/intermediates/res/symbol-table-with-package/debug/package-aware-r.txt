@@ -306,21 +306,6 @@ attr counterOverflowTextAppearance
 attr counterOverflowTextColor
 attr counterTextAppearance
 attr counterTextColor
-attr cpv_allowCustom
-attr cpv_allowPresets
-attr cpv_alphaChannelText
-attr cpv_alphaChannelVisible
-attr cpv_borderColor
-attr cpv_colorPresets
-attr cpv_colorShape
-attr cpv_dialogTitle
-attr cpv_dialogType
-attr cpv_previewSize
-attr cpv_showAlphaSlider
-attr cpv_showColorShades
-attr cpv_showDialog
-attr cpv_showOldColor
-attr cpv_sliderColor
 attr customNavigationLayout
 attr data
 attr dataPattern
@@ -346,7 +331,6 @@ attr dialogTitle
 attr disableDependentsState
 attr displayOptions
 attr divider
-attr dividerDrawable
 attr dividerHorizontal
 attr dividerPadding
 attr dividerVertical
@@ -476,6 +460,7 @@ attr indicatorType
 attr indicatorWidth
 attr initialActivityCount
 attr initialExpandedChildrenCount
+attr insetDividerDrawable
 attr insetForeground
 attr inverse
 attr isLightTheme
@@ -1242,14 +1227,6 @@ dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
 dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
-dimen cpv_color_preference_large
-dimen cpv_color_preference_normal
-dimen cpv_column_width
-dimen cpv_dialog_preview_height
-dimen cpv_dialog_preview_width
-dimen cpv_item_horizontal_padding
-dimen cpv_item_size
-dimen cpv_required_padding
 dimen default_dimension
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
@@ -1640,11 +1617,6 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
-drawable cpv_alpha
-drawable cpv_btn_background
-drawable cpv_btn_background_pressed
-drawable cpv_ic_arrow_right_black_24dp
-drawable cpv_preset_checked
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1836,7 +1808,6 @@ id chip2
 id chip3
 id chip_group
 id chronometer
-id circle
 id circular
 id clear_text
 id clip_horizontal
@@ -1847,14 +1818,6 @@ id container
 id content
 id contentPanel
 id coordinator
-id cpv_arrow_right
-id cpv_color_image_view
-id cpv_color_panel_new
-id cpv_color_panel_old
-id cpv_color_panel_view
-id cpv_color_picker_view
-id cpv_hex
-id cpv_preference_preview_color_panel
 id custom
 id customPanel
 id cut
@@ -1902,7 +1865,6 @@ id friday
 id ghost_view
 id ghost_view_holder
 id gone
-id gridView
 id group_divider
 id groups
 id hideable
@@ -1920,7 +1882,6 @@ id invisible
 id italic
 id item_touch_helper_previous_elevation
 id labeled
-id large
 id largeLabel
 id left
 id light
@@ -1991,7 +1952,6 @@ id peekHeight
 id percent
 id pin
 id preference_fragment
-id preset
 id priority_spinner_item_image
 id priority_spinner_item_text
 id progress_circular
@@ -2004,7 +1964,6 @@ id quantity_text_picker
 id quantity_text_view
 id radio
 id recycler_view
-id regular
 id reminder_delete
 id reminder_image_view
 id reminder_layout
@@ -2053,8 +2012,6 @@ id selected
 id settingsFragment
 id settings_appbarlayout
 id settings_toolbar
-id shades_divider
-id shades_layout
 id shortcut
 id showCustom
 id showHome
@@ -2071,7 +2028,6 @@ id spinner
 id split_action_bar
 id spread
 id spread_inside
-id square
 id src_atop
 id src_in
 id src_over
@@ -2099,7 +2055,6 @@ id tag_add_tag
 id tag_edit_text
 id tag_item_checkbox
 id tag_item_edit
-id tag_item_text
 id tag_recycler
 id tag_screen_reader_focusable
 id tag_transition_group
@@ -2153,10 +2108,6 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
-id transparency_layout
-id transparency_seekbar
-id transparency_text
-id transparency_title
 id tuesday
 id unchecked
 id uniform
@@ -2237,14 +2188,6 @@ layout abc_tooltip
 layout activity_add_to_do
 layout activity_main
 layout add_step
-layout cpv_color_item_circle
-layout cpv_color_item_square
-layout cpv_dialog_color_picker
-layout cpv_dialog_presets
-layout cpv_preference_circle
-layout cpv_preference_circle_large
-layout cpv_preference_square
-layout cpv_preference_square_large
 layout custom_dialog
 layout date_group_item
 layout date_picker_dialog
@@ -2411,11 +2354,6 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string copy
-string cpv_custom
-string cpv_default_title
-string cpv_presets
-string cpv_select
-string cpv_transparency
 string create
 string custom
 string daily
@@ -2838,7 +2776,6 @@ style ShapeAppearance_MaterialComponents_SmallComponent
 style ShapeAppearance_MaterialComponents_Test
 style ShapeAppearance_MaterialComponents_Tooltip
 style ShapeAppearance_MyApp_CircleButton
-style ShapeAppearance_MyApp_MaterialDialog
 style ShapeAppearance_MyTheme_LargeComponent
 style ShapeAppearance_MyTheme_MediumComponent
 style ShapeAppearance_MyTheme_SmallComponent
@@ -3263,7 +3200,6 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
-style cpv_ColorPickerViewStyle
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
@@ -3296,9 +3232,6 @@ styleable Chip android_textAppearance android_textColor android_ellipsize androi
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical selectionRequired singleLine singleSelection
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance maxLines scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleEnabled toolbarId
 styleable CollapsingToolbarLayout_Layout layout_collapseMode layout_collapseParallaxMultiplier
-styleable ColorPanelView cpv_borderColor cpv_colorShape cpv_showOldColor
-styleable ColorPickerView cpv_alphaChannelText cpv_alphaChannelVisible cpv_borderColor cpv_sliderColor
-styleable ColorPreference cpv_allowCustom cpv_allowPresets cpv_colorPresets cpv_colorShape cpv_dialogTitle cpv_dialogType cpv_previewSize cpv_showAlphaSlider cpv_showColorShades cpv_showDialog
 styleable ColorStateListItem android_color android_alpha alpha
 styleable CompoundButton android_button buttonCompat buttonTint buttonTintMode
 styleable ConstraintLayout_Layout android_orientation android_maxWidth android_maxHeight android_minWidth android_minHeight barrierAllowsGoneWidgets barrierDirection chainUseRtl constraintSet constraint_referenced_ids layout_constrainedHeight layout_constrainedWidth layout_constraintBaseline_creator layout_constraintBaseline_toBaselineOf layout_constraintBottom_creator layout_constraintBottom_toBottomOf layout_constraintBottom_toTopOf layout_constraintCircle layout_constraintCircleAngle layout_constraintCircleRadius layout_constraintDimensionRatio layout_constraintEnd_toEndOf layout_constraintEnd_toStartOf layout_constraintGuide_begin layout_constraintGuide_end layout_constraintGuide_percent layout_constraintHeight_default layout_constraintHeight_max layout_constraintHeight_min layout_constraintHeight_percent layout_constraintHorizontal_bias layout_constraintHorizontal_chainStyle layout_constraintHorizontal_weight layout_constraintLeft_creator layout_constraintLeft_toLeftOf layout_constraintLeft_toRightOf layout_constraintRight_creator layout_constraintRight_toLeftOf layout_constraintRight_toRightOf layout_constraintStart_toEndOf layout_constraintStart_toStartOf layout_constraintTop_creator layout_constraintTop_toBottomOf layout_constraintTop_toTopOf layout_constraintVertical_bias layout_constraintVertical_chainStyle layout_constraintVertical_weight layout_constraintWidth_default layout_constraintWidth_max layout_constraintWidth_min layout_constraintWidth_percent layout_editor_absoluteX layout_editor_absoluteY layout_goneMarginBottom layout_goneMarginEnd layout_goneMarginLeft layout_goneMarginRight layout_goneMarginStart layout_goneMarginTop layout_optimizationLevel
@@ -3307,7 +3240,7 @@ styleable ConstraintSet android_orientation android_id android_visibility androi
 styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
 styleable DialogPreference android_dialogTitle android_dialogMessage android_dialogIcon android_positiveButtonText android_negativeButtonText android_dialogLayout dialogIcon dialogLayout dialogMessage dialogTitle negativeButtonText positiveButtonText
-styleable Divider dividerDrawable
+styleable Divider insetDividerDrawable
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
 styleable EditTextPreference useSimpleSummaryProvider
 styleable ExtendedFloatingActionButton elevation extendMotionSpec hideMotionSpec showMotionSpec shrinkMotionSpec

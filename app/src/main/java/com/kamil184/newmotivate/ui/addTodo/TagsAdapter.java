@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,7 +16,7 @@ import com.kamil184.newmotivate.model.Tag;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder>  {
+public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder> {
 
     private List<Tag> selectedTags;
     private List<Tag> visibleTags; // sorted by typing
@@ -40,7 +39,7 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder>  {
     public void onBindViewHolder(TagsAdapter.ViewHolder holder, int position) {
         Tag tag = visibleTags.get(position);
         holder.checkBox.setChecked(selectedTags.contains(tag));
-        holder.textView.setText(tag.getText());
+        holder.checkBox.setText(tag.getText());
 
         ColorStateList colorStateList = new ColorStateList(
                 new int[][]{
@@ -52,6 +51,16 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder>  {
 
         holder.imageButton.setOnClickListener(view -> {
             //TODO
+        });
+
+        holder.checkBox.setOnClickListener(view1 -> {
+            if (holder.checkBox.isChecked()) {
+                if (!selectedTags.contains(tag)) {
+                    selectedTags.add(tag);
+                }
+            } else {
+                selectedTags.remove(tag);
+            }
         });
     }
 
@@ -76,29 +85,31 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder>  {
     }
 
     void addTag(Tag tag) {
-        allTags.add(tag);
-        visibleTags.add(tag);
-        selectedTags.add(tag);
-        notifyItemInserted(visibleTags.size() - 1);
+        allTags.add(0, tag);
+        visibleTags.add(0, tag);
+        selectedTags.add(0, tag);
+        notifyItemInserted(0);
     }
 
-    List<Tag> getAllTags(){
+    List<Tag> getAllTags() {
         return allTags;
     }
 
-    void setVisibleTags(List<Tag> visibleTags){
+    List<Tag> getVisibleTags() {
+        return visibleTags;
+    }
+
+    void setVisibleTags(List<Tag> visibleTags) {
         this.visibleTags = visibleTags;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
         final MaterialCheckBox checkBox;
-        final TextView textView;
         final ImageButton imageButton;
 
         ViewHolder(View view) {
             super(view);
             checkBox = (MaterialCheckBox) view.findViewById(R.id.tag_item_checkbox);
-            textView = (TextView) view.findViewById(R.id.tag_item_text);
             imageButton = (ImageButton) view.findViewById(R.id.tag_item_edit);
         }
     }

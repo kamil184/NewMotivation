@@ -12,8 +12,13 @@
         android:background="@null"
         android:hint="@string/enter_tag"
         android:maxLines="1"
-        android:singleLine="true"
-        android:padding="@dimen/spacing_16" />
+        android:padding="@dimen/spacing_16"
+        android:singleLine="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:dividerHorizontal"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tag_recycler"
@@ -29,6 +34,7 @@
         android:padding="@dimen/spacing_16"
         android:textSize="16sp"
         android:visibility="gone"
+        android:background="?selectableItemBackground"
         tools:text="Create 'Work'" />
 
 </LinearLayout>

@@ -4,26 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?selectableItemBackground">
+    android:background="?selectableItemBackground"
+    android:paddingStart="@dimen/spacing_16">
 
     <com.google.android.material.checkbox.MaterialCheckBox
         android:id="@+id/tag_item_checkbox"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="@dimen/spacing_16"
-        android:background="@null" />
-
-    <TextView
-        android:id="@+id/tag_item_text"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/spacing_48"
-        android:layout_toStartOf="@+id/tag_item_edit"
-        android:layout_toEndOf="@+id/tag_item_checkbox"
-        android:foregroundGravity="center"
-        android:gravity="center_vertical"
+        tools:text="Work"
+        android:paddingStart="@dimen/spacing_8"
         android:textSize="18sp"
-        tools:text="Work" />
+        android:background="@null"/>
 
     <ImageButton
         android:id="@+id/tag_item_edit"

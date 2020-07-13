@@ -1,4 +1,4 @@
-#Mon Jun 15 17:49:08 MSK 2020
+#Mon Jul 13 11:16:40 MSK 2020
 base.0=C\:\\Users\\tukta\\AndroidStudioProjects\\NewMotivate\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

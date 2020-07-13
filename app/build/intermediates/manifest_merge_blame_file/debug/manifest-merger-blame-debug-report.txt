@@ -106,7 +106,7 @@
 59            android:name="com.google.firebase.components.ComponentDiscoveryService"
 59-->[com.google.android.gms:play-services-measurement-api:17.4.3] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e56a2fcd76b120438df459f1cf422194\play-services-measurement-api-17.4.3\AndroidManifest.xml:28:13-84
 60            android:directBootAware="true"
-60-->[com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+60-->[com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
 61            android:exported="false" >
 61-->[com.google.android.gms:play-services-measurement-api:17.4.3] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e56a2fcd76b120438df459f1cf422194\play-services-measurement-api-17.4.3\AndroidManifest.xml:29:13-37
 62            <meta-data
@@ -146,15 +146,15 @@
 80        </receiver>
 81
 82        <provider
-82-->[com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+82-->[com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
 83            android:name="com.google.firebase.provider.FirebaseInitProvider"
-83-->[com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+83-->[com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
 84            android:authorities="com.kamil184.newmotivate.firebaseinitprovider"
-84-->[com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+84-->[com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
 85            android:exported="false"
-85-->[com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+85-->[com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
 86            android:initOrder="100" />
-86-->[com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\3696962380c35fee12292f04e2aef04a\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+86-->[com.google.firebase:firebase-common:19.3.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\5941344561ba45a97b1d20cff1d0bad8\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
 87
 88        <activity
 88-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\b989d78505a527364775fcd163b70614\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
@@ -166,11 +166,11 @@
 91-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\b989d78505a527364775fcd163b70614\play-services-base-17.0.0\AndroidManifest.xml:26:13-72
 92
 93        <meta-data
-93-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e3cc92c6b192f8e23ee92f9ddd7a8ed2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+93-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\92bd16339fbe8f83d0f9352a76346624\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
 94            android:name="com.google.android.gms.version"
-94-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e3cc92c6b192f8e23ee92f9ddd7a8ed2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+94-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\92bd16339fbe8f83d0f9352a76346624\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
 95            android:value="@integer/google_play_services_version" />
-95-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\e3cc92c6b192f8e23ee92f9ddd7a8ed2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+95-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\tukta\.gradle\caches\transforms-2\files-2.1\92bd16339fbe8f83d0f9352a76346624\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
 96    </application>
 97
 98</manifest>

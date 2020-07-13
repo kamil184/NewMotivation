@@ -10,7 +10,7 @@
     <style name="ShapeAppearance.MyTheme.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <!--Your custom shape here-->
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">16dp</item>
+        <item name="cornerSize">12dp</item>
     </style>
 
     <!--Shape Appearance for large components like side and bottom navigation drawers-->
@@ -22,11 +22,6 @@
     <style name="ShapeAppearanceOverlay.MyApp.MaterialCardView" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">0dp</item>
-    </style>
-
-    <style name="ShapeAppearance.MyApp.MaterialDialog" parent="">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">16dp</item>
     </style>
 
     <style name="ShapeAppearance.MyApp.CircleButton" parent="">

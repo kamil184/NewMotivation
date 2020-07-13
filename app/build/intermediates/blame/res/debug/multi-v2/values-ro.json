@@ -55,24 +55,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\tukta\\.gradle\\caches\\transforms-2\\files-2.1\\53ccceef26069dfc17d16285f1e323fa\\jetified-navigation-ui-1.0.0\\res\\values-ro\\values-ro.xml",
+                    "source": "C:\\Users\\tukta\\.gradle\\caches\\transforms-2\\files-2.1\\13a17c470fac778e0f65f71f9087584d\\preference-1.1.1\\res\\values-ro\\values-ro.xml",
                     "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,165",
-                        "endColumns": "109,123",
-                        "endOffsets": "160,284"
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "105,176,262,336,475,644,731",
+                        "endColumns": "70,85,73,138,168,86,80",
+                        "endOffsets": "171,257,331,470,639,726,807"
                     },
                     "to": {
-                        "startLines": "49,50",
-                        "startColumns": "4,4",
-                        "startOffsets": "5757,5867",
-                        "endColumns": "109,123",
-                        "endOffsets": "5862,5986"
+                        "startLines": "47,48,51,52,55,56,57",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "5600,5671,5991,6065,6388,6557,6644",
+                        "endColumns": "70,85,73,138,168,86,80",
+                        "endOffsets": "5666,5752,6060,6199,6552,6639,6720"
                     }
                 },
                 {
-                    "source": "C:\\Users\\tukta\\.gradle\\caches\\transforms-2\\files-2.1\\e3cc92c6b192f8e23ee92f9ddd7a8ed2\\jetified-play-services-basement-17.0.0\\res\\values-ro\\values.xml",
+                    "source": "C:\\Users\\tukta\\.gradle\\caches\\transforms-2\\files-2.1\\92bd16339fbe8f83d0f9352a76346624\\jetified-play-services-basement-17.0.0\\res\\values-ro\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -89,20 +89,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\tukta\\.gradle\\caches\\transforms-2\\files-2.1\\13a17c470fac778e0f65f71f9087584d\\preference-1.1.1\\res\\values-ro\\values-ro.xml",
+                    "source": "C:\\Users\\tukta\\.gradle\\caches\\transforms-2\\files-2.1\\e510cd0e6c87384a8464fd3aff837222\\jetified-navigation-ui-1.0.0\\res\\values-ro\\values-ro.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "105,176,262,336,475,644,731",
-                        "endColumns": "70,85,73,138,168,86,80",
-                        "endOffsets": "171,257,331,470,639,726,807"
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,165",
+                        "endColumns": "109,123",
+                        "endOffsets": "160,284"
                     },
                     "to": {
-                        "startLines": "47,48,51,52,55,56,57",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "5600,5671,5991,6065,6388,6557,6644",
-                        "endColumns": "70,85,73,138,168,86,80",
-                        "endOffsets": "5666,5752,6060,6199,6552,6639,6720"
+                        "startLines": "49,50",
+                        "startColumns": "4,4",
+                        "startOffsets": "5757,5867",
+                        "endColumns": "109,123",
+                        "endOffsets": "5862,5986"
                     }
                 }
             ]
