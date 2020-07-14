@@ -85,7 +85,7 @@ public class TagsDialog extends DialogFragment {
         adapter = new TagsAdapter(selectedTags, getLocallyStoredData(storeRetrieveData));
         recyclerView.setAdapter(adapter);
 
-        ComplexPreferences complexPreferences = ComplexPreferences.getComplexPreferences(context, APP_PREFERENCES, MODE_PRIVATE);
+        ComplexPreferences complexPreferences = new ComplexPreferences(context, APP_PREFERENCES, MODE_PRIVATE);
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
 
         boolean isFirstTimeColor = sharedPreferences.getBoolean(IS_FIRST_TIME_COLORS, true);

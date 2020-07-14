@@ -17,30 +17,39 @@
 
 
     <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:layout_alignParentEnd="true">
 
         <ImageButton
             android:id="@+id/date_group_add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="?android:attr/selectableItemBackground"
-            android:padding="@dimen/spacing_16"
             android:visibility="gone"
             app:srcCompat="?addDrawable" />
 
+        <TextView
+            android:id="@+id/date_group_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/empty"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
         <com.google.android.material.chip.Chip
             android:id="@+id/date_group_count"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_margin="@dimen/spacing_4"
             android:checkable="false"
             android:clickable="false"
             android:textSize="20sp"
             app:chipBackgroundColor="@null"
-            app:chipSurfaceColor="@null"
             app:chipStrokeWidth="1dp"
+            app:chipSurfaceColor="@null"
             app:rippleColor="@null"
             tools:text="10" />
     </FrameLayout>

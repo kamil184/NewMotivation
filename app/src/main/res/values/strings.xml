@@ -50,6 +50,7 @@
     <string name="delete">Delete</string>
     <string name="enter_tag">Enter tag</string>
     <string name="create">Create</string>
+    <string name="empty">empty</string>
 
     <string-array name="repeat_list">
         <item>Days</item>

@@ -23,6 +23,7 @@ public class DateGroupViewHolder_ViewBinding implements Unbinder {
     target.title = Utils.findRequiredViewAsType(source, R.id.date_group_title, "field 'title'", TextView.class);
     target.add = Utils.findRequiredViewAsType(source, R.id.date_group_add, "field 'add'", ImageView.class);
     target.count = Utils.findRequiredViewAsType(source, R.id.date_group_count, "field 'count'", Chip.class);
+    target.empty = Utils.findRequiredViewAsType(source, R.id.date_group_empty, "field 'empty'", TextView.class);
   }
 
   @Override
@@ -35,5 +36,6 @@ public class DateGroupViewHolder_ViewBinding implements Unbinder {
     target.title = null;
     target.add = null;
     target.count = null;
+    target.empty = null;
   }
 }

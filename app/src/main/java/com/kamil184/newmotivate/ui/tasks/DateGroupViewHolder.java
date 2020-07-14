@@ -23,6 +23,8 @@ public class DateGroupViewHolder extends GroupViewHolder {
     ImageView add;
     @BindView(R.id.date_group_count)
     Chip count;
+    @BindView(R.id.date_group_empty)
+    TextView empty;
 
     private int size;
     private Context context;
@@ -51,6 +53,7 @@ public class DateGroupViewHolder extends GroupViewHolder {
     @Override
     public void expand() {
         if (size != 0) {
+            // empty итак gone
             Animation fadeIn = AnimationUtils.loadAnimation(context, R.anim.fade_in);
             Animation fadeOut = AnimationUtils.loadAnimation(context, R.anim.fade_out);
             fadeIn.setAnimationListener(new Animation.AnimationListener() {
@@ -83,15 +86,83 @@ public class DateGroupViewHolder extends GroupViewHolder {
             });
             add.startAnimation(fadeIn);
             count.startAnimation(fadeOut);
+        } else {
+            // count итак gone
+            Animation fadeIn = AnimationUtils.loadAnimation(context, R.anim.fade_in);
+            Animation fadeOut = AnimationUtils.loadAnimation(context, R.anim.fade_out);
+            fadeIn.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    empty.setVisibility(View.VISIBLE);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+                }
+            });
+            fadeOut.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+
+                    add.setVisibility(View.GONE);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+                }
+            });
+            empty.startAnimation(fadeIn);
+            add.startAnimation(fadeOut);
         }
     }
 
     @Override
     public void collapse() {
         if (size == 0) {
-            add.setVisibility(View.VISIBLE);
-            count.setVisibility(View.GONE);
+            // count итак gone
+            Animation fadeIn = AnimationUtils.loadAnimation(context, R.anim.fade_in);
+            Animation fadeOut = AnimationUtils.loadAnimation(context, R.anim.fade_out);
+            fadeIn.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    add.setVisibility(View.VISIBLE);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+                }
+            });
+            fadeOut.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+
+                    empty.setVisibility(View.GONE);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+                }
+            });
+            add.startAnimation(fadeIn);
+            empty.startAnimation(fadeOut);
         } else {
+            // empty итак gone
             Animation fadeIn = AnimationUtils.loadAnimation(context, R.anim.fade_in);
             Animation fadeOut = AnimationUtils.loadAnimation(context, R.anim.fade_out);
             fadeIn.setAnimationListener(new Animation.AnimationListener() {

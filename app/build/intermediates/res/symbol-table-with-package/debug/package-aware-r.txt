@@ -1825,6 +1825,7 @@ id dark
 id date_delete
 id date_group_add
 id date_group_count
+id date_group_empty
 id date_group_title
 id date_image_view
 id date_layout
@@ -2271,6 +2272,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout step_item
 layout support_simple_spinner_dropdown_item
+layout tag_edit
 layout tags_dialog
 layout tags_item
 layout task_item
@@ -2365,6 +2367,7 @@ string delete
 string description
 string done_label
 string edit_btn
+string empty
 string empty_field_err
 string enter_tag
 string error
