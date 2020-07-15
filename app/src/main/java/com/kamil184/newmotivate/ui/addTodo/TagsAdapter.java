@@ -2,6 +2,7 @@ package com.kamil184.newmotivate.ui.addTodo;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +48,12 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder> {
                 },
                 new int[]{tag.getColor()}
         );
-        holder.checkBox.setSupportButtonTintList(colorStateList);
+
+        if (android.os.Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP) {
+            holder.checkBox.setSupportButtonTintList(colorStateList);
+        } else {
+            holder.checkBox.setButtonTintList(colorStateList);
+        }
 
         holder.imageButton.setOnClickListener(view -> {
             //TODO

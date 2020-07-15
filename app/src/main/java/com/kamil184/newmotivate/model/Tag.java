@@ -3,11 +3,22 @@ package com.kamil184.newmotivate.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.Index;
+import org.greenrobot.greendao.annotation.NotNull;
+import org.greenrobot.greendao.annotation.Generated;
+
+@Entity(generateConstructors = false, generateGettersSetters = false)
 public class Tag implements Parcelable {
 
-    public static final String TAG_JSON_FILENAME = "Tags.json";
+    @Id(autoincrement = true)
+    private Long id;
 
+    @Index(unique = true)
+    @NotNull
     private String text;
+    @NotNull
     private int color;
 
     public Tag(String text, int color) {
@@ -42,9 +53,20 @@ public class Tag implements Parcelable {
         dest.writeInt(this.color);
     }
 
-    protected Tag(Parcel in) {
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    private Tag(Parcel in) {
         this.text = in.readString();
         this.color = in.readInt();
+    }
+
+    public Tag() {
     }
 
     public static final Parcelable.Creator<Tag> CREATOR = new Parcelable.Creator<Tag>() {

@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\tukta\\AndroidStudioProjects\\NewMotivate\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\tukta\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\tukta\\.gradle\\caches\\transforms-2\\files-2.1\\34ec44c42a527eead29ae8ecbc42d7f6\\appcompat-1.1.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\tukta\\.gradle\\caches\\transforms-2\\files-2.1\\d5a97e410e2c366a50d3e0f1ca998460\\core-1.2.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\tukta\\.gradle\\caches\\transforms-2\\files-2.1\\e1060bb161911f8c59eb4e35536ba10e\\core-1.2.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

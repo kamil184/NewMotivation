@@ -14,8 +14,6 @@ import static com.kamil184.newmotivate.util.Constants.NO;
 
 public class ToDoItem implements Parcelable {
 
-    public static final String TODO_JSON_FILENAME = "ToDoItems.json";
-
     private boolean hasReminder;
     private boolean hasDate;
     private boolean hasQuantity = false;
@@ -36,44 +34,6 @@ public class ToDoItem implements Parcelable {
         calendar = Calendar.getInstance();
         uuid = UUID.randomUUID();
     }
-
-   /* public ToDoItem(JSONObject jsonObject) throws JSONException {
-        hasReminder = jsonObject.getBoolean("hasReminder");
-        hasDate = jsonObject.getBoolean("hasDate");
-        hasQuantity = jsonObject.getBoolean("hasQuantity");
-        title = jsonObject.getString("title");
-        note = jsonObject.getString("note");
-        repeat = (Repeat) jsonObject.get("repeat"); //выглядит опасно, так же как и calendar, steps, tags
-        quantityNumber = jsonObject.getInt("quantityNumber");
-        quantityTextPosition = jsonObject.getInt("quantityTextPosition");
-        calendar = (Calendar) jsonObject.get("calendar");
-        priority = jsonObject.getInt("priority");
-        steps = (List<Step>) jsonObject.getJSONArray("steps");
-        isCompleted = jsonObject.getBoolean("isCompleted");
-        repeatSelected = jsonObject.getInt("repeatSelected");
-        tags = (List<Tag>) jsonObject.getJSONArray("tags");
-        uuid = UUID.fromString(jsonObject.getString("uuid"));
-    }*/
-
-    /*public JSONObject toJSON() throws JSONException {
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("hasReminder", hasReminder);
-        jsonObject.put("hasDate", hasDate);
-        jsonObject.put("hasQuantity", hasQuantity);
-        jsonObject.put("title", title);
-        jsonObject.put("note", note);
-        jsonObject.put("repeat", repeat);
-        jsonObject.put("quantityNumber", quantityNumber);
-        jsonObject.put("quantityTextPosition", quantityTextPosition);
-        jsonObject.put("calendar", calendar);
-        jsonObject.put("priority", priority);
-        jsonObject.put("steps", steps);
-        jsonObject.put("isCompleted", isCompleted);
-        jsonObject.put("repeatSelected", repeatSelected);
-        jsonObject.put("tags", tags);
-        jsonObject.put("uuid", uuid);
-        return jsonObject;
-    }*/
 
     public int getPriority() {
         return priority;

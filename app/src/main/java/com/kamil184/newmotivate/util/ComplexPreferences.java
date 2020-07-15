@@ -13,18 +13,30 @@ import java.util.List;
 
 public class ComplexPreferences {
 
+    private static ComplexPreferences complexPreferences;
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
     private static Gson GSON = new Gson();
     Type typeOfObject = new TypeToken<Object>() {
     }.getType();
 
-    public ComplexPreferences(Context context, String namePreferences, int mode) {
+    private ComplexPreferences(Context context, String namePreferences, int mode) {
         if (namePreferences == null || namePreferences.equals("")) {
             namePreferences = "complex_preferences";
         }
         preferences = context.getSharedPreferences(namePreferences, mode);
         editor = preferences.edit();
+    }
+
+    public static ComplexPreferences getComplexPreferences(Context context,
+                                                           String namePreferences, int mode) {
+
+        if (complexPreferences == null) {
+            complexPreferences = new ComplexPreferences(context,
+                    namePreferences, mode);
+        }
+
+        return complexPreferences;
     }
 
     public void putObject(String key, Object object) {
@@ -61,14 +73,13 @@ public class ComplexPreferences {
         }
     }
 
-    public <T> List<T> getObjects(String key, Class<T> a) {
-
+    public List<Integer> getIntegers(String key) {
         String gson = preferences.getString(key, null);
         if (gson == null) {
             return null;
         } else {
             try{
-                return GSON.fromJson(gson, new TypeToken<ArrayList<T>>(){}.getType());
+                return GSON.fromJson(gson, new TypeToken<ArrayList<Integer>>(){}.getType());
             } catch (Exception e) {
                 throw new IllegalArgumentException("Object storaged with key " + key + " is instanceof other class");
             }
