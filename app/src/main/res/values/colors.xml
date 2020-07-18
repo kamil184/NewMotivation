@@ -8,6 +8,7 @@
     <color name="color_background">#ffffff</color>
     <color name="color_surface">#ffffff</color>
     <color name="color_error">#b00020</color>
+    <color name="border_color">#000000</color>
 
     <color name="color_on_primary">#ffffff</color>
     <color name="color_on_secondary">#000000</color>
@@ -24,6 +25,7 @@
     <color name="dark_color_background">#121212</color>
     <color name="dark_color_surface">#424242</color>
     <color name="dark_color_error">#cf6679</color>
+    <color name="dark_border_color">#ffffff</color>
 
     <color name="dark_color_on_primary">#000000</color>
     <color name="dark_color_on_secondary">#000000</color>

@@ -3,6 +3,9 @@
     <declare-styleable name="Divider">
         <attr name="insetDividerDrawable" format="reference" />
     </declare-styleable>
+    <declare-styleable name="Border">
+        <attr name="borderColor" format="color"/>
+    </declare-styleable>
 
     <declare-styleable name="Menu">
         <attr name="setThemeDrawable" format="reference" />

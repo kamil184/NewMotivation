@@ -22,7 +22,7 @@ public class DateGroupViewHolder extends GroupViewHolder {
     @BindView(R.id.date_group_add)
     ImageView add;
     @BindView(R.id.date_group_count)
-    Chip count;
+    TextView count;
     @BindView(R.id.date_group_empty)
     TextView empty;
 

@@ -8,7 +8,6 @@ import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
-import com.google.android.material.chip.Chip;
 import com.kamil184.newmotivate.R;
 import java.lang.IllegalStateException;
 import java.lang.Override;
@@ -22,7 +21,7 @@ public class DateGroupViewHolder_ViewBinding implements Unbinder {
 
     target.title = Utils.findRequiredViewAsType(source, R.id.date_group_title, "field 'title'", TextView.class);
     target.add = Utils.findRequiredViewAsType(source, R.id.date_group_add, "field 'add'", ImageView.class);
-    target.count = Utils.findRequiredViewAsType(source, R.id.date_group_count, "field 'count'", Chip.class);
+    target.count = Utils.findRequiredViewAsType(source, R.id.date_group_count, "field 'count'", TextView.class);
     target.empty = Utils.findRequiredViewAsType(source, R.id.date_group_empty, "field 'empty'", TextView.class);
   }
 
