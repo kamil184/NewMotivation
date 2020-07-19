@@ -335,6 +335,7 @@ attr divider
 attr dividerHorizontal
 attr dividerPadding
 attr dividerVertical
+attr doneDrawable
 attr drawableBottomCompat
 attr drawableEndCompat
 attr drawableLeftCompat
@@ -1656,6 +1657,7 @@ drawable ic_date_range_primary_dark_24dp
 drawable ic_date_range_white_24dp
 drawable ic_delete_grey_600_24dp
 drawable ic_delete_white_24dp
+drawable ic_done_gray_600_24dp
 drawable ic_done_white_24dp
 drawable ic_edit_grey_600_24dp
 drawable ic_edit_white_24dp
@@ -2057,9 +2059,11 @@ id tag_accessibility_clickable_spans
 id tag_accessibility_heading
 id tag_accessibility_pane_title
 id tag_add_tag
+id tag_edit_save
 id tag_edit_text
 id tag_item_checkbox
 id tag_item_edit
+id tag_item_text
 id tag_recycler
 id tag_screen_reader_focusable
 id tag_transition_group
@@ -3264,7 +3268,7 @@ styleable FragmentContainerView android_name android_tag
 styleable FragmentNavigator android_name
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
-styleable ImageButtons addAlarmDrawable addDrawable addPrimaryDrawable clearDrawable clockDrawable dateRangeDrawable deleteDrawable editDrawable repeatDrawable tagDrawable
+styleable ImageButtons addAlarmDrawable addDrawable addPrimaryDrawable clearDrawable clockDrawable dateRangeDrawable deleteDrawable doneDrawable editDrawable repeatDrawable tagDrawable
 styleable Insets paddingBottomSystemWindowInsets paddingLeftSystemWindowInsets paddingRightSystemWindowInsets
 styleable LinearConstraintLayout android_orientation
 styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers

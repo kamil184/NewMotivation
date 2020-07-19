@@ -2284,6 +2284,10 @@
         "source": "C:\\Users\\Компьютер\\.gradle\\caches\\transforms-2\\files-2.1\\2cca80e11ded86d8c0f7fb4b3b806792\\preference-1.1.1\\res\\layout\\image_frame.xml"
     },
     {
+        "merged": "C:\\projects\\NewMotivation\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_done_gray_600_24dp.xml.flat",
+        "source": "C:\\projects\\NewMotivation\\app\\src\\main\\res\\drawable\\ic_done_gray_600_24dp.xml"
+    },
+    {
         "merged": "C:\\projects\\NewMotivation\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "C:\\Users\\Компьютер\\.gradle\\caches\\transforms-2\\files-2.1\\e1060bb161911f8c59eb4e35536ba10e\\core-1.2.0\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
     },

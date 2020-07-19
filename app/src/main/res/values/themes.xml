@@ -54,6 +54,7 @@
         <item name="addDrawable">@drawable/ic_add_dark_24dp</item>
         <item name="tagDrawable">@drawable/ic_tag_primary_24dp</item>
         <item name="editDrawable">@drawable/ic_edit_grey_600_24dp</item>
+        <item name="doneDrawable">@drawable/ic_done_gray_600_24dp</item>
         <item name="uncheckable">@color/grey300</item>
     </style>
 
@@ -109,6 +110,7 @@
         <item name="addDrawable">@drawable/ic_add_white_24dp</item>
         <item name="tagDrawable">@drawable/ic_tag_primary_dark_24dp</item>
         <item name="editDrawable">@drawable/ic_edit_white_24dp</item>
+        <item name="doneDrawable">@drawable/ic_done_white_24dp</item>
         <item name="uncheckable">@color/grey700</item>
     </style>
 </resources>

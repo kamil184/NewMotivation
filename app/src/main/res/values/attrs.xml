@@ -26,6 +26,7 @@
         <attr name="addDrawable" format="reference" />
         <attr name="tagDrawable" format="reference" />
         <attr name="editDrawable" format="reference" />
+        <attr name="doneDrawable" format="reference" />
     </declare-styleable>
 
 </resources>
