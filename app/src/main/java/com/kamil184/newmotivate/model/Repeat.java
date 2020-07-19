@@ -1,5 +1,7 @@
 package com.kamil184.newmotivate.model;
 
+import org.greenrobot.greendao.converter.PropertyConverter;
+
 public enum Repeat {
     DAY(0) {
         int count;
@@ -106,5 +108,22 @@ public enum Repeat {
     }
 
     public void setDays(boolean[] days) {
+    }
+
+    public static class RepeatConverter implements PropertyConverter<Repeat, Integer> {
+        @Override
+        public Repeat convertToEntityProperty(Integer databaseValue) {
+            for (Repeat role : Repeat.values()) {
+                if (role.selection == databaseValue) {
+                    return role;
+                }
+            }
+            return null;
+        }
+
+        @Override
+        public Integer convertToDatabaseValue(Repeat entityProperty) {
+            return entityProperty == null ? null : entityProperty.selection;
+        }
     }
 }

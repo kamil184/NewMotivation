@@ -163,7 +163,7 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
         is24HourFormat = DateFormat.is24HourFormat(this);
 
         //fill fields
-        todoCheckBox.setChecked(item.isCompleted());
+        todoCheckBox.setChecked(item.getIsCompleted());
         todoTitle.setText(item.getTitle());
         noteEditText.setText(item.getNote());
 
@@ -172,16 +172,16 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
         } else {
             todoTitle.setPaintFlags(todoTitle.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
         }
-        item.setCompleted(todoCheckBox.isChecked());
+        item.setIsCompleted(todoCheckBox.isChecked());
 
-        if (item.hasDate()) {
+        if (item.getHasDate()) {
             Calendar calendar = item.getCalendar();
             setDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
         }
-        if (item.hasQuantity()) {
+        if (item.getHasQuantity()) {
             setQuantity(item.getQuantityNumber(), item.getQuantityTextPosition());
         }
-        if (item.hasReminder()) {
+        if (item.getHasReminder()) {
             Calendar calendar = item.getCalendar();
             setReminder(calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE));
         }
@@ -195,7 +195,7 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
             } else {
                 todoTitle.setPaintFlags(todoTitle.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
             }
-            item.setCompleted(todoCheckBox.isChecked());
+            item.setIsCompleted(todoCheckBox.isChecked());
         });
 
         todoTitle.addTextChangedListener(new TextWatcher() {
@@ -447,7 +447,7 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
 
     private void showQuantityDialog() {
         QuantityDialog dialog;
-        if (item.hasQuantity()) {
+        if (item.getHasQuantity()) {
             dialog = new QuantityDialog(item.getQuantityNumber(), item.getQuantityTextPosition());
         } else dialog = new QuantityDialog(1, 0);
         dialog.show(getSupportFragmentManager(), QuantityDialog.class.getSimpleName());

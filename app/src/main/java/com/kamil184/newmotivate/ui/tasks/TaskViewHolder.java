@@ -81,11 +81,11 @@ public class TaskViewHolder extends ChildViewHolder {
         String timeText = DateUtils.getFormattedTime(calendar, is24HourFormat);
 
         boolean isTodayOrTomorrow = dateText.equals(context.getString(R.string.today)) || dateText.equals(context.getString(R.string.tomorrow));
-        if (!isTodayOrTomorrow && item.hasDate() && item.hasReminder()) {
+        if (!isTodayOrTomorrow && item.getHasDate() && item.getHasReminder()) {
             date.setText(dateText + ",\n" + timeText);
-        } else if (!isTodayOrTomorrow && item.hasDate()) {
+        } else if (!isTodayOrTomorrow && item.getHasDate()) {
             date.setText(dateText);
-        } else if (item.hasReminder()) {
+        } else if (item.getHasReminder()) {
             date.setText(timeText);
         } else {
             if (item.getRepeat() != null) {
@@ -107,7 +107,7 @@ public class TaskViewHolder extends ChildViewHolder {
         }
 
         //Checkbox
-        checkBox.setChecked(item.isCompleted());
+        checkBox.setChecked(item.getIsCompleted());
         SharedPreferences preference = PreferenceManager.getDefaultSharedPreferences(context);
         checkBox.setSupportButtonTintList(ColorUtils.getPriorityColorList(item.getPriority(), context, preference.getBoolean(THEME, LIGHT_THEME)));
 
@@ -117,7 +117,7 @@ public class TaskViewHolder extends ChildViewHolder {
             } else {
                 title.setPaintFlags(title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
             }
-            item.setCompleted(checkBox.isChecked());
+            item.setIsCompleted(checkBox.isChecked());
         });
 
         //RelativeLayout
