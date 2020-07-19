@@ -1,6 +1,7 @@
 package com.kamil184.newmotivate.ui.tasks;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.text.format.DateFormat;
@@ -15,6 +16,7 @@ import androidx.preference.PreferenceManager;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.kamil184.newmotivate.R;
 import com.kamil184.newmotivate.model.ToDoItem;
+import com.kamil184.newmotivate.ui.addTodo.AddToDoActivity;
 import com.kamil184.newmotivate.util.ColorUtils;
 import com.kamil184.newmotivate.util.DateUtils;
 import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder;
@@ -57,6 +59,10 @@ public class TaskViewHolder extends ChildViewHolder {
     public void onBind(ToDoItem item) {
         //Title
         title.setText(item.getTitle());
+        title.setOnClickListener(view -> {
+           //Intent intent = new Intent(view.getContext(), AddToDoActivity.class);
+           //view.getContext().startActivity(intent);
+        });
 
         //Note
         if (item.getNote().equals("")) {

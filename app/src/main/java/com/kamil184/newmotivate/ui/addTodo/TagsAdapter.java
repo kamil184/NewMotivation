@@ -142,7 +142,7 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder> {
         removeTag(position);
         allTags.add(position, tag);
         visibleTags.add(position, tag);
-        selectedTags.add(tag);
+      //  selectedTags.add(tag);
         notifyItemInserted(position);
     }
 

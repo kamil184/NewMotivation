@@ -37,13 +37,18 @@ import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.snackbar.Snackbar;
+import com.kamil184.newmotivate.App;
 import com.kamil184.newmotivate.R;
+import com.kamil184.newmotivate.model.DaoSession;
 import com.kamil184.newmotivate.model.Repeat;
 import com.kamil184.newmotivate.model.Step;
 import com.kamil184.newmotivate.model.Tag;
 import com.kamil184.newmotivate.model.ToDoItem;
+import com.kamil184.newmotivate.model.ToDoItemDao;
 import com.kamil184.newmotivate.util.ColorUtils;
 import com.kamil184.newmotivate.util.DateUtils;
+
+import org.greenrobot.greendao.query.Query;
 
 import java.util.Calendar;
 import java.util.List;
@@ -745,5 +750,15 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
     @Override
     public void onTagsNegativeClicked() {
 
+    }
+
+    @Override
+    public void onDestroy()
+    {
+        DaoSession daoSession = ((App) dateImageView.getContext().getApplicationContext()).getDaoSession(); //контекст можно взть из любого вью
+        ToDoItemDao dao = daoSession.getToDoItemDao();
+        Query<ToDoItem> toDOQuery = dao.queryBuilder().build();
+        dao.update(item);
+        super.onDestroy();
     }
 }
