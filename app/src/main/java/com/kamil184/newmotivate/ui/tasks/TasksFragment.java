@@ -2,6 +2,7 @@ package com.kamil184.newmotivate.ui.tasks;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -51,6 +52,8 @@ public class TasksFragment extends Fragment {
     DateGroupAdapter adapter;
     private ToDoItemDao todoDao;
     private Query<ToDoItem> todoQuery;
+    private List<ToDoItem> toDoItems;
+
 
 
     @Override
@@ -61,18 +64,7 @@ public class TasksFragment extends Fragment {
 
         unbinder = ButterKnife.bind(this, view);
 
-        DaoSession daoSession = ((App) view.getContext().getApplicationContext()).getDaoSession();
-        todoDao = daoSession.getToDoItemDao();
-        todoQuery = todoDao.queryBuilder().build();
-
-        List<ToDoItem> toDoItems = todoQuery.list();
-
-        dateGroups = DateGroup.getDateGroups(toDoItems, getString(R.string.today), getString(R.string.tomorrow),
-                getString(R.string.someday), getString(R.string.without_date));
-
-        adapter = new DateGroupAdapter(dateGroups, this);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(adapter);
+        updateToDoList();
 
         addTodoFab.setOnClickListener(view1 -> {
             //TODO запускать создание не в активити
@@ -97,9 +89,32 @@ public class TasksFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (resultCode == RESULT_OK) {
             //TODO сделать что-то с результатом startActivityForResult
+            ToDoItem item = (ToDoItem) data.getParcelableExtra(TODO_ITEM);
+
+            Handler handler = new Handler();
+            handler.postDelayed(() -> {
+                recyclerView.setAdapter(null);
+                updateToDoList();
+            }, 280);
+
         } else {
             Log.d(TAG, "resultCode != RESULT_OK");
         }
+    }
+
+
+    private void updateToDoList(){
+        DaoSession daoSession = ((App) recyclerView.getContext().getApplicationContext()).getDaoSession();
+        todoDao = daoSession.getToDoItemDao();
+        todoQuery = todoDao.queryBuilder().build();
+
+        toDoItems = todoQuery.list();
+
+        dateGroups = DateGroup.getDateGroups(toDoItems, getString(R.string.today), getString(R.string.tomorrow),
+                getString(R.string.someday), getString(R.string.without_date));
+        adapter = new DateGroupAdapter(dateGroups, this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(adapter);
     }
 
     /*@Override
