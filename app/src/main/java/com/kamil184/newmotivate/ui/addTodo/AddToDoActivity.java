@@ -48,8 +48,6 @@ import com.kamil184.newmotivate.model.ToDoItemDao;
 import com.kamil184.newmotivate.util.ColorUtils;
 import com.kamil184.newmotivate.util.DateUtils;
 
-import org.greenrobot.greendao.query.Query;
-
 import java.util.Calendar;
 import java.util.List;
 import java.util.TimeZone;
@@ -183,6 +181,7 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
             Calendar calendar = item.getCalendar();
             setDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
         }
+        Log.d(AddToDoActivity.class.getSimpleName(), "item.getHasQuantity: " + item.getHasQuantity());
         if (item.getHasQuantity()) {
             setQuantity(item.getQuantityNumber(), item.getQuantityTextPosition());
         }
@@ -205,7 +204,8 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
 
         todoTitle.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -213,12 +213,14 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
             }
 
             @Override
-            public void afterTextChanged(Editable editable) { }
+            public void afterTextChanged(Editable editable) {
+            }
         });
 
         noteEditText.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -226,7 +228,8 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
             }
 
             @Override
-            public void afterTextChanged(Editable editable) { }
+            public void afterTextChanged(Editable editable) {
+            }
         });
 
         String[] resArray = getResources().getStringArray(R.array.priority_array);
@@ -238,7 +241,11 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                todoCheckBox.setSupportButtonTintList(ColorUtils.getPriorityColorList(i, AddToDoActivity.this, theme));
+                if (android.os.Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP) {
+                    todoCheckBox.setSupportButtonTintList(ColorUtils.getPriorityColorList(i, AddToDoActivity.this, theme));
+                } else {
+                    todoCheckBox.setButtonTintList(ColorUtils.getPriorityColorList(i, AddToDoActivity.this, theme));
+                }
                 item.setPriority(i);
             }
 
@@ -729,8 +736,8 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        switch(id){
-            case R.id.menu_add_todo_tags_item :
+        switch (id) {
+            case R.id.menu_add_todo_tags_item:
                 showTagsDialog();
                 return true;
 
@@ -753,12 +760,17 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
     }
 
     @Override
-    public void onDestroy()
-    {
-        DaoSession daoSession = ((App) dateImageView.getContext().getApplicationContext()).getDaoSession(); //контекст можно взть из любого вью
+    public void onDestroy() {
+        DaoSession daoSession = ((App) dateImageView.getContext().getApplicationContext()).getDaoSession();
         ToDoItemDao dao = daoSession.getToDoItemDao();
-        Query<ToDoItem> toDOQuery = dao.queryBuilder().build();
-        dao.update(item);
+
+        //TODO dao.update(item); когда будем только редактировать
+
+        if (dao.hasKey(item)) {
+            dao.update(item);
+        } else {
+            dao.insert(item);
+        }
         super.onDestroy();
     }
 }

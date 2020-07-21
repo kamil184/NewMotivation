@@ -5,6 +5,7 @@
     android:id="@+id/task_item_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
     android:paddingStart="@dimen/spacing_4"
     android:paddingEnd="@dimen/spacing_4">
 

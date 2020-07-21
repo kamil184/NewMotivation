@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Paint;
+import android.os.Build;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.view.ViewGroup.MarginLayoutParams;
@@ -28,6 +29,7 @@ import butterknife.ButterKnife;
 
 import static com.kamil184.newmotivate.util.Constants.LIGHT_THEME;
 import static com.kamil184.newmotivate.util.Constants.THEME;
+import static com.kamil184.newmotivate.util.Constants.TODO_ITEM;
 
 public class TaskViewHolder extends ChildViewHolder {
 
@@ -56,18 +58,14 @@ public class TaskViewHolder extends ChildViewHolder {
         is24HourFormat = DateFormat.is24HourFormat(context);
     }
 
-    public void onBind(ToDoItem item) {
+    public void onBind(ToDoItem item, TasksFragment tasksFragment) {
         //Title
         title.setText(item.getTitle());
-        title.setOnClickListener(view -> {
-           //Intent intent = new Intent(view.getContext(), AddToDoActivity.class);
-           //view.getContext().startActivity(intent);
-        });
 
         //Note
         if (item.getNote().equals("")) {
             MarginLayoutParams titleParams = (MarginLayoutParams) title.getLayoutParams();
-            titleParams.topMargin = dp4 * 2;
+            titleParams.topMargin = dp4 * 3;
             title.setLayoutParams(titleParams);
         } else {
             note.setText(item.getNote());
@@ -115,7 +113,12 @@ public class TaskViewHolder extends ChildViewHolder {
         //Checkbox
         checkBox.setChecked(item.getIsCompleted());
         SharedPreferences preference = PreferenceManager.getDefaultSharedPreferences(context);
-        checkBox.setSupportButtonTintList(ColorUtils.getPriorityColorList(item.getPriority(), context, preference.getBoolean(THEME, LIGHT_THEME)));
+
+        if (android.os.Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP) {
+            checkBox.setSupportButtonTintList(ColorUtils.getPriorityColorList(item.getPriority(), context, preference.getBoolean(THEME, LIGHT_THEME)));
+        } else {
+            checkBox.setButtonTintList(ColorUtils.getPriorityColorList(item.getPriority(), context, preference.getBoolean(THEME, LIGHT_THEME)));
+        }
 
         checkBox.setOnClickListener(view -> {
             if (checkBox.isChecked()) {
@@ -128,7 +131,7 @@ public class TaskViewHolder extends ChildViewHolder {
 
         //RelativeLayout
         layout.setOnClickListener(view -> {
-            //TODO навигация к AddToDoActivity
+            tasksFragment.startAddToDoActivity(item);
         });
     }
 }

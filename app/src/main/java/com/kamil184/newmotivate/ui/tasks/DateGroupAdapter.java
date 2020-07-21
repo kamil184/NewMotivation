@@ -14,8 +14,10 @@ import java.util.List;
 
 public class DateGroupAdapter extends ExpandableRecyclerViewAdapter<DateGroupViewHolder, TaskViewHolder> {
 
-    public DateGroupAdapter(List<? extends ExpandableGroup> groups) {
+    TasksFragment tasksFragment;
+    public DateGroupAdapter(List<? extends ExpandableGroup> groups, TasksFragment tasksFragment) {
         super(groups);
+        this.tasksFragment = tasksFragment;
     }
 
     @Override
@@ -34,7 +36,7 @@ public class DateGroupAdapter extends ExpandableRecyclerViewAdapter<DateGroupVie
     public void onBindChildViewHolder(TaskViewHolder holder, int flatPosition, ExpandableGroup group,
                                       int childIndex) {
         final ToDoItem task = (ToDoItem) group.getItems().get(childIndex);
-        holder.onBind(task);
+        holder.onBind(task, tasksFragment);
     }
 
     @Override

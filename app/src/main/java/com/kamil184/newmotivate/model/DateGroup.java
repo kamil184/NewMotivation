@@ -4,10 +4,7 @@ import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
-
-import static com.kamil184.newmotivate.util.Constants.HIGH;
 
 public class DateGroup extends ExpandableGroup<ToDoItem> {
 
@@ -15,30 +12,38 @@ public class DateGroup extends ExpandableGroup<ToDoItem> {
         super(title, items);
     }
 
-    public static List<DateGroup> getDateGroups(String today, String tomorrow, String nextWeek, String someday){
-        //TODO доставать из бд!!!!!
+    public static List<DateGroup> getDateGroups(List<ToDoItem> items, String today, String tomorrow, String someday, String withoutDate) {
         List<DateGroup> list = new ArrayList<>();
         List<ToDoItem> todayItems = new ArrayList<>();
-        ToDoItem toDoItem = new ToDoItem();
-        toDoItem.setTitle("Сделать покупки, очень большие причем");
-        toDoItem.setPriority(HIGH);
-        todayItems.add(toDoItem);
-        ToDoItem toDoItem2 = new ToDoItem();
-        toDoItem2.setTitle("Немецкий, причем очень долгий, ведь надо как бы DSD2 сдавать, но мы об этом не думаем, ведь мы тупое быдлооооооооо ");
-        toDoItem2.setNote("Срочно!!!");
-        Calendar calendar = new GregorianCalendar();
-        calendar.set(2020, 6, 9);
-        toDoItem2.setCalendar(calendar);
-        toDoItem2.setHasDate(true);
-        toDoItem2.setHasReminder(true);
-        Repeat repeat2 = Repeat.DAY;
-        repeat2.setCount(1);
-        toDoItem.setRepeat(repeat2);
-        todayItems.add(toDoItem2);
+        List<ToDoItem> tomorrowItems = new ArrayList<>();
+        List<ToDoItem> somedayItems = new ArrayList<>();
+        List<ToDoItem> withoutDateItems = new ArrayList<>();
+
+        for (ToDoItem item : items) {
+            Calendar itemCalendar = item.getCalendar();
+            int year = itemCalendar.get(Calendar.YEAR);
+            int month = itemCalendar.get(Calendar.MONTH);
+            int day = itemCalendar.get(Calendar.DAY_OF_MONTH);
+            Calendar calendar = Calendar.getInstance();
+            int year1 = calendar.get(Calendar.YEAR);
+            int month1 = calendar.get(Calendar.MONTH);
+            int day1 = calendar.get(Calendar.DAY_OF_MONTH);
+
+            if(!item.getHasDate()){
+                withoutDateItems.add(item);
+            } else if (year == year1 && month == month1 && day == day1) {
+                todayItems.add(item);
+            } else if (year == year1 && month == month1 && day == day1 + 1) {
+                tomorrowItems.add(item);
+            } else {
+                somedayItems.add(item);
+            }
+        }
+
         list.add(new DateGroup(today, todayItems));
-        list.add(new DateGroup(tomorrow, new ArrayList<>()));
-        list.add(new DateGroup(nextWeek, new ArrayList<>()));
-        list.add(new DateGroup(someday, new ArrayList<>()));
+        list.add(new DateGroup(tomorrow, tomorrowItems));
+        list.add(new DateGroup(someday, somedayItems));
+        list.add(new DateGroup(withoutDate, withoutDateItems));
         return list;
     }
 }

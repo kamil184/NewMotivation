@@ -14,10 +14,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.kamil184.newmotivate.App;
 import com.kamil184.newmotivate.R;
+import com.kamil184.newmotivate.model.DaoSession;
 import com.kamil184.newmotivate.model.DateGroup;
+import com.kamil184.newmotivate.model.Tag;
+import com.kamil184.newmotivate.model.TagDao;
 import com.kamil184.newmotivate.model.ToDoItem;
+import com.kamil184.newmotivate.model.ToDoItemDao;
 import com.kamil184.newmotivate.ui.addTodo.AddToDoActivity;
+
+import org.greenrobot.greendao.query.Query;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +49,8 @@ public class TasksFragment extends Fragment {
 
     List<DateGroup> dateGroups;
     DateGroupAdapter adapter;
+    private ToDoItemDao todoDao;
+    private Query<ToDoItem> todoQuery;
 
 
     @Override
@@ -52,18 +61,22 @@ public class TasksFragment extends Fragment {
 
         unbinder = ButterKnife.bind(this, view);
 
-        dateGroups = DateGroup.getDateGroups(getString(R.string.today), getString(R.string.tomorrow),
-                getString(R.string.next_week), getString(R.string.someday));
+        DaoSession daoSession = ((App) view.getContext().getApplicationContext()).getDaoSession();
+        todoDao = daoSession.getToDoItemDao();
+        todoQuery = todoDao.queryBuilder().build();
 
-        adapter = new DateGroupAdapter(dateGroups);
+        List<ToDoItem> toDoItems = todoQuery.list();
+
+        dateGroups = DateGroup.getDateGroups(toDoItems, getString(R.string.today), getString(R.string.tomorrow),
+                getString(R.string.someday), getString(R.string.without_date));
+
+        adapter = new DateGroupAdapter(dateGroups, this);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(adapter);
 
         addTodoFab.setOnClickListener(view1 -> {
-            Intent intent = new Intent(getActivity(), AddToDoActivity.class);
-            ToDoItem item = new ToDoItem();
-            intent.putExtra(TODO_ITEM, item);
-            startActivityForResult(intent, REQUEST_ID_TODO_ITEM);
+            //TODO запускать создание не в активити
+            startAddToDoActivity(new ToDoItem());
         });
         return view;
     }
@@ -74,11 +87,16 @@ public class TasksFragment extends Fragment {
         unbinder.unbind();
     }
 
+    void startAddToDoActivity(ToDoItem item){
+        Intent intent = new Intent(getActivity(), AddToDoActivity.class);
+        intent.putExtra(TODO_ITEM, item);
+        startActivityForResult(intent, REQUEST_ID_TODO_ITEM);
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (resultCode == RESULT_OK) {
             //TODO сделать что-то с результатом startActivityForResult
-
         } else {
             Log.d(TAG, "resultCode != RESULT_OK");
         }

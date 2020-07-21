@@ -4,7 +4,7 @@
         <attr name="insetDividerDrawable" format="reference" />
     </declare-styleable>
     <declare-styleable name="Border">
-        <attr name="borderColor" format="color"/>
+        <attr name="borderDrawable" format="reference"/>
     </declare-styleable>
 
     <declare-styleable name="Menu">

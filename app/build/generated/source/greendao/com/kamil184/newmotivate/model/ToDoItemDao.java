@@ -29,7 +29,7 @@ public class ToDoItemDao extends AbstractDao<ToDoItem, Long> {
      * Can be used for QueryBuilder and for referencing column names.
      */
     public static class Properties {
-        public final static Property Id = new Property(0, long.class, "id", true, "_id");
+        public final static Property Id = new Property(0, Long.class, "id", true, "_id");
         public final static Property HasReminder = new Property(1, boolean.class, "hasReminder", false, "HAS_REMINDER");
         public final static Property HasDate = new Property(2, boolean.class, "hasDate", false, "HAS_DATE");
         public final static Property HasQuantity = new Property(3, boolean.class, "hasQuantity", false, "HAS_QUANTITY");
@@ -63,11 +63,11 @@ public class ToDoItemDao extends AbstractDao<ToDoItem, Long> {
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"TO_DO_ITEM\" (" + //
-                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," + // 0: id
+                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
                 "\"HAS_REMINDER\" INTEGER NOT NULL ," + // 1: hasReminder
                 "\"HAS_DATE\" INTEGER NOT NULL ," + // 2: hasDate
                 "\"HAS_QUANTITY\" INTEGER NOT NULL ," + // 3: hasQuantity
-                "\"TITLE\" TEXT NOT NULL ," + // 4: title
+                "\"TITLE\" TEXT," + // 4: title
                 "\"NOTE\" TEXT," + // 5: note
                 "\"REPEAT\" INTEGER," + // 6: repeat
                 "\"QUANTITY_NUMBER\" INTEGER NOT NULL ," + // 7: quantityNumber
@@ -89,11 +89,19 @@ public class ToDoItemDao extends AbstractDao<ToDoItem, Long> {
     @Override
     protected final void bindValues(DatabaseStatement stmt, ToDoItem entity) {
         stmt.clearBindings();
-        stmt.bindLong(1, entity.getId());
+ 
+        Long id = entity.getId();
+        if (id != null) {
+            stmt.bindLong(1, id);
+        }
         stmt.bindLong(2, entity.getHasReminder() ? 1L: 0L);
         stmt.bindLong(3, entity.getHasDate() ? 1L: 0L);
         stmt.bindLong(4, entity.getHasQuantity() ? 1L: 0L);
-        stmt.bindString(5, entity.getTitle());
+ 
+        String title = entity.getTitle();
+        if (title != null) {
+            stmt.bindString(5, title);
+        }
  
         String note = entity.getNote();
         if (note != null) {
@@ -129,11 +137,19 @@ public class ToDoItemDao extends AbstractDao<ToDoItem, Long> {
     @Override
     protected final void bindValues(SQLiteStatement stmt, ToDoItem entity) {
         stmt.clearBindings();
-        stmt.bindLong(1, entity.getId());
+ 
+        Long id = entity.getId();
+        if (id != null) {
+            stmt.bindLong(1, id);
+        }
         stmt.bindLong(2, entity.getHasReminder() ? 1L: 0L);
         stmt.bindLong(3, entity.getHasDate() ? 1L: 0L);
         stmt.bindLong(4, entity.getHasQuantity() ? 1L: 0L);
-        stmt.bindString(5, entity.getTitle());
+ 
+        String title = entity.getTitle();
+        if (title != null) {
+            stmt.bindString(5, title);
+        }
  
         String note = entity.getNote();
         if (note != null) {
@@ -168,7 +184,7 @@ public class ToDoItemDao extends AbstractDao<ToDoItem, Long> {
 
     @Override
     public Long readKey(Cursor cursor, int offset) {
-        return cursor.getLong(offset + 0);
+        return cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0);
     }    
 
     @Override
@@ -180,11 +196,11 @@ public class ToDoItemDao extends AbstractDao<ToDoItem, Long> {
      
     @Override
     public void readEntity(Cursor cursor, ToDoItem entity, int offset) {
-        entity.setId(cursor.getLong(offset + 0));
+        entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
         entity.setHasReminder(cursor.getShort(offset + 1) != 0);
         entity.setHasDate(cursor.getShort(offset + 2) != 0);
         entity.setHasQuantity(cursor.getShort(offset + 3) != 0);
-        entity.setTitle(cursor.getString(offset + 4));
+        entity.setTitle(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
         entity.setNote(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
         entity.setRepeat(cursor.isNull(offset + 6) ? null : repeatConverter.convertToEntityProperty(cursor.getInt(offset + 6)));
         entity.setQuantityNumber(cursor.getInt(offset + 7));
@@ -214,7 +230,7 @@ public class ToDoItemDao extends AbstractDao<ToDoItem, Long> {
 
     @Override
     public boolean hasKey(ToDoItem entity) {
-        throw new UnsupportedOperationException("Unsupported for entities with a non-null key");
+        return entity.getId() != null;
     }
 
     @Override

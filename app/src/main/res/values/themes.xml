@@ -21,7 +21,7 @@
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textColorPrimary">@android:color/black</item>
         <item name="android:textColorSecondary">@color/secondary_text</item>
-        <item name="borderColor">@color/border_color</item>
+        <item name="borderDrawable">@drawable/border_dark</item>
 
         <!-- ActionBar -->
         <item name="windowActionBar">false</item>
@@ -73,7 +73,7 @@
         <item name="colorOnBackground">@color/dark_color_on_background</item>
         <item name="colorOnSurface">@color/dark_color_on_surface</item>
         <item name="colorOnError">@color/dark_color_on_error</item>
-        <item name="borderColor">@color/dark_border_color</item>
+        <item name="borderDrawable">@drawable/border_white</item>
 
         <item name="android:textColor">@color/white</item>
         <item name="android:textColorPrimary">@color/white</item>

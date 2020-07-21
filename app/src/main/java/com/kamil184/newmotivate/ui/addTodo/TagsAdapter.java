@@ -2,17 +2,15 @@ package com.kamil184.newmotivate.ui.addTodo;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout.LayoutParams;
 
-import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.checkbox.MaterialCheckBox;
@@ -54,16 +52,12 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder> {
         Tag tag = visibleTags.get(position);
         holder.checkBox.setChecked(selectedTags.contains(tag));
         holder.editText.setText(tag.getText());
-        holder.disableEditText();
-
-        Drawable defEdit = holder.editText.getBackground();
+        holder.editText.setEnabled(false);
 
         holder.daoInit();
 
         List<Tag> tags = tagsQuery.list();
         Collections.reverse(tags);
-
-
 
         ColorStateList colorStateList = new ColorStateList(
                 new int[][]{
@@ -78,8 +72,9 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder> {
             holder.checkBox.setButtonTintList(colorStateList);
         }
 
-        holder.imageButton.setOnClickListener(view -> {
-            holder.enableEditText(defEdit);
+        holder.editButton.setOnClickListener(view -> {
+            holder.editText.setEnabled(true);
+            holder.enableEditText();
             holder.hideEditBtn();
         });
 
@@ -94,22 +89,27 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder> {
         });
 
         holder.saveButton.setOnClickListener(view -> {
-            Tag newTag = tag;
-            allTags.indexOf(tag);
+            tag.setText(holder.editText.getText().toString());
+            tag.setColor(tag.getColor());
 
-            newTag.setText(holder.editText.getText().toString());
-            newTag.setColor(tag.getColor());
-            newTag.setId(tag.getId());
+            boolean isSelected = selectedTags.contains(tag);
 
-            addTag(position,newTag);
+            removeTag(position);
+            allTags.add(position, tag);
+            visibleTags.add(position, tag);
+            if (isSelected) {
+                selectedTags.add(tag);
+            }
+            notifyItemInserted(position);
+
+            InputMethodManager imm = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+
+            holder.editText.setEnabled(false);
             holder.hideSaveBtn();
-            tagDao.update(newTag);
+            tagDao.update(tag);
         });
-
-
     }
-
-
 
     @Override
     public int getItemCount() {
@@ -138,16 +138,6 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder> {
         notifyItemInserted(0);
     }
 
-    void addTag(int position, Tag tag) {
-        removeTag(position);
-        allTags.add(position, tag);
-        visibleTags.add(position, tag);
-      //  selectedTags.add(tag);
-        notifyItemInserted(position);
-    }
-
-
-
     List<Tag> getAllTags() {
         return allTags;
     }
@@ -163,42 +153,38 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder> {
 
     class ViewHolder extends RecyclerView.ViewHolder {
         final MaterialCheckBox checkBox;
-        final ImageButton imageButton;
+        final ImageButton editButton;
         final ImageButton saveButton;
         final EditText editText;
+        private Context context;
 
         ViewHolder(View view) {
             super(view);
             checkBox = (MaterialCheckBox) view.findViewById(R.id.tag_item_checkbox);
-            imageButton = (ImageButton) view.findViewById(R.id.tag_item_edit);
-            saveButton = (ImageButton) view.findViewById(R.id.tag_edit_save);
-            editText = (EditText) view.findViewById(R.id.tag_item_text);
+            editButton = (ImageButton) view.findViewById(R.id.tag_item_edit);
+            saveButton = (ImageButton) view.findViewById(R.id.tag_item_save);
+            editText = (EditText) view.findViewById(R.id.tag_item_edit_text);
+            context = view.getContext();
         }
 
-        void enableEditText(Drawable def){
-            editText.setFocusable(true);
-            editText.setFocusableInTouchMode(true);
+        void enableEditText() {
+            editText.setSelection(editText.getText().length());
             editText.requestFocus();
-            //todo клава выходит
-            editText.setBackground(def);
+            InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
         }
 
-        void disableEditText(){
-            editText.setFocusable(false);
-            editText.setBackground(null);
-        }
-
-        void hideSaveBtn(){
+        void hideSaveBtn() {
             saveButton.setVisibility(View.GONE);
-            imageButton.setVisibility(View.VISIBLE);
+            editButton.setVisibility(View.VISIBLE);
         }
 
-        void hideEditBtn(){
-            imageButton.setVisibility(View.GONE);
+        void hideEditBtn() {
+            editButton.setVisibility(View.GONE);
             saveButton.setVisibility(View.VISIBLE);
         }
 
-        void daoInit(){
+        void daoInit() {
             DaoSession daoSession = ((App) editText.getContext().getApplicationContext()).getDaoSession(); //контекст можно взть из любого вью
             tagDao = daoSession.getTagDao();
             tagsQuery = tagDao.queryBuilder().build();

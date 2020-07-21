@@ -25,24 +25,12 @@ import org.greenrobot.greendao.annotation.Generated;
 @Entity(generateConstructors = false, generateGettersSetters = false)
 public class ToDoItem implements Parcelable {
 
-    public static final Creator<ToDoItem> CREATOR = new Creator<ToDoItem>() {
-        @Override
-        public ToDoItem createFromParcel(Parcel source) {
-            return new ToDoItem(source);
-        }
-
-        @Override
-        public ToDoItem[] newArray(int size) {
-            return new ToDoItem[size];
-        }
-    };
     @Id(autoincrement = true)
-    private long id;
+    private Long id;
     private boolean hasReminder;
     private boolean hasDate;
     private boolean hasQuantity = false;
-    @NotNull
-    private String title;
+    private String title = "";
     private String note = "";
     @Convert(converter = Repeat.RepeatConverter.class, columnType = Integer.class)
     private Repeat repeat;
@@ -59,25 +47,6 @@ public class ToDoItem implements Parcelable {
     private List<Tag> tags = new ArrayList<>();
     public ToDoItem() {
         calendar = Calendar.getInstance();
-    }
-
-    protected ToDoItem(Parcel in) {
-        this.hasReminder = in.readByte() != 0;
-        this.hasDate = in.readByte() != 0;
-        this.hasQuantity = in.readByte() != 0;
-        this.title = in.readString();
-        this.note = in.readString();
-        int tmpRepeat = in.readInt();
-        this.repeat = tmpRepeat == -1 ? null : Repeat.values()[tmpRepeat];
-        this.quantityNumber = in.readInt();
-        this.quantityTextPosition = in.readInt();
-        this.calendar = (Calendar) in.readSerializable();
-        this.priority = in.readInt();
-        this.steps = in.createTypedArrayList(Step.CREATOR);
-        this.isCompleted = in.readByte() != 0;
-        this.repeatSelected = in.readInt();
-        this.tags = in.createTypedArrayList(Tag.CREATOR);
-        this.id = in.readLong();
     }
 
     public int getPriority() {
@@ -142,7 +111,6 @@ public class ToDoItem implements Parcelable {
 
     public void setQuantityTextPosition(int quantityTextPosition) {
         this.quantityTextPosition = quantityTextPosition;
-        hasQuantity = true;
     }
 
     public Calendar getCalendar() {
@@ -201,34 +169,10 @@ public class ToDoItem implements Parcelable {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeByte(this.hasReminder ? (byte) 1 : (byte) 0);
-        dest.writeByte(this.hasDate ? (byte) 1 : (byte) 0);
-        dest.writeByte(this.hasQuantity ? (byte) 1 : (byte) 0);
-        dest.writeString(this.title);
-        dest.writeString(this.note);
-        dest.writeInt(this.repeat == null ? -1 : this.repeat.ordinal());
-        dest.writeInt(this.quantityNumber);
-        dest.writeInt(this.quantityTextPosition);
-        dest.writeSerializable(this.calendar);
-        dest.writeInt(this.priority);
-        dest.writeTypedList(this.steps);
-        dest.writeByte(this.isCompleted ? (byte) 1 : (byte) 0);
-        dest.writeInt(this.repeatSelected);
-        dest.writeTypedList(this.tags);
-        dest.writeLong(this.id);
-    }
 
     public static class CalendarConverter implements PropertyConverter<Calendar, Date> {
         @Override
@@ -269,4 +213,59 @@ public class ToDoItem implements Parcelable {
             return new Gson().toJson(entityProperty);
         }
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(this.id);
+        dest.writeByte(this.hasReminder ? (byte) 1 : (byte) 0);
+        dest.writeByte(this.hasDate ? (byte) 1 : (byte) 0);
+        dest.writeByte(this.hasQuantity ? (byte) 1 : (byte) 0);
+        dest.writeString(this.title);
+        dest.writeString(this.note);
+        dest.writeInt(this.repeat == null ? -1 : this.repeat.ordinal());
+        dest.writeInt(this.quantityNumber);
+        dest.writeInt(this.quantityTextPosition);
+        dest.writeSerializable(this.calendar);
+        dest.writeInt(this.priority);
+        dest.writeTypedList(this.steps);
+        dest.writeByte(this.isCompleted ? (byte) 1 : (byte) 0);
+        dest.writeInt(this.repeatSelected);
+        dest.writeTypedList(this.tags);
+    }
+
+    protected ToDoItem(Parcel in) {
+        this.id = (Long) in.readValue(Long.class.getClassLoader());
+        this.hasReminder = in.readByte() != 0;
+        this.hasDate = in.readByte() != 0;
+        this.hasQuantity = in.readByte() != 0;
+        this.title = in.readString();
+        this.note = in.readString();
+        int tmpRepeat = in.readInt();
+        this.repeat = tmpRepeat == -1 ? null : Repeat.values()[tmpRepeat];
+        this.quantityNumber = in.readInt();
+        this.quantityTextPosition = in.readInt();
+        this.calendar = (Calendar) in.readSerializable();
+        this.priority = in.readInt();
+        this.steps = in.createTypedArrayList(Step.CREATOR);
+        this.isCompleted = in.readByte() != 0;
+        this.repeatSelected = in.readInt();
+        this.tags = in.createTypedArrayList(Tag.CREATOR);
+    }
+
+    public static final Creator<ToDoItem> CREATOR = new Creator<ToDoItem>() {
+        @Override
+        public ToDoItem createFromParcel(Parcel source) {
+            return new ToDoItem(source);
+        }
+
+        @Override
+        public ToDoItem[] newArray(int size) {
+            return new ToDoItem[size];
+        }
+    };
 }
