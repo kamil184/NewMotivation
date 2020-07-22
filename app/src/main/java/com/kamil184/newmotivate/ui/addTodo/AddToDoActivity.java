@@ -70,7 +70,7 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
     private final String TAG = AddToDoActivity.class.getSimpleName();
 
     ToDoItem item;
-    boolean is24HourFormat;
+    boolean is24HourFormat, isBackPressed = false;
     List<Step> steps;
     StepsAdapter stepsAdapter;
     boolean theme;
@@ -719,9 +719,10 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent();
         item.setSteps(steps);
-        intent.putExtra(TODO_ITEM, item);
+        saveItem();
+        isBackPressed = true;
+        Intent intent = new Intent();
         setResult(RESULT_OK, intent);
         finish();
         //super.onBackPressed();
@@ -760,7 +761,14 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
     }
 
     @Override
-    public void onDestroy() {
+    protected void onStop() {
+        if(!isBackPressed) {
+            saveItem();
+        }
+        super.onStop();
+    }
+
+    void saveItem(){
         DaoSession daoSession = ((App) dateImageView.getContext().getApplicationContext()).getDaoSession();
         ToDoItemDao dao = daoSession.getToDoItemDao();
 
@@ -771,6 +779,5 @@ public class AddToDoActivity extends AppCompatActivity implements RepeatCustomDi
         } else {
             dao.insert(item);
         }
-        super.onDestroy();
     }
 }

@@ -2,8 +2,6 @@ package com.kamil184.newmotivate.ui.tasks;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,15 +17,12 @@ import com.kamil184.newmotivate.App;
 import com.kamil184.newmotivate.R;
 import com.kamil184.newmotivate.model.DaoSession;
 import com.kamil184.newmotivate.model.DateGroup;
-import com.kamil184.newmotivate.model.Tag;
-import com.kamil184.newmotivate.model.TagDao;
 import com.kamil184.newmotivate.model.ToDoItem;
 import com.kamil184.newmotivate.model.ToDoItemDao;
 import com.kamil184.newmotivate.ui.addTodo.AddToDoActivity;
 
 import org.greenrobot.greendao.query.Query;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -41,19 +36,16 @@ public class TasksFragment extends Fragment {
 
     private static final String TAG = TasksFragment.class.getSimpleName();
     private static final int REQUEST_ID_TODO_ITEM = 1;
-    private Unbinder unbinder;
-
     @BindView(R.id.tasks_add_todo_fab)
     FloatingActionButton addTodoFab;
     @BindView(R.id.tasks_recycler)
     RecyclerView recyclerView;
-
     List<DateGroup> dateGroups;
     DateGroupAdapter adapter;
+    private Unbinder unbinder;
     private ToDoItemDao todoDao;
     private Query<ToDoItem> todoQuery;
     private List<ToDoItem> toDoItems;
-
 
 
     @Override
@@ -79,7 +71,7 @@ public class TasksFragment extends Fragment {
         unbinder.unbind();
     }
 
-    void startAddToDoActivity(ToDoItem item){
+    void startAddToDoActivity(ToDoItem item) {
         Intent intent = new Intent(getActivity(), AddToDoActivity.class);
         intent.putExtra(TODO_ITEM, item);
         startActivityForResult(intent, REQUEST_ID_TODO_ITEM);
@@ -88,14 +80,8 @@ public class TasksFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (resultCode == RESULT_OK) {
-            //TODO сделать что-то с результатом startActivityForResult
-            ToDoItem item = (ToDoItem) data.getParcelableExtra(TODO_ITEM);
-
-            Handler handler = new Handler();
-            handler.postDelayed(() -> {
-                recyclerView.setAdapter(null);
-                updateToDoList();
-            }, 280);
+            recyclerView.setAdapter(null);
+            updateToDoList();
 
         } else {
             Log.d(TAG, "resultCode != RESULT_OK");
@@ -103,7 +89,7 @@ public class TasksFragment extends Fragment {
     }
 
 
-    private void updateToDoList(){
+    private void updateToDoList() {
         DaoSession daoSession = ((App) recyclerView.getContext().getApplicationContext()).getDaoSession();
         todoDao = daoSession.getToDoItemDao();
         todoQuery = todoDao.queryBuilder().build();

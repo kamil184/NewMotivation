@@ -16,6 +16,7 @@ import androidx.preference.PreferenceManager;
 
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.kamil184.newmotivate.R;
+import com.kamil184.newmotivate.model.Repeat;
 import com.kamil184.newmotivate.model.ToDoItem;
 import com.kamil184.newmotivate.ui.addTodo.AddToDoActivity;
 import com.kamil184.newmotivate.util.ColorUtils;
@@ -77,7 +78,7 @@ public class TaskViewHolder extends ChildViewHolder {
         //Repeat
         if (item.getRepeat() == null) {
             repeat.setVisibility(View.GONE);
-        }
+        }else repeat.setVisibility(View.VISIBLE);
 
         //Date
         Calendar calendar = item.getCalendar();
@@ -112,6 +113,11 @@ public class TaskViewHolder extends ChildViewHolder {
 
         //Checkbox
         checkBox.setChecked(item.getIsCompleted());
+        if (checkBox.isChecked()) {
+            title.setPaintFlags(title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        } else {
+            title.setPaintFlags(title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+        }
         SharedPreferences preference = PreferenceManager.getDefaultSharedPreferences(context);
 
         if (android.os.Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP) {
